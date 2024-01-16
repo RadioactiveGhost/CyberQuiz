@@ -1,3 +1,10 @@
+/*
+
+Ficheiro CSS Geral
+
+*/
+
+
 :root {
     --rosewater:    #dc8a78;
 	--flamingo:	    #dd7878;
@@ -7,6 +14,7 @@
 	--maroon:       #e64553;
 	--peach:        #fe640b;
 	--yellow:       #df8e1d;
+    --gold:         rgb(241, 205, 1);
 	--green:        #40a02b;
 	--teal:         #179299;
 	--sky:          #04a5e5;
@@ -30,6 +38,7 @@
 * {
     margin: 0px;
     font-family: Arial;
+    transition-duration: 250ms;
 }
 
 body {
@@ -38,46 +47,145 @@ body {
 
 .quiz-area {
     color: var(--text);
-    width: 90%;
-    height: 75vh;
-    min-height: 90%;
+    background-color: var(--mantle);
+    width: 92%;
+    height: 70vh;
     clear: both;
-    margin: 4%;
-    border-radius: 5px;
-    box-shadow: 0px 5px 6px var(--overlay2);
+    margin: 20px 4% 0 4%;
+    border: 1px solid var(--sapphire);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 5px 5px var(--overlay2);
 }
 
 .title-bar {
     border: 1px solid var(--surface0);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding: 5px;
+    line-height: 40px;
+    padding: 2px 12px 0 0;
+    height: 40px;
     background-color: var(--surface0);
 }
 
 .title {
     font-weight: bold;
     margin-left: 10px;
+    position: relative;
+    float:left;
+    height: 100%;
+    padding: 0 20px 0 10px;
+    background-color: var(--mantle);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid var(--sapphire);
+    border-bottom: 1px solid var(--mantle);
 }
 
 .window-icons {
     float:right;
-    color: var(--maroon);
+    color: var(--mauve);
+}
+
+.window-icons > i:not(:last-child) {
+    margin-right: 20px;
 }
 
 .quiz {
-    border: 1px solid var(--overlay0);
-    border-top: none;
-    border-bottom: none;
-    padding: 10px;
     text-align: center;
     height: calc(100% - 50px);
 }
 
 .taskbar {
     border: 1px solid var(--sapphire);
+    background-color: var(--sapphire);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 5px;
+    width: 92%;
+    margin: 0 4% 0 4%;
+    padding: 5px 0;
+    position: relative;
+    clear:both;
+    box-shadow: 0 5px 5px var(--overlay2);
+}
+.menu {
+    color: white;
+    margin-left: 10px;
+}
+
+#clock {
+    float: right;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.nav-container {
+    position: relative;
+    clear: both;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navigation {
+    background-color: var(--flamingo);
+    flex: 1;
+    width: 50px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 3px var(--overlay2);
+}
+
+.navigation:hover {
+    background-color: var(--maroon);
+    cursor:pointer;
+}
+
+.points {
     background-color: var(--sapphire);
+    flex: 1;
+    color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+    width:fit-content;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 3px 3px var(--overlay2);
+}
+
+.padding {
+    flex: 2;
+}
+
+.prev {
+    margin-left: 4%;
+    float: left;
+}
+
+.next {
+    margin-right: 4%;
+    float:right;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    background-color: var(--blue);
+}
+
+footer img {
+    height: 40px;
+}
+
+
+
+.fa-trophy {
+    color: var(--gold);
 }

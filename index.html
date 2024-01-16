@@ -3,26 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberQuiz</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/brands.css">
     <link rel="stylesheet" href="assets/css/solid.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="points">1/10</div>
     <div class="quiz-area">
         <div class="title-bar">
-            <span class="title"><i class="fa-solid fa-feather-pointed"></i> Quiz de CiberSegurança</span>
-            <div class="window-icons"><i class="fa-solid fa-xmark"></i></div>
-            
+            <div class="title"><i class="fa-solid fa-feather-pointed"></i>  CyberQuiz</div>
+            <div class="window-icons"><i class="fa-solid fa-window-minimize"></i><i class="fa-solid fa-window-maximize"></i><i class="fa-solid fa-xmark"></i></div>
         </div>
-        <div class="quiz">
-            <h2>TESTE2</h2>
+        <div class="quiz" id="quiz">
+        
         </div>
-        <div class="taskbar">
-            <i class="fa-solid fa-circle-nodes"></i>
+        <!--<div class="taskbar">
+            <i class="fa-solid fa-circle-nodes menu"></i>
+            <span id="clock"></span>
+        </div>-->
+    </div>
+    <div class="taskbar">
+        <i class="fa-solid fa-circle-nodes menu"></i>
+        <span id="clock"></span>
+    </div>
+    <div class="nav-container">
+        <div class="navigation prev" onclick="quiz(0)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="padding"></div>
+        <div class="points">
+            1/10 <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="padding"></div>
+        <div class="navigation next" onclick="quiz(1)">
+            <i class="fa-solid fa-chevron-right"></i>
         </div>
     </div>
+    <footer>
+        <img src="assets/img/transmontana.png" alt="">
+    </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
