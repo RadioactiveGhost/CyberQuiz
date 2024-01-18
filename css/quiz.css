@@ -5,20 +5,27 @@
 */
 
 @import url(style.css);
+* {
+    transition-duration: 250ms;
+}
 
 /* PASSWORD QUIZ */
 
 #pass {
     position:relative;
-    border: 1px solid var(--mauve);
     border-radius: 5px;
     background-color: var(--crust);
     width:min-content;
     margin:20px auto -20px auto;
-    padding: 10px 50px;
+    padding: 10px 20px;
     box-shadow: 0 3px 3px var(--surface2);
 }
 
+@media only screen and (max-width: 600px) {
+    #pass {
+        width: 70vw;
+    }
+}
 
 #pass input {
     margin: 10px;
@@ -28,7 +35,7 @@
 }
 
 #pass input[type=text] {
-    margin: 5px 10px;
+    margin: 5px 2px;
     background: #96969656;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -61,11 +68,12 @@
 /* -------- */
 
 
-#sms {
+/* SMS */
+
+.messagewindow {
     position:relative;
-    border: 1px solid var(--sapphire);
-    border-radius: 5px;
-    background-color: var(--crust);
+    border-radius: 20px;
+    background-color: rgb(31, 31, 31);
     width:300px;
     margin:20px auto -20px auto;
     padding: 20px 25px;
@@ -76,12 +84,14 @@
     position:relative;
     font-weight: bold;
     float: left;
+    color: white;
 }
 
 .mess-menu {
     position: relative;
     float: right;
     top: -9px;
+    color: white;
 }
 
 .message {
@@ -89,13 +99,22 @@
     position:relative;
     border-radius: 10px;
     border-bottom-left-radius: 0;
-    background: var(--blue);
+    background: #575757;
     color: white;
     padding: 10px;
     text-align: left;
     width: 75%;
     margin-bottom: 5px;
     margin-top: 10px;
+}
+
+.link {
+    text-decoration: underline;
+    color: rgb(0, 174, 255) !important;
+}
+
+.link:hover {
+    cursor:pointer;
 }
 
 #sms-bottom {
@@ -107,20 +126,23 @@
 #sms-input {
     float: left;
     position: relative;
-    width: 75%;
+    width: 55%;
     border-radius: 10px;
     border: none;
     outline: none;
     padding: 10px 10px;
     margin-right: 5%;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.664);
 }
 
-#sms-send {
+.sms-send {
     position: relative;
-    color: var(--sapphire);
-    background: white;
+    color: white;
+    background-color: var(--sapphire);
     padding: 10px;
     border-radius: 20px;
+    margin-left: 5px;
 }
 
 
@@ -134,7 +156,7 @@
 }
   /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: var(--blue);
+    background-color: var(--sapphire);
     color: white;
 }
 
@@ -147,7 +169,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--mantle);
+    background-color: black;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 5px;
@@ -159,7 +181,7 @@
 
   /* Links inside the dropdown */
 .dropdown-content p {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -183,3 +205,299 @@
 }
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+/*---------------------------------------*/
+
+/*-----   USB   -------------------------*/
+
+
+/*---------------------------------------*/
+
+
+/*-----   WebSpoofing  ------------------*/
+
+#webspoofing {
+    background: white;
+    height: 100%;
+    position: relative;
+}
+
+#urlbar {
+    background: var(--blue);
+    padding: 9px;
+    height: 23px;
+}
+
+
+#urlbar i {
+    float: left;
+    background-color: var(--yellow);
+    padding: 4px;
+    margin-right: 4px;
+    border-radius: 6px;
+}
+
+#urlbar > input {
+    float:left;
+    clear: right;
+    width: 70%;
+    background: white;
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+#urlbar > .hammenu {
+    float: right;
+    color:white;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#spoofing-content .txt {
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    #urlbar {
+        padding-left: 130px;
+        padding-right: 130px;
+    }
+    #spoofing-content {
+        padding-left: 50px;
+        padding-right: 50px;
+
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #spoofing-content {
+        padding-left: 130px;
+        padding-right: 130px;
+    }
+    #spoofing-content img {
+        width: 250px;
+        float: left;
+        margin: 20px 0 0 30px;
+    }
+
+    #spoofing-content #login {
+        float:right;
+        margin: 30px 0 0 30px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    #spoofing-content {
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+}
+
+#spoofdownload {
+    width: 100px;
+}
+
+#download {
+    background-color: var(--green);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    color: white;
+    padding: 30px;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+#download i {
+    font-size: 30px;
+}
+
+/*---------------------------------------*/
+
+/*-----   Engenharia Social   -----------*/
+#engsocial {
+    border-radius: 20px;
+}
+
+#engsocial .icon {
+    color: white;
+    float: left;
+    font-size: 25px;
+    margin: 0 5px 5px 0;
+}
+
+#engsocial #sms-input {
+    width: 64%;
+    background-color: #575757;
+}
+
+#engsocial .sms-send {
+    background: none;
+    padding-left: 4px;
+}
+/*---------------------------------------*/
+
+/*-----   Verificação de Email   --------*/
+#email {
+    background-color: var(--mantle);
+    height: 95%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#emailtopbar {
+    background-color: var(--blue);
+    padding: 20px 0;
+    position: relative;
+    box-shadow: 0 2px 5px grey;
+    z-index: 1;
+}
+
+#emailtopbar span {
+    float: left;
+    color: white;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+
+#emailtopbar .fa-circle-user {
+    float: right;
+    color: white;
+    font-size: 25px;
+    margin-right: 40px;
+}
+
+#emailtopbar .fa-magnifying-glass {
+    margin-left: -30px;
+    color: white;
+}
+
+#emailtopbar input {
+    width: 60%;
+    height: 25px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(22, 22, 22, 0.747);
+    border: none;
+}
+
+#emailcontent {
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    padding: 20px 0 0 0;
+    box-shadow: 0 2px 5px grey;
+}
+
+
+#assunto {
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    height: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px grey;
+}
+
+#emailheader {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.493);
+    position: relative;
+    padding: 0 20px 5px 20px;
+}
+#iremetente {
+    float: left;
+    background: var(--gold);
+    border-radius: 50px;
+    padding: 5px;
+    width: 23px;
+    margin-right: 30px;
+}
+#remetente {
+    padding: 10px;
+    position: relative;
+    font-weight: bold;
+    text-align: left;
+    width: 350px;
+}
+
+#remetente:hover {
+    cursor: pointer;
+}
+#emailhover {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    display: none;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px grey;
+    color: var(--blue);
+
+}
+
+#remetente:hover div {
+    display:block;
+}
+
+#emailcontent #text {
+    text-align: left;
+    padding: 20px;
+}
+
+.imail {
+    position: relative;
+    margin: auto;
+    width:fit-content;
+}
+
+.imail img {
+    width: 150px;
+}
+
+#emailimghover {
+    border: 1px solid var(--surface2);
+    position: absolute;
+    bottom: 10px;
+    width: 85%;
+    padding: 3px;
+    display: none;
+}
+#emailimg:hover {
+    cursor: pointer;
+}
+
+#signimg {
+    float: left;
+}
+
+@media only screen and (max-width: 1000px) {
+    #emailcontent {
+        width: 100%;
+    }
+    #text {
+        font-size: .5em;
+    }
+    #emailtopbar input {
+        width: 40%;
+    }
+    #remetente {
+        font-size: .7em;
+    }
+    #assunto {
+        font-size: .7em;
+    }
+    .imail img {
+        width: 100px;
+    }
+}
+/*---------------------------------------*/
