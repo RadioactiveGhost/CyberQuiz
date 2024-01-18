@@ -43,8 +43,7 @@ Ficheiro CSS Geral
 * {
     margin: 0px;
     /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
-    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;;
-    transition-duration: 250ms;
+    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -95,7 +94,7 @@ body {
 
 .quiz {
     text-align: center;
-    height: 100%;
+    height: 92%;
 }
 
 .taskbar {
@@ -135,10 +134,12 @@ body {
 
 
 .menu {
-    color: white;
+    background-image: conic-gradient(red, yellow, green, blue, black);
+    border-radius: 50%;
+    color: #209fb500;
     margin-left: 10px;
     animation: rotate;
-    animation-duration: 1s;
+    animation-duration: .1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -231,5 +232,106 @@ footer img {
     }
     to {
         transform:rotate(360deg);
+    }
+}
+
+#block {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.329);
+}
+
+#popwindow, #sabias{
+    position:relative;
+    border-radius: 20px;
+    background-color: white;
+    width:600px;
+    margin:40px auto -20px auto;
+    padding: 30px 40px;
+    z-index: 11;
+}
+
+#popwindow {
+    border: 4px solid #5ba08c;
+}
+
+.nextbdiv {
+    position:relative;
+    width:fit-content;
+    margin:40px auto -20px auto;
+    z-index: 11;
+
+}
+
+#balao1 .fa-caret-right, #balao2 .fa-caret-right {
+    margin: 10px;
+    color: #5ba08c;
+}
+
+
+
+.nextb{
+    border: none;
+    outline: none;
+    width: 200px;
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(88, 88, 88, 0.719);
+    font-size: 16px;
+}
+
+.nextb:hover {
+    cursor:pointer;
+    background-color: #5ba08c;
+    color: white;
+    box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
+}
+
+#sabias {
+    background: none;
+    overflow: hidden;
+}
+
+#montana img{
+    width: 80px;
+}
+
+#montana {
+    float: left;
+}
+
+#sabiasque {
+    float: right;
+    width: 80%;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid #b8fde9;
+}
+
+.squote {
+    color: #5ba08c;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.right {
+    color: rgb(85, 146, 85);
+}
+
+.wrong {
+    color: rgb(155, 31, 31);
+}
+
+
+@media only screen and (max-width: 600px) {
+    #pop-up {
+        width: 200px;
     }
 }

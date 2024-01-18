@@ -11,6 +11,27 @@
     <title>CyberQuiz</title>
 </head>
 <body>
+    <div id="block">
+        <div id="popwindow">
+            <div id="pop-up"></div>
+            <div id="balao1"></div>
+            <div id="balao2"></div>
+            <div class="nextbdiv"><input type="button" value="Anterior" class="nextb" id="nextb" onclick="nextButton(0)"><input type="button" value="Seguinte" class="nextb" id="nextb" onclick="nextButton(1)"></div>
+        </div>
+        <div id="sabias">
+            <div id="montana">
+                <img src="assets/img/montana.png" alt="">
+            </div>
+            <div id="sabiasque">
+                <div id="sabias1">
+
+                </div>
+                <div id="sabias2">
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="quiz-area">
         <div class="title-bar">
             <div class="title"><i class="fa-solid fa-gamepad"></i>  CyberQuiz</div>
@@ -20,10 +41,10 @@
         </div>
     </div>
     <div class="taskbar">
-        <i class="fa-solid fa-circle-nodes menu"></i>
+        <i class="fa-solid fa-spinner menu"></i>
         <span id="clock"></span>
     </div>
-    <div class="nav-container">
+    <!--<div class="nav-container">
         <div class="navigation prev" onclick="quiz(0)">
             <i class="fa-solid fa-circle-chevron-left"></i>
         </div>
@@ -35,10 +56,11 @@
         <div class="navigation next" onclick="quiz(1)">
             <i class="fa-solid fa-circle-chevron-right"></i>
         </div>
-    </div>
+    </div>-->
     <footer>
         <img src="assets/img/transmontana.png" alt="">
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/quiz.js"></script>
 </body>
 </html>

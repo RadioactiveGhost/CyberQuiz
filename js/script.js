@@ -26,34 +26,34 @@ setInterval(tempus, 5000);
 let ele = document.getElementById("quiz");
 let quizAtual = 0;
 let quizArray = [
-    "<div id='pass'>\
+    "<div id='passb'><div id='pass'>\
         <i class='fa-solid fa-user icon-left'>\
         </i><input type='text' width=20 value='Utilizador' disabled>\
         <br>\
         <i class='fa-solid fa-key icon-left'>\
         </i><input type='text' width=20>\
         <div id='passchecks'>\
-            <input type='checkbox' id='pass1' name='pass1' value='Password123**'>\
+            <input type='checkbox' class='pass' id='pass1' name='pass1' value='Password123**'>\
             <label for='pass1'>Password123**</label>\
             <br>\
-            <input type='checkbox' id='pass2' name='pass2' value='!LiK3MySch001#*??'>\
+            <input type='checkbox' class='pass' id='pass2' name='pass2' value='!LiK3MySch001#*??'>\
             <label for='pass2'>!LiK3MySch001#*??</label>\
             <br>\
-            <input type='checkbox' id='pass3' name='pass3' value='*Apr1l012000*'>\
+            <input type='checkbox' class='pass' id='pass3' name='pass3' value='*Apr1l012000*'>\
             <label for='pass3'>*Apr1l012000*</label>\
             <br>\
-            <input type='checkbox' id='pass4' name='pass4' value='!--Am@z0n55--!'>\
+            <input type='checkbox' class='pass' id='pass4' name='pass4' value='!--Am@z0n55--!'>\
             <label for='pass4'>!--Am@z0n55--!</label>\
             <br>\
-            <input type='checkbox' id='pass5' name='pass5' value='1q2w3e4r'>\
+            <input type='checkbox' class='pass' id='pass5' name='pass5' value='1q2w3e4r'>\
             <label for='pass5'>1q2w3e4r</label>\
             <br>\
-            <input type='checkbox' id='pass6' name='pass6' value='John@1981.Google'>\
+            <input type='checkbox' class='pass' id='pass6' name='pass6' value='John@1981.Google'>\
             <label for='pass6'>John@1981.Google</label>\
             <br>\
-            <input type='button' value='Submeter'>\
+            <input type='button' value='Submeter' onclick='submitPass()'>\
         </div>\
-    </div>",
+    </div></div>",
 
     "<div id='sms' class='messagewindow'>\
         <div id='sms-head'>\
@@ -148,7 +148,33 @@ Gabinete da Autoridade Tributária de Portugal\
     </div>",
 
     "<div id='uac'>\
-        \
+        <div id='uactopbar'>\
+            <span>Controlo de Conta de Utilizador</span><br>\
+            <span id='uactitle'>Pretende permitir que esta aplicação faça alterações ao seu dispositivo?</span>\
+        </div>\
+        <div id='uaccontent'>\
+            <span id='uacprogram'><i class='fa-solid fa-file-word'></i> Microsoft Word 2023/24 ® Microsoft</span><br><br><br>\
+            <span>Editor verificado: Free MS Word for Everyone<br>Origem do ficheiro: Disco neste computador</span><br><br>\
+            <span id='uaclink' onclick='uacdetalhes()'>Mostrar mais detalhes</span>\
+            <span id='uacaddress'>C:\Users\NOME\Transferencias\Wormzy.exe</span>\
+        </div>\
+        <div id='uacbottombar'>\
+            <input type='button' value='Sim'><input type='button' value='Não'>\
+        </div>\
+    </div>",
+
+    "<div id='browser'>\
+        <div id='wifi'>\
+            <div class='wifientry'>\
+                <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> CFPVR-5\
+            </div>\
+            <div class='wifientry'>\
+                <i class='fa-solid fa-wifi'></i> Café-CIDADE\
+            </div>\
+            <div class='wifientry'>\
+                <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> Hotspot-NOME\
+            </div>\
+        </div>\
     </div>"
 ];
 let quizMax = quizArray.length;
@@ -169,6 +195,9 @@ function quiz(n) {
     }
     if (quizAtual == 3) {
         centerDownload();
+    }
+    if(quizAtual == 6) {
+        document.getElementById('uacaddress').style.display = 'none';
     }
 }
 /*--------------------------------------------------------------------*/
@@ -208,7 +237,7 @@ window.onresize = centerDownload;
 
 /*--------------------------------------------------------------------*/
 
-const imail = document.getElementById('emailimg');
+/*const imail = document.getElementById('emailimg');
 const imailtxt = document.getElementById('emailimghover');
 
 imail.addEventListener(
@@ -225,4 +254,128 @@ imail.addEventListener(
         imailtxt.style.display = 'none';
     },
     false,
-);
+);*/
+
+/*--------------------------------------------------------------------*/
+
+function uacdetalhes() {
+    let uacaddress = document.getElementById('uacaddress');
+    if (uacaddress.style.display === 'none') {
+        uacaddress.style.display = 'block';
+    } else{
+        uacaddress.style.display = 'none';
+    }
+}
+
+
+
+
+
+
+/* -----------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/* PASSWORD QUIZ */
+let block = document.getElementById('block');
+let popup = document.getElementById('pop-up');
+let balao1 = document.getElementById('balao1');
+let balao2 = document.getElementById('balao2');
+let nextb = document.getElementById('nextb');
+let sabiasque = document.getElementById('sabiasque');
+let sabias = document.getElementById('sabias');
+let sabias1 = document.getElementById('sabias1');
+let sabias2 = document.getElementById('sabias2');
+// 0 Passa de Pop para Balões/Sabias que, 1 passa do anterior para vazio
+let buttonmode = 0;
+block.style.display = 'none';
+balao1.style.display = 'none';
+balao2.style.display = 'none';
+sabias.style.display = 'none';
+
+function nextButton(n) {
+    console.log(buttonmode);
+    if (n == 0 && buttonmode != 0) {
+        buttonmode--;
+    }
+    if (n == 1 && buttonmode !=3) {
+        buttonmode++;
+    }
+    if (n == 1 && buttonmode == 3) {
+        quiz(1);
+        buttonmode = 0;
+        block.style.display = 'none';
+        balao1.style.display = 'none';
+        balao2.style.display = 'none';
+        sabias.style.display = 'none';
+        return;
+    }
+    //window.alert(buttonmode);
+    if (buttonmode == 0) {
+        popup.style.display = 'block';
+        balao1.style.display = 'none';
+        balao2.style.display = 'none';
+        sabias.style.display = 'none';
+        sabias1.style.display = 'none';
+        sabias2.style.display = 'none';
+        return;
+    }
+    if (buttonmode == 1) {
+        popup.style.display = 'none';
+        balao1.style.display = 'block';
+        balao2.style.display = 'none';
+        sabias.style.display = 'block';
+        sabias1.style.display = 'block';
+        sabias2.style.display = 'none';
+        return;
+    }
+    if (buttonmode == 2) {
+        popup.style.display = 'none';
+        balao1.style.display = 'none';
+        balao2.style.display = 'block';
+        sabias.style.display = 'block';
+        sabias1.style.display = 'none';
+        sabias2.style.display = 'block';
+        return;
+    }
+
+}
+
+function submitPass() {
+    let pass = document.getElementsByClassName('pass');
+    let messagePop = '';
+    balao1.innerHTML = '<h3>O que poderia ter acontecido?</h3><br>\
+    <i class="fa-solid fa-caret-right"></i> A tua palavra-passe poderia ser usada para tentar entrar noutros websites onde tens registo\
+    <br><i class="fa-solid fa-caret-right"></i> Ficarias sem acesso à tua conta. Os invasores tendem a mudar a palavra-passe assim que conseguem entrar\
+    <br><i class="fa-solid fa-caret-right"></i> Os teus dados e informações pessoais poderiam ser roubados e vendidos';
+    balao2.innerHTML = '<h3>Como me prevenir?</h3><br>\
+    Ao criares uma palavra-passe, tem em atenção os seguintes pontos:\
+    <br><i class="fa-solid fa-caret-right"></i> Pelo menos 12 caracteres\
+    <br><i class="fa-solid fa-caret-right"></i> Uma combinação de letras maiúsculas, minúsculas, números e símbolos\
+    <br><i class="fa-solid fa-caret-right"></i> Não utilizes uma palavra que se encontre no dicionário\
+    <br><i class="fa-solid fa-caret-right"></i> Usa uma palavra-passe diferente para cada website\
+    <br><i class="fa-solid fa-caret-right"></i> Utiliza autenticação multifator\
+    ';
+    sabias1.innerHTML = '<span class="squote">Sabias que?</span><br>“81% dos casos de fuga de informação em empresas são causados por palavras-passe fracas” - <i>Microsoft</i>';
+    sabias2.innerHTML = '<span class="squote">Sabias que?</span><br>“As palavras-passe mais utilizadas em Portugal são admin, 123456 e user” - <i>JN, 2023</i>';
+    if (pass[1].checked && pass[3].checked) {
+        messagePop += '<center><h2 class="right">Estás em segurança!</h2></center><br><br>\
+        Escolheste as duas palavras-passe mais seguras: ';
+    } else {
+        messagePop += '<center><h2 class="wrong">NÃO ESTÁS EM SEGURANÇA!</h2></center><br><br>\
+        As duas palavras-chave mais seguras seriam: ';
+    }
+    messagePop += '<br><b>!LiK3MySch001#*??</b> e <b>!--Am@z0Pa55--!</b><br><br>\
+    Sabes quanto tempo levaria um hacker a descobrir estas palavras-chave?<br><b><i>Mais de mil anos!</i></b> As restantes palavras-passe seriam descobertas em <b><i>menos de um mês!</i></b>';
+    popup.innerHTML = messagePop;
+    popup.style.display = 'block';
+    block.style.display = 'block';
+}
+
