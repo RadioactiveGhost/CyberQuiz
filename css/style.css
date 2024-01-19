@@ -6,6 +6,8 @@ Ficheiro CSS Geral
 
 
 :root {
+    --p1:          #0f3866;
+    --p2:           #94e8bf;
     --rosewater:    #dc8a78;
 	--flamingo:	    #dd7878;
 	--pink:         #ea76cb;
@@ -57,7 +59,7 @@ body {
     height: 70vh;
     clear: both;
     margin: 20px 4% 0 4%;
-    border: 1px solid var(--sapphire);
+    border: 1px solid var(--p1);
     border-radius: 5px 5px 0 0;
     box-shadow: 0 5px 5px var(--overlay2);
 }
@@ -85,7 +87,7 @@ body {
 
 .window-icons {
     float:right;
-    color: var(--mauve);
+    color: var(--p1);
 }
 
 .window-icons > i:not(:last-child) {
@@ -98,8 +100,8 @@ body {
 }
 
 .taskbar {
-    border: 1px solid var(--sapphire);
-    background-color: var(--sapphire);
+    border: 1px solid var(--p1);
+    background-color: var(--p1);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 92%;
@@ -139,7 +141,7 @@ body {
     color: #209fb500;
     margin-left: 10px;
     animation: rotate;
-    animation-duration: .1s;
+    animation-duration: .2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -212,7 +214,8 @@ footer {
     bottom: 0;
     width: 100%;
     text-align:center;
-    background-color: var(--blue);
+    background-color: var(--p1);
+    padding: 10px 0;
 }
 
 footer img {
@@ -245,7 +248,7 @@ footer img {
     background-color: rgba(0, 0, 0, 0.329);
 }
 
-#popwindow, #sabias{
+#popwindow, #sabias, #desafio{
     position:relative;
     border-radius: 20px;
     background-color: white;
@@ -255,11 +258,15 @@ footer img {
     z-index: 11;
 }
 
+#desafio {
+    text-align: center;
+}
+
 #popwindow {
     border: 4px solid #5ba08c;
 }
 
-.nextbdiv {
+#nextbdiv, #confirmdiv{
     position:relative;
     width:fit-content;
     margin:40px auto -20px auto;

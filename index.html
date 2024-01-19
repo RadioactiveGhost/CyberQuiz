@@ -12,11 +12,17 @@
 </head>
 <body>
     <div id="block">
+        <div id="desafio">
+            <div id="desafiot"></div>
+            <div id="confirmdiv">
+                <input type="button" value="Entendi" class="nextb" id="nextb" onclick="esconder()">
+            </div>
+        </div>
         <div id="popwindow">
             <div id="pop-up"></div>
             <div id="balao1"></div>
             <div id="balao2"></div>
-            <div class="nextbdiv"><input type="button" value="Anterior" class="nextb" id="nextb" onclick="nextButton(0)"><input type="button" value="Seguinte" class="nextb" id="nextb" onclick="nextButton(1)"></div>
+            <div id="nextbdiv"><input type="button" value="Anterior" class="nextb" id="prevb" onclick="nextButton(0)"><input type="button" value="Seguinte" class="nextb" id="nextb" onclick="nextButton(1)"></div>
         </div>
         <div id="sabias">
             <div id="montana">
@@ -61,6 +67,5 @@
         <img src="assets/img/transmontana.png" alt="">
     </footer>
     <script src="js/script.js"></script>
-    <script src="js/quiz.js"></script>
 </body>
 </html>
