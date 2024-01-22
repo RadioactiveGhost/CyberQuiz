@@ -9,6 +9,7 @@
     Teste de pull request 2
 */
 @import url(style.css);
+
 * {
     transition-duration: 250ms;
 }
@@ -18,21 +19,22 @@
     width: 100%;
     height: 100%;
     background-image: url(../assets/img/bg1.jpg);
-    background-size:100%;
+    background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
     padding-top: 40px;
 }
 
 #pass {
-    position:relative;
+    position: relative;
     border-radius: 5px;
     background-color: var(--crust);
-    width:min-content;
-    margin:0 auto 0 auto;
+    width: min-content;
+    margin: 0 auto 0 auto;
     padding: 10px 20px;
     box-shadow: 0 3px 3px var(--surface2);
 }
+
 
 @media only screen and (max-width: 600px) {
     #pass {
@@ -59,25 +61,26 @@
 }
 
 #pass input[type=button] {
-    border:none;
+    border: none;
     border-radius: 5px;
     background-color: #b7caff;
-    width:90%;
+    width: 90%;
     box-shadow: 0 3px 3px var(--surface2);
 }
 
 #pass input[type=button]:hover {
     background-color: var(--sapphire);
     color: white;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #passchecks {
-    text-align:left;
-    margin-top:10px;
+    text-align: left;
+    margin-top: 10px;
 }
 
-.pass:hover, #passchecks label {
+.pass:hover,
+#passchecks label {
     cursor: pointer;
 }
 
@@ -89,25 +92,25 @@
 #smsb {
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/bg2.jpg);
-    background-size:center;
+    background-image: url(../assets/img/sms_60_transparencia.jpg);
+    background-size: center;
     background-position: bottom;
     background-repeat: no-repeat;
     padding-top: 40px;
 }
 
 .messagewindow {
-    position:relative;
+    position: relative;
     border-radius: 20px;
     background-color: rgb(31, 31, 31);
-    width:300px;
-    margin:20px auto -20px auto;
+    width: 300px;
+    margin: 20px auto -20px auto;
     padding: 20px 25px;
     box-shadow: 0 3px 3px var(--surface2);
 }
 
 #mess-number {
-    position:relative;
+    position: relative;
     font-weight: bold;
     float: left;
     color: white;
@@ -122,7 +125,7 @@
 
 .message {
     clear: both;
-    position:relative;
+    position: relative;
     border-radius: 10px;
     border-bottom-left-radius: 0;
     background: #575757;
@@ -140,7 +143,7 @@
 }
 
 .link:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #sms-bottom {
@@ -180,24 +183,27 @@
     width: 15px;
     cursor: pointer;
 }
-  /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: var(--sapphire);
     color: white;
 }
 
-  /* The container <div> - needed to position the dropdown content */
+/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
-  /* Dropdown Content (Hidden by Default) */
+
+/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: black;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     z-index: 1;
     right: 0;
@@ -205,7 +211,7 @@
     margin-right: 20px;
 }
 
-  /* Links inside the dropdown */
+/* Links inside the dropdown */
 .dropdown-content p {
     color: white;
     padding: 12px 16px;
@@ -214,7 +220,7 @@
     cursor: pointer;
 }
 
-  /* Change color of dropdown links on hover */
+/* Change color of dropdown links on hover */
 .dropdown-content p:hover {
     background-color: var(--sapphire);
     color: white;
@@ -229,8 +235,11 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
 
 
 /*---------------------------------------*/
@@ -264,8 +273,8 @@
     border-radius: 6px;
 }
 
-#urlbar > input {
-    float:left;
+#urlbar>input {
+    float: left;
     clear: right;
     width: 70%;
     background: white;
@@ -277,7 +286,7 @@
 
 .hammenubar {
     float: right;
-    color:white;
+    color: white;
     background-color: rgba(255, 255, 255, 0);
     margin-left: 20px;
     margin-top: 4px;
@@ -305,6 +314,7 @@
         padding-left: 130px;
         padding-right: 130px;
     }
+
     #spoofing-content {
         padding-left: 50px;
         padding-right: 50px;
@@ -317,6 +327,7 @@
         padding-left: 130px;
         padding-right: 130px;
     }
+
     #spoofing-content img {
         width: 250px;
         float: left;
@@ -324,7 +335,7 @@
     }
 
     #spoofing-content #login {
-        float:right;
+        float: right;
         margin: 30px 0 0 30px;
     }
 }
@@ -348,7 +359,7 @@
     color: white;
     padding: 30px;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
 }
 
 #download i {
@@ -385,19 +396,20 @@
     background: none;
     font-style: italic;
 }
-.message.warning input{
+
+.message.warning input {
     width: 100%;
     background: none;
     outline: none;
-    border:2px solid var(--sapphire);
+    border: 2px solid var(--sapphire);
     border-radius: 10px;
     color: #ddd;
     font-size: 16px;
     margin-top: 10px;
 }
 
-.message.warning input:hover{
-    cursor:pointer;
+.message.warning input:hover {
+    cursor: pointer;
     background-color: var(--sapphire);
     color: white;
 }
@@ -473,6 +485,7 @@
     position: relative;
     padding: 0 20px 5px 20px;
 }
+
 #iremetente {
     float: left;
     background: var(--gold);
@@ -481,6 +494,7 @@
     width: 23px;
     margin-right: 30px;
 }
+
 #remetente {
     padding: 10px;
     position: relative;
@@ -492,6 +506,7 @@
 #remetente:hover {
     cursor: pointer;
 }
+
 #emailhover {
     position: absolute;
     top: 40px;
@@ -506,7 +521,7 @@
 }
 
 #remetente:hover div {
-    display:block;
+    display: block;
 }
 
 #emailcontent #text {
@@ -517,7 +532,7 @@
 .imail {
     position: relative;
     margin: auto;
-    width:fit-content;
+    width: fit-content;
 }
 
 .imail img {
@@ -532,6 +547,7 @@
     padding: 3px;
     display: none;
 }
+
 #emailimg:hover {
     cursor: pointer;
 }
@@ -544,12 +560,13 @@
     box-shadow: 0px 2px 6px grey;
     background: white;
     border: none;
-    outline:none;
+    outline: none;
     color: var(--text);
     border-radius: 10px;
     padding: 10px 20px;
     margin-left: 10px;
 }
+
 .emailb:hover {
     background-color: var(--sapphire);
     color: white;
@@ -560,22 +577,28 @@
     #emailcontent {
         width: 100%;
     }
+
     #text {
         font-size: .5em;
     }
+
     #emailtopbar input {
         width: 40%;
     }
+
     #remetente {
         font-size: .7em;
     }
+
     #assunto {
         font-size: .7em;
     }
+
     .imail img {
         width: 100px;
     }
 }
+
 /*---------------------------------------*/
 
 
@@ -584,25 +607,28 @@
     width: 100%;
     height: 100%;
     background-image: url(../assets/img/bg7.jpg);
-    background-size:center;
+    background-size: center;
     background-position: bottom;
     background-repeat: no-repeat;
     padding-top: 40px;
 }
+
 #uac {
-    position:relative;
-    background-color: rgb(239, 241, 241);;
-    width:500px;
-    margin:20px auto -20px auto;
+    position: relative;
+    background-color: rgb(239, 241, 241);
+    ;
+    width: 500px;
+    margin: 20px auto -20px auto;
     box-shadow: 0 3px 5px var(--surface2);
     border-radius: 8px;
     user-select: none;
 }
+
 #uactopbar {
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     width: calc(100% - 40px);
-    background:#e0edf3;
+    background: #e0edf3;
     text-align: left;
     padding: 10px 20px;
     font-size: 15px;
@@ -621,7 +647,7 @@
     font-size: 30px;
 }
 
-#uacprogram i{
+#uacprogram i {
     color: rgb(0, 140, 255);
 }
 
@@ -629,8 +655,8 @@
     color: var(--blue);
 }
 
-#uaclink:hover{
-    cursor:pointer;
+#uaclink:hover {
+    cursor: pointer;
 }
 
 #uacbottombar {
@@ -640,7 +666,7 @@
     border-bottom-left-radius: 8px;
 }
 
-#uacbottombar input{
+#uacbottombar input {
     border: none;
     outline: none;
     width: 200px;
@@ -653,11 +679,12 @@
 }
 
 #uacbottombar input:hover {
-    cursor:pointer;
+    cursor: pointer;
     background-color: var(--sapphire);
     color: white;
     box-shadow: 0px 2px 4px rgba(88, 88, 88, 0.651);
 }
+
 /*---------------------------------------*/
 
 
@@ -681,7 +708,7 @@
     color: white;
     height: 400px;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     box-shadow: 0px 2px 4px rgb(88, 88, 88);
 }
 
@@ -690,17 +717,20 @@
     padding: 20px 40px 20px 20px;
     position: relative;
 }
-.wifientry > .fa-wifi {
+
+.wifientry>.fa-wifi {
     font-size: 24px;
     margin-right: 10px;
 }
-.wifientry > .fa-lock {
+
+.wifientry>.fa-lock {
     position: absolute;
     margin-left: -15px;
     margin-top: 14px;
     font-size: 13px;
 
 }
+
 .wifientry:first-child {
     border-radius: 8px 8px 0 0;
 }
