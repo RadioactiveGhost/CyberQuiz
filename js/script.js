@@ -16,7 +16,6 @@ tempus();
 setInterval(tempus, 5000);
 /*--------------------------------------------------------------------*/
 
-
 /*
     Função usada para apresentar as diferentes atividades do quiz.
     As atividades são guardadas dentro de um Array - as quebras de linha são para leitura mais fácil - em formato HTML.
@@ -182,7 +181,7 @@ Gabinete da Autoridade Tributária de Portugal\
 ];
 
 let desafioArray = [
-    "Seleciona as 2 palavras-passe mais seguras para o teu registo.",
+    "Seleciona as <b>2 palavras-passe mais seguras </b> para o teu registo",
     "Recebeste esta mensagem! O que vais fazer?",
     "Se achares seguro, faz login na rede social.",
     "Estás numa aplicação de mensagens. Toma uma decisão!",
@@ -192,6 +191,7 @@ let desafioArray = [
 ]
 let quizMax = quizArray.length;
 ele.innerHTML = quizArray[quizAtual];
+
 function quiz(n) {
     let str1 = "pages/quiz";
     if (n == 0) {
@@ -280,21 +280,7 @@ function uacdetalhes() {
     }
 }
 
-
-
-
-
-
 /* -----------------------------------*/
-
-
-
-
-
-
-
-
-
 
 /* PASSWORD QUIZ */
 let block = document.getElementById('block');
@@ -395,29 +381,108 @@ function submitPass(n) {
     }
     else {
         let messagePop = '';
-        b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> A tua palavra-passe poderia ser usada para tentar entrar noutros websites onde tens registo\
-        <br><i class="fa-solid fa-caret-right"></i> Ficarias sem acesso à tua conta. Os invasores tendem a mudar a palavra-passe assim que conseguem entrar\
-        <br><i class="fa-solid fa-caret-right"></i> Os teus dados e informações pessoais poderiam ser roubados e vendidos';
-        b2H = '<h3>Como me prevenir?</h3><br>\
-        Ao criares uma palavra-passe, tem em atenção os seguintes pontos:\
-        <br><i class="fa-solid fa-caret-right"></i> Pelo menos 12 caracteres\
-        <br><i class="fa-solid fa-caret-right"></i> Uma combinação de letras maiúsculas, minúsculas, números e símbolos\
-        <br><i class="fa-solid fa-caret-right"></i> Não utilizes uma palavra que se encontre no dicionário\
-        <br><i class="fa-solid fa-caret-right"></i> Usa uma palavra-passe diferente para cada website\
-        <br><i class="fa-solid fa-caret-right"></i> Utiliza autenticação multifator\
+        //O QUE PODERIA TER ACONTECIDO --------------------------
+        b1H = 
+        '<h2>\
+        <font color=\"#0F3866\">\
+        <center>\
+            O que poderia ter acontecido?\
+        </center>\
+        </font>\
+        </h2>\
+        <br>\
+        <i class="fa-solid fa-caret-right"></i>\
+            As tuas <b>informações</b> pessoais podiam ser <b>roubadas e vendidas</b>\
+        <br>\
+        <i class="fa-solid fa-caret-right"></i>\
+        <b>Perdias acesso</b> a esta e a todas as contas onde o login fosse igual\
         ';
-        s1H = '<span class="squote">Sabias que?</span><br>“81% dos casos de fuga de informação em empresas são causados por palavras-passe fracas” - <i>Microsoft</i>';
-        s2H = '<span class="squote">Sabias que?</span><br>“As palavras-passe mais utilizadas em Portugal são admin, 123456 e user” - <i>JN, 2023</i>';
-        if (pass[1].checked && pass[3].checked) {
-            mPH = '<center><h2 class="right">Estás em segurança!</h2></center><br><br>\
-            Escolheste as duas palavras-passe mais seguras: ';
+        //COMO ME PREVENIR --------------------------------------
+        b2H = 
+        '<h2>\
+        <font color=\"#0F3866\">\
+        <center>\
+            Como me prevenir?\
+        </center>\
+        </font>\
+        </h2>\
+        <br>\
+        <br><i class="fa-solid fa-caret-right"></i>\
+            No mínimo <b>12 caracteres</b>\
+        <br><i class="fa-solid fa-caret-right"></i>\
+            Uso de letras <b>maiúsculas</b>, <b>minúsculas</b>, <b>números</b> e <b>símbolos</b>\
+        <br><i class="fa-solid fa-caret-right"></i>\
+            Não utilizes uma palavra que se encontre no dicionário\
+        <br><i class="fa-solid fa-caret-right"></i>\
+            Utiliza autenticação multifator\
+        ';
+        //SABIAS QUE --------------------------------------------
+        s1H = 
+        '<span class="squote">\
+        Sabias que?\
+        </span>\
+        <br>\
+        <small>\
+            “81% dos casos de fuga de informação em empresas são causados por palavras-passe fracas” <br>-<i>Microsoft</i>\
+        </small>\
+        ';
+        s2H = 
+        '<span class="squote">\
+        Sabias que?\
+        </span>\
+        <br>\
+        <small>\
+            “As palavras-passe mais utilizadas em Portugal são admin, 123456 e user” <br>-<i>JN, 2023</i>\
+        </small>\
+        ';
+        //RESPOSTAS  --------------------------------------------
+        if (pass[1].checked && pass[3].checked) { 
+            mPH = 
+                '<center>\
+                <h1 class="right">\
+                    Estás em segurança!\
+                </h1>\
+                <br><br>\
+                <h3>\
+                    Escolheste as palavras-passe mais seguras\
+                </h3>\
+                </center>\
+                <br>';
         } else {
-            mPH = '<center><h2 class="wrong">NÃO ESTÁS EM SEGURANÇA!</h2></center><br><br>\
-            As duas palavras-chave mais seguras seriam: ';
+            mPH = 
+            '<center>\
+            <h1 class="wrong">\
+                NÃO ESTÁS EM SEGURANÇA!\
+            </h1>\
+            <br><br>\
+            <h3>\
+                As palavras-passe seguras são\
+            </h3>\
+            </center>\
+            <br>';
         }
-        mPH += '<br><b>!LiK3MySch001#*??</b> e <b>!--Am@z0Pa55--!</b><br><br>\
-        Sabes quanto tempo levaria um hacker a descobrir estas palavras-chave?<br><b><i>Mais de mil anos!</i></b> As restantes palavras-passe seriam descobertas em <b><i>menos de um mês!</i></b>';
+
+        mPH += 
+        '<center>\
+        <h4>\
+        <font color=\"#0F3866\">\
+            !LiK3MySch001#*??\
+        <br>\
+            !--Am@z0Pa55--!\
+        </font>\
+        </h4>\
+        </center>\
+        <br><br>\
+        <small>\
+        <justify>\
+        <center>\
+            Um hacker levaria <b> mais de mil anos </b> a decifrá-las.\
+        <br>\
+            As outras em <b> menos de um mês.</b>\
+        </center>\
+        </justify>\
+        </small>';
+
         popup.innerHTML = mPH;
         showPopup();
     }
@@ -594,7 +659,8 @@ function submitWifi(n) {
 }
 
 function mostrarDesafio (n){
-    desafiot.innerText = desafioArray[n];
+    desafiot.innerHTML = "<h1><center><font color=\"#0F3866\">Desafio " + (quizAtual + 1) + "</font></center></h1><br><br>";
+    desafiot.innerHTML += desafioArray[n];
     popwindow.style.display = 'none';
     block.style.display = 'block';
     desafio.style.display = 'block';
