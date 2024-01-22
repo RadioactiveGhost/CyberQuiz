@@ -1,22 +1,4 @@
 /*
-    Função que mostra um relógio digital no canto inferior direito da "janela".
-    O texto é formatado de maneira a mostrar um 0 antes de valores de hora/minuto com um único algarismo. (linha 12)
-    Atualiza a cada cinco segundos. (linha 16)
-*/
-
-let c1 = document.getElementById("clock");
-function tempus () {
-    const tempo = new Date();
-    let hora = tempo.getHours();
-    let minuto = tempo.getMinutes();
-    c1.innerText = (hora).toString().padStart(2 ,"0")+":"+(minuto).toString().padStart(2, "0");
-    
-}
-tempus();
-setInterval(tempus, 5000);
-/*--------------------------------------------------------------------*/
-
-/*
     Função usada para apresentar as diferentes atividades do quiz.
     As atividades são guardadas dentro de um Array - as quebras de linha são para leitura mais fácil - em formato HTML.
     A função quiz (linha 77) altera a atividade em ativo.
