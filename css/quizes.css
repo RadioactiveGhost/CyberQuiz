@@ -1,28 +1,30 @@
 @charset "UTF-8";
 @import url(style.css);
 * {
+  padding: 0px;
   transition-duration: 250ms;
 }
 
 /*-----   Passwords  --------------------*/
 #passb {
   width: 100%;
-  height: 100%;
+  height: calc(100% - (var(--titlebarh) + 6px));
   background-image: url(../assets/img/bg1.jpg);
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding-top: 40px;
 }
 #passb #pass {
   position: relative;
   border-radius: 5px;
   background-color: var(--crust);
-  width: -moz-min-content;
-  width: min-content;
-  margin: 0 auto 0 auto;
+  width: -moz-max-content;
+  width: max-content;
   padding: 10px 20px;
   box-shadow: 0 3px 3px var(--surface2);
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #passb #pass :hover {
   cursor: pointer;
@@ -34,7 +36,7 @@
   text-align: center;
 }
 #passb #pass input[type=text] {
-  margin: 5px 2px;
+  margin: 5px 10px;
   background: rgba(150, 150, 150, 0.337254902);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -70,20 +72,18 @@
 
 /*-----   SMS  --------------------------*/
 #smsb {
-  width: 100%;
-  height: 100%;
+  height: calc(100% - (var(--titlebarh) + 6px));
   background-image: url(../assets/img/sms_60_transparencia.jpg);
   background-size: center;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding-top: 40px;
 }
 #smsb .messagewindow {
   position: relative;
   border-radius: 20px;
   background-color: rgb(31, 31, 31);
   width: 300px;
-  margin: 20px auto -20px auto;
+  margin: 0 auto 0 auto;
   padding: 20px 25px;
   box-shadow: 0 3px 3px var(--surface2);
 }
@@ -196,8 +196,8 @@
 
 /*-----   WebSpoofing  ------------------*/
 #webspoofing {
-  background: white;
-  height: 100%;
+  background: rgb(255, 255, 255);
+  height: calc(100% - (var(--titlebarh) + 6px));
   position: relative;
 }
 #webspoofing #urlbar {
@@ -236,6 +236,9 @@
   padding: 4px;
   border-radius: 6px;
 }
+#webspoofing #urlbar .fa-right-from-bracket:hover {
+  cursor: pointer;
+}
 #webspoofing #spoofing-content .txt {
   float: left;
   width: 100px;
@@ -244,6 +247,9 @@
 }
 #webspoofing .spoofdownload {
   width: 100px;
+}
+#webspoofing .spoofdownload:hover {
+  cursor: pointer;
 }
 #webspoofing #download {
   background-color: var(--green);
@@ -254,6 +260,9 @@
   padding: 30px;
   margin-left: auto;
   margin-right: auto;
+}
+#webspoofing #download:hover {
+  cursor: pointer;
 }
 #webspoofing #download i {
   font-size: 30px;
@@ -448,7 +457,7 @@
 /*-----   Verificação de Email   --------*/
 #email {
   background-color: var(--mantle);
-  height: 95%;
+  height: calc(100% - (var(--titlebarh) + 6px));
   position: relative;
   display: flex;
   flex-direction: column;
@@ -485,11 +494,12 @@
 }
 #email #emailcontent {
   width: 70%;
-  height: 100%;
+  height: -moz-min-content;
+  height: min-content;
   background-color: white;
   margin: auto;
   position: relative;
-  padding: 20px 0 0 0;
+  padding: 20px 0 0 5px;
   box-shadow: 0 2px 5px grey;
 }
 #email #emailcontent #text {
@@ -603,18 +613,17 @@
 /*-----   UAC   -------------------------*/
 #uacb {
   width: 100%;
-  height: 100%;
+  height: calc(100% - (var(--titlebarh) + 6px));
   background-image: url(../assets/img/bg7.jpg);
   background-size: center;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding-top: 40px;
 }
 #uacb #uac {
   position: relative;
   background-color: rgb(239, 241, 241);
   width: 500px;
-  margin: 20px auto -20px auto;
+  margin: 0 auto 0 auto;
   box-shadow: 0 3px 5px var(--surface2);
   border-radius: 8px;
   -webkit-user-select: none;
@@ -675,7 +684,7 @@
 
 /*-----   Wi-Fi   -----------------------*/
 #browser {
-  height: 102%;
+  height: calc(100% - (var(--titlebarh) + 6px));
   background-color: white;
   background-image: url("../assets/img/bg8.jpg");
   background-size: 100%;
