@@ -24,7 +24,7 @@ helpi.addEventListener(
 );
 
 let ele = document.getElementById("quiz");
-let quizAtual = 5;
+let quizAtual = 6;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
@@ -202,7 +202,7 @@ let desafioArray = [
     "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
     "<b>Recebeste este email</b> 2 semanas depois de submeter o IRS. O que fazer?",
     "<b>Fizeste uma pesquisa</b> por \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
-    "<b>Foste a um café</b> e precisas de consultar o email de trabalho."
+    "Foste a um café e precisas de consultar o email. <b>Conecta a uma rede.</b>"
 ]
 let quizMax = quizArray.length;
 ele.innerHTML = quizArray[quizAtual];
@@ -833,29 +833,61 @@ function submitUAC(n) {
 
 function submitWifi(n) {
     let mPH = '';
-    b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> As tuas informações pessoais teriam sido roubadas\
-        <br><i class="fa-solid fa-caret-right"></i> Os atacantes teriam acesso total ao teu dispositivo\
-        <br><i class="fa-solid fa-caret-right"></i> O cibercriminoso iria tomar conta de todas as tuas contas online\
-        <br><i class="fa-solid fa-caret-right"></i> O teu computador ficaria infectado com um vírus.';
-    b2H = '<h3>Como me prevenir?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Desliga a ligação automática às redes\
-        <br><i class="fa-solid fa-caret-right"></i> Verifica se existem nomes duplicados das redes\
-        <br><i class="fa-solid fa-caret-right"></i> Não uses redes com segurança WEP, apenas acima\
-        <br><i class="fa-solid fa-caret-right"></i> Enquanto utilizas uma Wi-Fi pública, evita logar em contas privadas\
-        <br><i class="fa-solid fa-caret-right"></i> Utiliza uma VPN, vai encriptar e dificultar a interceptação da tua informação\
-        <br><i class="fa-solid fa-caret-right"></i> Navega apenas em websites com o protocolo HTTPS\
-        <br><i class="fa-solid fa-caret-right"></i> Utilizares o teu hotspot pessoal, é uma ótima alternativa enquanto não podes aceder a uma rede Wi-Fi segura';
-        
-    s1H = '<span class="squote">Sabias que?</span><br>“O ataque Evil Twin acontece quando um cibercriminoso configura uma rede maliciosa, com um nome aparentemente confiável, para interceptar as tuas informações” - <i>Aura</i>';
-    s2H = '<span class="squote">Sabias que?</span><br>“20% das pessoas usa Wi-Fi público para fazer transações financeiras” - <i>Forbes Advisor</i>';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            'Os <b>cibercriminosos teriam total acesso</b> ao teu dispositivo'
+        + putCaret() +
+            'Todas as tuas <b>contas pessoais ficariam comprometidas</b>';
+    //COMO ME PREVENIR --------------------------------------
+    b2H =
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Desliga a ligação automática</b> às redes'
+        + putCaret() +
+            '<b>Utilizar uma VPN</b> encripta e dificulta a interceptação da tua informação'
+        + putCaret() +
+            'Navega apenas em websites com o <b>protocolo HTTPS</b>';
+    //SABIAS QUE --------------------------------------------
+    s1H =
+        putSabiasQue('"O ataque \'Evil Twin\' acontece quando um cibercriminoso configura uma rede maliciosa para interceptar informações, com um nome aparentemente confiável."', 'Aura');
+    s2H =
+        putSabiasQue('"A \'NordVPN\' e a \'Surfshark\' são duas VPNs que permitem uma navegação encriptada e sem rastro."','Bleepingcomputer');
+    //RESPOSTAS  --------------------------------------------
     if (n == 1) {
-        mPH = '<center><h2 class="right">O teu sistema continua protegido!</h2></center><br><br>A rede wi-fi aberta era, na realidade, uma rede fraudulenta.<br>\
-        Depois da conexão, todos os teus dados ficariam expostos a tentativas de ciberataque.';
+        mPH = 
+            '<h1 class="right">\
+                Estás a navegar de forma segura!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Conectaste à rede mais segura\
+            </center></h3>\
+            <br>';
     } else {
-        mPH = '<center><h2 class="wrong">O teu computador foi comprometido!</h2></center><br><br>A rede wi-fi aberta era, na realidade, uma rede fraudulenta.<br>\
-        Depois de realizares a conexão, os teus dados ficaram expostos a novas tentativas de ciberataque.';
+        mPH = 
+            '<h1 class="wrong">\
+                O TEU SISTEMA FICOU COMPROMETIDO!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                A rede mais segura para conectar seria\
+            </center></h3>\
+            <br>';
     }
+
+    mPH += 
+        '<center><h4>\
+        <font color=\"#0F3866\">\
+            Hotspot-' + nomeP + 
+        '</font>\
+        </center></h4>\
+        <br><br>\
+        <small><center>\
+            Apesar de gastar dados móveis, <b>é mais seguro conectar a um hotspot pessoal</b> do que a uma rede Wi-Fi pública.\
+        </center></small>';
+
     popup.innerHTML = mPH;
     showPopup();
 }
