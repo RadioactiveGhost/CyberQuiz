@@ -322,7 +322,7 @@ function putSubtitle(n){
 }
 
 function putCaret(){
-    return('<i class="fa-solid fa-caret-right"></i>');
+    return('<br><i class="fa-solid fa-caret-right"></i>');
 }
 
 function showPopup() {
@@ -402,23 +402,19 @@ function submitPass(n) {
         b1H = 
             putSubtitle(1) + 
             putCaret() + 
-                'As tuas <b>informações</b> pessoais podiam ser <b>roubadas e vendidas</b>\
-            <br>' + 
-            putCaret() + 
+                'As tuas <b>informações</b> pessoais podiam ser <b>roubadas e vendidas</b>'
+            + putCaret() + 
                 '<b>Perdias acesso</b> a esta e a todas as contas onde o login fosse igual';
         //COMO ME PREVENIR --------------------------------------
         b2H = 
             putSubtitle(2) +
             putCaret() +
-                'No mínimo <b>12 caracteres</b>\
-            <br>' +
-            putCaret() +
-                'Uso de letras <b>maiúsculas</b>, <b>minúsculas</b>, <b>números</b> e <b>símbolos</b>\
-            <br>' +
-            putCaret() +
-                '<b>Não utilizes</b> uma palavra que se encontre no <b>dicionário</b>\
-            <br>' +
-            putCaret() +
+                'No mínimo <b>12 caracteres</b>'
+            + putCaret() +
+                'Uso de letras <b>maiúsculas</b>, <b>minúsculas</b>, <b>números</b> e <b>símbolos</b>'
+            + putCaret() +
+                '<b>Não utilizes</b> uma palavra que se encontre no <b>dicionário</b>'
+            + putCaret() +
                 'Utiliza <b>autenticação multifator</b>';
         //SABIAS QUE --------------------------------------------
         s1H = 
@@ -488,6 +484,9 @@ function submitSMS(n) {
     let mPH = '';
     //O QUE PODERIA TER ACONTECIDO --------------------------
     b1H = 
+    putSubtitle(1) +
+    putCaret() +
+        'O teu dispositivo ficava infetado com um malware'
     '<h2 class="subtitle">\
         O que poderia ter acontecido?\
     </h2>\
