@@ -427,7 +427,7 @@ function submitPass(n) {
             </span>\
             <br>\
             <span class="tquote">\
-                “As palavras-passe mais utilizadas em Portugal são admin, 123456 e user”\
+                “As palavras-passe mais utilizadas em Portugal são \'admin\', \'123456\' e \'user\'”\
             <br>\
                 <i>- JN, 2023</i>\
             </span>';
