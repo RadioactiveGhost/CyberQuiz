@@ -88,7 +88,7 @@ let quizArray = [
                 </div>\
             <div>\
         </div>\
-        <div class='message'>Estou aqui na cidade e preciso de 10€ para almoçar. Podes mandar por mbway? Já agora, guarda este número que é o novo. Beijinhos, mãe 😘</span></div>\
+        <div class='message'>Olá <span id='engNome'></span>, estou aqui em <span id='engCidade'></span> e preciso de 10€ para almoçar. Podes mandar por mbway? Já agora, guarda este número que é o novo. Beijinhos, mãe 😘</span></div>\
         <div class='message warning'>Este número não se encontra guardado nos seus contactos.\
         <input type='button' value='Adicionar aos contactos' onclick='submitEng(0)'></div>\
         <div id='sms-bottom'>\
@@ -113,7 +113,7 @@ let quizArray = [
                 </div>\
             </div>\
             <div id='text'>\
-                <p>Exmo(a) NOME,<br><br>\
+                <p>Exmo(a) <span id='emailNome'></span>,<br><br>\
                 É com urgência que entramos em contacto consigo referente a uma contraordenação fiscal associada à sua declaração de IRS.<br>\
                 Após uma análise minuciosa, detectamos irregularidades que exigem a sua imediata atenção. O não cumprimento das orientações que se seguem poderá resultar numa coima substancial.<br>\
                 Para resolver a sua situação, solicitamos que clique no botão abaixo para aceder ao portal da Autoridade Tributária e proceder à validação dos seus dados fiscais:<br>\
@@ -170,7 +170,7 @@ Gabinete da Autoridade Tributária de Portugal\
                 <i class='fa-solid fa-wifi'></i> Cafe-Gratis\
             </div>\
             <div class='wifientry' onclick='submitWifi(1)'>\
-                <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> Hotspot-Pessoal\
+                <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> Hotspot-<span id='wifiNome'></span>\
             </div>\
         </div>\
     </div>"
@@ -202,11 +202,19 @@ function quiz(n) {
             ele.innerHTML = quizArray[quizAtual];
         }
     }
+    if (quizAtual == 3) {
+        document.getElementById('engNome').innerText = nomeP;
+        document.getElementById('engCidade').innerText = cidade;
+    }
     if (quizAtual == 4) {
+        document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
         emailHover();
     }
     if(quizAtual == 5) {
         document.getElementById('uacaddress').style.display = 'none';
+    }
+    if(quizAtual == 6) {
+        document.getElementById('wifiNome').innerText = nomeP;
     }
 }
 /*--------------------------------------------------------------------*/
@@ -322,6 +330,7 @@ function start() {
     cidade = document.getElementById('cidade').value;
     if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
         block.classList.toggle('registo');
+        block.style.display = 'none';
         registo.style.display = 'none';
         document.getElementById("login").value = nomeP;
         mostrarDesafio(quizAtual);
