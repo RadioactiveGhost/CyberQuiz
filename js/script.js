@@ -10,7 +10,7 @@ let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
             <i class='fa-solid fa-user icon-left'>\
-            </i><input type='text' width=20 value='Utilizador' disabled>\
+            </i><input type='text' width=20 value='Utilizador' id='login' disabled>\
             <br>\
             <i class='fa-solid fa-key icon-left'>\
             </i><input type='text' width=20>\
@@ -98,7 +98,7 @@ let quizArray = [
 
     "<div id='email'>\
         <div id='emailtopbar'>\
-            <span><i class='fa-solid fa-envelope-open-text'></i> E-Mail</span>\
+            <span><i class='fa-solid fa-envelope-open-text'></i> GlobalMail</span>\
             <input type='text' width=60 disabled>\
             <i class='fa-solid fa-magnifying-glass'></i>\
             <i class='fa-solid fa-circle-user'></i>\
@@ -127,7 +127,9 @@ Gabinete da Autoridade Tributária de Portugal\
                 http://www.portaldasfinancas-portugal.pt/validacaoIRS.php\
                 </div>\
             </div>\
-            <input type='button' value='Responder' class='emailb' onclick='submitEmail(0)'><input type='button' value='Denunciar' class='emailb' onclick='submitEmail(1)'>\
+            <div id='buttons'>\
+                <button class='emailb' onclick='submitEmail(0)'><i class='fa-solid fa-reply'></i> Responder</button><button class='emailb' onclick='submitEmail(1)'><i class='fa-solid fa-flag'></i> Denunciar</button>\
+            </div>\
         </div>\
     </div>",
 
@@ -200,9 +202,9 @@ function quiz(n) {
             ele.innerHTML = quizArray[quizAtual];
         }
     }
-    /*if (quizAtual == 3) {
-        centerDownload();
-    }*/
+    if (quizAtual == 4) {
+        emailHover();
+    }
     if(quizAtual == 5) {
         document.getElementById('uacaddress').style.display = 'none';
     }
@@ -213,7 +215,6 @@ function quiz(n) {
 function dropdown() {
     document.getElementById("dropdown").classList.toggle("show");
 }
-
 
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -229,39 +230,26 @@ window.onclick = function(event) {
 } 
 
 /*--------------------------------------------------------------------*/
+function emailHover() {
+    const imail = document.getElementById('emailimg');
+    const imailtxt = document.getElementById('emailimghover');
 
-/*function centerDownload() {
-    if (quizAtual == 3) {
-        let downloadPrompt = document.getElementById('download');
-        let quizArea = document.getElementById('quiz');
-        let dWidth = (quizArea.clientWidth/2) - (downloadPrompt.clientWidth/2);
-        downloadPrompt.style.marginLeft = dWidth+"px";
-    }
-    
+    imail.addEventListener(
+        "mouseenter",
+        (event) => {
+            imailtxt.style.display = 'block';
+        },
+        false,
+    );
+
+    imail.addEventListener(
+        "mouseleave",
+        (event) => {
+            imailtxt.style.display = 'none';
+        },
+        false,
+    );
 }
-centerDownload();
-window.onresize = centerDownload;*/
-
-/*--------------------------------------------------------------------*/
-
-/*const imail = document.getElementById('emailimg');
-const imailtxt = document.getElementById('emailimghover');
-
-imail.addEventListener(
-    "mouseenter",
-    (event) => {
-        imailtxt.style.display = 'block';
-    },
-    false,
-);
-
-imail.addEventListener(
-    "mouseleave",
-    (event) => {
-        imailtxt.style.display = 'none';
-    },
-    false,
-);*/
 
 /*--------------------------------------------------------------------*/
 
@@ -275,9 +263,8 @@ function uacdetalhes() {
 }
 
 /* -----------------------------------*/
-
-/* PASSWORD QUIZ */
 let block = document.getElementById('block');
+let registo = document.getElementById('registo');
 let popup = document.getElementById('pop-up');
 let popwindow = document.getElementById('popwindow');
 let balao1 = document.getElementById('balao1');
@@ -290,14 +277,18 @@ let sabias1 = document.getElementById('sabias1');
 let sabias2 = document.getElementById('sabias2');
 let desafio = document.getElementById('desafio');
 let desafiot = document.getElementById('desafiot');
+
+let nomeP = '';
+let nomeS = '';
+let cidade = '';
+
 // 0 Passa de Pop para Balões/Sabias que, 1 passa do anterior para vazio
 let buttonmode = 0;
-block.style.display = 'none';
+block.style.display = 'block';
 balao1.style.display = 'none';
 balao2.style.display = 'none';
 sabias.style.display = 'none';
 desafio.style.display = 'none';
-//nextbdiv.style.display = 'none';
 popwindow.style.display = 'none';
 
 let mPH = '', b1H = '', b2H = '', s1H = '', s2H = '';
@@ -323,6 +314,20 @@ function putSubtitle(n){
 
 function putCaret(){
     return('<br><i class="fa-solid fa-caret-right"></i>');
+}
+
+function start() {
+    nomeP = document.getElementById('nomeP').value;
+    nomeS = document.getElementById('nomeS').value;
+    cidade = document.getElementById('cidade').value;
+    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
+        block.classList.toggle('registo');
+        registo.style.display = 'none';
+        document.getElementById("login").value = nomeP;
+        mostrarDesafio(quizAtual);
+    } else {
+        window.alert("Hey");
+    }
 }
 
 function showPopup() {
@@ -682,6 +687,4 @@ function esconder() {
     block.style.display = 'none';
     desafio.style.display = 'none';
 }
-
-mostrarDesafio(quizAtual);
 
