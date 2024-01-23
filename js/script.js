@@ -24,7 +24,7 @@ helpi.addEventListener(
 );
 
 let ele = document.getElementById("quiz");
-let quizAtual = 3;
+let quizAtual = 4;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
@@ -200,7 +200,7 @@ let desafioArray = [
     "<b>Recebeste esta mensagem</b>! O que vais fazer?",
     "Se achares seguro, <b>faz login na rede social</b>",
     "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
-    "<b>Recebeste este email</b> 2 semanas depois de submeter a declaração de IRS.<br>O que fazer?",
+    "<b>Recebeste este email</b> 2 semanas depois de submeter o IRS. O que fazer?",
     "<b>Fizeste uma pesquisa</b> por \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
     "<b>Foste a um café</b> e precisas de consultar o email de trabalho."
 ]
@@ -668,7 +668,7 @@ function submitEng(n) {
     s1H =
         putSabiasQue('"Em 2022, um Hacker tentou vender as informações pessoais de 500 milhões de utilizadores do WhatsApp na darkweb"','Cshub');
     s2H =
-        putSabiasQue('"Entre janeiro e fevereiro de 2023, os ataques com recurso à engenharia social aumentaram 135%, correspondendo ao lançamento mundial do ChatGPT"','Darktrace');
+        putSabiasQue('"Entre janeiro e fevereiro de 2023, os ataques com recurso à engenharia social aumentaram 135%, correspondendo ao recente lançamento mundial do ChatGPT"','Darktrace');
     //RESPOSTAS  --------------------------------------------
     if (n == 1) {
         mPH = 
@@ -712,27 +712,60 @@ function submitEng(n) {
 
 function submitEmail(n) {
     let mPH = '';
-    b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Perderes acesso à tua conta de e-mail\
-        <br><i class="fa-solid fa-caret-right"></i> Os teus dados ficarem completamente exposto\
-        <br><i class="fa-solid fa-caret-right"></i> Infetares o teu dispositivo com vírus\
-        <br><i class="fa-solid fa-caret-right"></i> Pagares uma contraordenação que não cometeste\
-        <br><i class="fa-solid fa-caret-right"></i> Receberes emails fraudulentos com mais frequência.';
-    b2H = '<h3>Como me prevenir?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Atualiza o browser e o sistema operativo sempre que possível\
-        <br><i class="fa-solid fa-caret-right"></i> Altera as tuas palavras-passe com regularidade\
-        <br><i class="fa-solid fa-caret-right"></i> Evita abrir mensagens de email de remetentes desconhecidos \
-        <br><i class="fa-solid fa-caret-right"></i> Informa-te com notícias de ciberataques com regularidade\
-        <br><i class="fa-solid fa-caret-right"></i> Nos casos das empresas, os trabalhadores devem estar consciencializados sobre o assunto.';
-        
-    s1H = '<span class="squote">Sabias que?</span><br>“Em 2023, 94% das organizações do mundo tiveram incidentes de segurança através de emails” - <i>Digit.Fyi</i>';
-    s2H = '<span class="squote">Sabias que?</span><br>“O Malware QBot, que se propaga através de e-mails spam, foi o que mais afetou o setor de cuidados de saúde em Portugal. Roubava palavras-passe e detalhes de cartões bancários” - <i>TVEuropa</i>';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            '<b>Perderes acesso</b> à tua conta de e-mail'
+        + putCaret() +
+            '<b>Receberes e-mails fraudulentos</b> com mais frequência';
+    //COMO ME PREVENIR --------------------------------------
+    b2H =
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Evita abrir</b> mensagens de email <b>de remetentes desconhecidos</b>'
+        + putCaret() +
+            'Ter especial <b>cuidado com links e anexos</b>'
+        + putCaret() +
+            '<b>Rectifica</b> cuidadosamente <b>o endereço</b> do remetente';
+    //SABIAS QUE --------------------------------------------
+    s1H =
+        putSabiasQue('"O Malware QBot, que se propaga através de e-mails spam, foi o que mais afetou o setor de cuidados de saúde em Portugal, através do roubo de palavras-passe e detalhes de cartões bancários"','TVEuropa');
+    s2H =
+        putSabiasQue('"Em 2023, 94% das organizações do mundo tiveram incidentes de segurança através de emails"','Digit.Fyi');
+    //RESPOSTAS  --------------------------------------------
     if (n == 1) {
-        mPH = '<center><h2 class="right">Tomaste a decisão correta!</h2></center><br><br>Ao clicares no link, irias enviar dinheiro para uma conta desconhecida.<br>';
+        mPH = 
+            '<h1 class="right">\
+                Resististe ao ciberataque!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Fizeste aquilo que era mais seguro\
+            </center></h3>\
+            <br>';
     } else {
-        mPH = '<center><h2 class="wrong">Foste vítima de burla!</h2></center><br><br>Deverias ter denunciado como phishing e/ou bloqueado o contacto de email!<br>';
+        mPH = 
+            '<h1 class="wrong">\
+                SOFRESTE UM CIBERATAQUE!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                O mais seguro a fazer seria\
+            </center></h3>\
+            <br>';
     }
-    mPH += 'Ao clicares no link, irias enviar dinheiro para uma conta desconhecida'
+    mPH += 
+        '<center><h4>\
+        <font color=\"#0F3866\">\
+            Denunciar\
+        </font>\
+        </center></h4>\
+        <br><br>\
+        <small><center>\
+            Acreditar neste tipo de mensagens leva ao pagamento de contraordenações não existentes.<br>Os cibercriminosos <b>ficam com todo o dinheiro sem deixar rastro.</b>\
+        </center></small>';
+
     popup.innerHTML = mPH;
     showPopup();
 }
