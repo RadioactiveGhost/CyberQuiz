@@ -325,6 +325,18 @@ function putCaret(){
     return('<br><i class="fa-solid fa-caret-right"></i>');
 }
 
+function putSabiasQue(t1, t2){
+    let texto =
+        '<span class="squote">\
+            Sabias que?\
+        </span>\
+        <br>\
+        <span class="tquote">'
+        + t1 + '<br><i>- ' + t2 + '</i></span>';
+    
+    return(texto);
+}
+
 function showPopup() {
     balao1.innerHTML = b1H;
     balao2.innerHTML = b2H;
@@ -418,25 +430,9 @@ function submitPass(n) {
                 'Utiliza <b>autenticação multifator</b>';
         //SABIAS QUE --------------------------------------------
         s1H = 
-            '<span class="squote">\
-                Sabias que?\
-            </span>\
-            <br>\
-            <span class="tquote">\
-                “As palavras-passe mais utilizadas em Portugal são \'admin\', \'123456\' e \'user\'”\
-            <br>\
-                <i>- JN, 2023</i>\
-            </span>';
+            putSabiasQue('“As palavras-passe mais utilizadas em Portugal são \'admin\', \'123456\' e \'user\'”', 'JN, 2023');
         s2H = 
-            '<span class="squote">\
-                Sabias que?\
-            </span>\
-            <br>\
-            <span class="tquote">\
-                “A autenticação multifator bloqueia 99.9% de todos os ataques!"\
-            <br>\
-                <i>- FinancesOnline</i>\
-            </span>';
+            putSabiasQue('“A autenticação multifator bloqueia 99.9% de todos os ataques!"', 'FinancesOnline');
         //RESPOSTAS  --------------------------------------------
         if (pass[1].checked && pass[3].checked) { 
             mPH = 
@@ -484,38 +480,27 @@ function submitSMS(n) {
     let mPH = '';
     //O QUE PODERIA TER ACONTECIDO --------------------------
     b1H = 
-    putSubtitle(1) +
-    putCaret() +
-        'O teu dispositivo ficava infetado com um malware'
-    '<h2 class="subtitle">\
-        O que poderia ter acontecido?\
-    </h2>\
-    <i class="fa-solid fa-caret-right"></i>\
-        Os teus dados pessoais e privados seriam roubados ou perdidos\
-    <br>\
-    <i class="fa-solid fa-caret-right"></i>\
-        O teu dispositivo ficaria infetado com malware\
-    <br>\
-    <i class="fa-solid fa-caret-right"></i>\
-        Teriam acesso ao teu dispositivo sem te aperceberes\
-    <br>\
-    <i class="fa-solid fa-caret-right"></i>\
-        Irias perder dinheiro para uma burla\
-    ';
+        putSubtitle(1) +
+        putCaret() +
+            'O teu <b>dispositivo ficava infetado</b> com um malware'
+        + putCaret() +
+            '<b>Irias perder</b> os teus <b>documentos pessoais</b> para sempre';
     //COMO ME PREVENIR --------------------------------------    
     b2H = 
-    '<h2 class="subtitle">\
-        Como me prevenir?\
-    </h2>\
-        <i class="fa-solid fa-caret-right"></i> Presta especial atenção às mensagens que fazem pedidos com urgência\
-        <br><i class="fa-solid fa-caret-right"></i> Repara nos detalhes. Erros gramáticos e construção frásica errada costumam ser indicadores visíveis de burla\
-        <br><i class="fa-solid fa-caret-right"></i> Nunca cliques em um link enviado \
-        <br><i class="fa-solid fa-caret-right"></i> Verifica as tuas faturas de telemóvel, gastos desconhecidos podem indicar que foste vítima de um ciberataque\
-        <br><i class="fa-solid fa-caret-right"></i> Contacta a instituição através dos meios confiáveis (website ou telefone) \
-        <br><i class="fa-solid fa-caret-right"></i> Nenhuma instituição financeira ou comércio envia mensagens a pedir a atualização da nossa informação de conta ou dados pessoais/ bancários';
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Contacta a instituição</b> através dos meios confiáveis'
+        + putCaret() +
+            '<b>Nunca cliques em links</b> enviados em mensagens suspeitas'
+        + putCaret() +
+            '<b>Repara nos detalhes</b>, como erros ortográficos e pedidos com urgência';
         
-    s1H = '<span class="squote">Sabias que?</span><br>“Smishing é um tipo de ataque que leva as vítimas a fazerem download de malware, partilhar informação pessoal e até enviar dinheiro, através de mensagens de texto” - <i>IBM</i>';
-    s2H = '<span class="squote">Sabias que?</span><br>“Em 2021 os CTT fizeram um comunicado de tentativa de burla em nome da entidade. As vítimas recebiam SMS com a informação que teriam valores por pagar. Ao clicar no link da mensagem, os dados do consumidor eram roubados.” - <i>Deco Proteste</i>';
+    s1H = 
+        putSabiasQue('"Smishing é um tipo de ataque que leva as vítimas a fazerem download de malware, partilhar informação pessoal e até enviar dinheiro, através de mensagens de texto"', 'IBM');
+
+    s2H = 
+        putSabiasQue('“Em 2021 os CTT fizeram um comunicado de tentativa de burla em nome da entidade. As vítimas recebiam SMS com a informação que teriam valores por pagar. Ao clicar no link da mensagem, os dados do consumidor eram roubados.”', 'Deco Proteste');
+
     if (n == 1) {
         mPH = '<center><h2 class="right">Estás em segurança!</h2></center><br><br>';
     } else {
