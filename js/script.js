@@ -24,7 +24,7 @@ helpi.addEventListener(
 );
 
 let ele = document.getElementById("quiz");
-let quizAtual = 4;
+let quizAtual = 0;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
