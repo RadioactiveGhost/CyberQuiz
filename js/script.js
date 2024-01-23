@@ -24,7 +24,7 @@ helpi.addEventListener(
 );
 
 let ele = document.getElementById("quiz");
-let quizAtual = 0;
+let quizAtual = 5;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
@@ -730,7 +730,7 @@ function submitEmail(n) {
             '<b>Rectifica</b> cuidadosamente <b>o endereço</b> do remetente';
     //SABIAS QUE --------------------------------------------
     s1H =
-        putSabiasQue('"O Malware QBot, que se propaga através de e-mails spam, foi o que mais afetou o setor de cuidados de saúde em Portugal, através do roubo de palavras-passe e detalhes de cartões bancários"','TVEuropa');
+        putSabiasQue('"O Malware QBot, que se propaga através de emails spam, foi o que mais afetou o setor de cuidados de saúde em Portugal"','TVEuropa');
     s2H =
         putSabiasQue('"Em 2023, 94% das organizações do mundo tiveram incidentes de segurança através de emails"','Digit.Fyi');
     //RESPOSTAS  --------------------------------------------
@@ -772,29 +772,61 @@ function submitEmail(n) {
 
 function submitUAC(n) {
     let mPH = '';
-    b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> As tuas informações seriam bloqueadas/ copiadas/ modificadas/ apagadas\
-        <br><i class="fa-solid fa-caret-right"></i> A tua identidade seria roubada\
-        <br><i class="fa-solid fa-caret-right"></i> Terias perdas financeiras\
-        <br><i class="fa-solid fa-caret-right"></i> A performance do teu dispositivo/ rede ficaria afetada\
-        <br><i class="fa-solid fa-caret-right"></i> O teu computador seria utilizado como um meio de envio de emails enganosos\
-        <br><i class="fa-solid fa-caret-right"></i> Irias enfrentar ações legais, depois do teu computador ser usado para atos ilegais.';
-    b2H = '<h3>Como me prevenir?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Não descarregues aplicações de fontes suspeitas, utiliza preferencialmente a loja oficial do teu sistema operativo\
-        <br><i class="fa-solid fa-caret-right"></i> Não aceites a instalação de uma aplicação que desconheces\
-        <br><i class="fa-solid fa-caret-right"></i> Utiliza um antivírus infalível e confiável, de preferência com diferentes níveis de segurança\
-        <br><i class="fa-solid fa-caret-right"></i> Lê com atenção todos os detalhes presentes nas janelas de aviso do teu sistema\
-        <br><i class="fa-solid fa-caret-right"></i> Atualiza o teu sistema operativo sempre que for possível';
-        
-    s1H = '<span class="squote">Sabias que?</span><br>“60% das empresas que sofrem um ciberataque, fecham num espaço de meio ano.” - <i>ModernDiplomacy</i>';
-    s2H = '<span class="squote">Sabias que?</span><br>“No final de 2023, foram descobertas cerca de 25 aplicações, na loja de aplicações do sistema android, que estavam a infectar smartphones com malware.” - <i>The Hacker News</i>';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            'Os teus <b>ficheiros seriam copiados</b> para o servidor dos cibercriminosos'
+        + putCaret() +
+            'A <b>performance</b> do teu computador/rede <b>ficaria afetada</b>';
+    //COMO ME PREVENIR --------------------------------------
+    b2H =
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Atualiza o</b> teu <b>sistema operativo</b> sempre que possível'
+        + putCaret() +
+            '<b>Não descarregues aplicações</b> de fontes desconhecidas'
+        + putCaret() +
+            '<b>Utiliza um antivirus</b> que seja bom e confiável';
+    //SABIAS QUE --------------------------------------------
+    s1H =
+        putSabiasQue('"60% das empresas, que sofrem um ciberataque, fecham num espaço de meio ano."','ModernDiplomacy');
+    s2H =
+        putSabiasQue('"Em 2023 foram colocados online vários torrents de falsos Windows 10. Tinham um malware utilizado para o roubo de criptomoedas."','Techradar');
+    //RESPOSTAS  --------------------------------------------
     if (n == 1) {
-        mPH = '<center><h2 class="right">O teu sistema está seguro!</h2></center><br><br>Nos detalhes da instalação era possível ver que o ficheiro executável não correspondia ao software pretendido<br>\
-        Se tivesses instalado, todos os teus ficheiros seriam automaticamente danificados.';
+        mPH = 
+            '<h1 class="right">\
+                O teu sistema está seguro!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Fizeste o mais seguro perante a instalação\
+            </center></h3>\
+            <br>';
     } else {
-        mPH = '<center><h2 class="wrong">Foste vítima de burla!</h2></center><br><br>Nos detalhes da instalação era possível ver que o ficheiro executável não correspondia ao software pretendido<br>\
-        Ao instalares, todos os teus ficheiros foram automaticamente danificados.';
+        mPH = 
+            '<h1 class="wrong">\
+                O TEU SISTEMA FOI CORROMPIDO!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                O mais seguro a fazer perante a instalação era\
+            </center></h3>\
+            <br>';
     }
+
+    mPH += 
+        '<center><h4>\
+        <font color=\"#0F3866\">\
+            Não prosseguir\
+        </font>\
+        </center></h4>\
+        <br><br>\
+        <small><center>\
+            Nos detalhes da instalação era possível ver que <b>o ficheiro executável não correspondia</b> ao software pretendido.</b>\
+        </center></small>';
+
     popup.innerHTML = mPH;
     showPopup();
 }
