@@ -103,14 +103,14 @@ body #montana {
   float: left;
 }
 body #montana img {
-  width: 80px;
+  width: 110px;
 }
 body #sabiasque {
   float: right;
   width: 80%;
   border-radius: 10px;
-  background-color: white;
-  border: 3px solid var(--p2);
+  background-color: #0f3866;
+  /*border: 3px solid var(--p2);*/
 }
 body #sabias1, body #sabias2 {
   padding: 5px;
@@ -122,8 +122,12 @@ body .wrong {
   color: rgb(155, 31, 31);
 }
 body .squote {
-  color: var(--p1);
+  color: var(--p2);
   font-weight: bold;
+}
+body .tquote {
+  color: white;
+  font-size: small;
 }
 body .quiz-area {
   color: var(--text);

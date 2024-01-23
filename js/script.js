@@ -404,9 +404,9 @@ function submitPass(n) {
         Sabias que?\
         </span>\
         <br>\
-        <small>\
+        <span class="tquote">\
             “81% dos casos de fuga de informação em empresas são causados por palavras-passe fracas” <br>-<i>Microsoft</i>\
-        </small>\
+        </span>\
         ';
         s2H = 
         '<span class="squote">\
