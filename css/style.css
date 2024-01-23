@@ -50,7 +50,7 @@ body #block {
   top: 0;
   left: 0;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.329);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 body #popwindow, body #sabias, body #desafio {
   position: relative;
@@ -65,7 +65,7 @@ body #desafio {
   text-align: center;
 }
 body #popwindow {
-  border: 4px solid #5ba08c;
+  border: 3px solid var(--p1);
 }
 body #nextbdiv, body #confirmdiv {
   position: relative;
@@ -109,25 +109,34 @@ body #sabiasque {
   float: right;
   width: 80%;
   border-radius: 10px;
-  background-color: #0f3866;
-  /*border: 3px solid var(--p2);*/
+  background-color: var(--p1);
 }
 body #sabias1, body #sabias2 {
   padding: 5px;
 }
 body .right {
+  text-align: center;
   color: rgb(85, 146, 85);
 }
 body .wrong {
+  text-align: center;
   color: rgb(155, 31, 31);
 }
 body .squote {
   color: var(--p2);
   font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
 }
 body .tquote {
   color: white;
   font-size: small;
+}
+body .subtitle {
+  color: var(--p1);
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
 }
 body .quiz-area {
   color: var(--text);

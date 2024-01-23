@@ -5,7 +5,7 @@
 
 */
 let ele = document.getElementById("quiz");
-let quizAtual = 6;
+let quizAtual = 0;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
@@ -302,6 +302,29 @@ popwindow.style.display = 'none';
 
 let mPH = '', b1H = '', b2H = '', s1H = '', s2H = '';
 
+//1 para "o que poderia ter acontecido"
+//2 para "como me prevenir"
+function putSubtitle(n){
+    
+    let texto;
+
+    if(n == 1){
+        texto = '<h2 class="subtitle">\
+                O que poderia ter acontecido?\
+                </h2>';
+    }
+    else if(n == 2){
+        texto = '<h2 class="subtitle">\
+                Como me prevenir?\
+                </h2>';
+    }
+    return(texto);
+}
+
+function putCaret(){
+    return('<i class="fa-solid fa-caret-right"></i>');
+}
+
 function showPopup() {
     balao1.innerHTML = b1H;
     balao2.innerHTML = b2H;
@@ -377,105 +400,84 @@ function submitPass(n) {
         let messagePop = '';
         //O QUE PODERIA TER ACONTECIDO --------------------------
         b1H = 
-        '<h2>\
-        <font color=\"#0F3866\">\
-        <center>\
-            O que poderia ter acontecido?\
-        </center>\
-        </font>\
-        </h2>\
-        <br>\
-        <i class="fa-solid fa-caret-right"></i>\
-            As tuas <b>informações</b> pessoais podiam ser <b>roubadas e vendidas</b>\
-        <br>\
-        <i class="fa-solid fa-caret-right"></i>\
-        <b>Perdias acesso</b> a esta e a todas as contas onde o login fosse igual\
-        ';
+            putSubtitle(1) + 
+            putCaret() + 
+                'As tuas <b>informações</b> pessoais podiam ser <b>roubadas e vendidas</b>\
+            <br>' + 
+            putCaret() + 
+                '<b>Perdias acesso</b> a esta e a todas as contas onde o login fosse igual';
         //COMO ME PREVENIR --------------------------------------
         b2H = 
-        '<h2>\
-        <font color=\"#0F3866\">\
-        <center>\
-            Como me prevenir?\
-        </center>\
-        </font>\
-        </h2>\
-        <br>\
-        <br><i class="fa-solid fa-caret-right"></i>\
-            No mínimo <b>12 caracteres</b>\
-        <br><i class="fa-solid fa-caret-right"></i>\
-            Uso de letras <b>maiúsculas</b>, <b>minúsculas</b>, <b>números</b> e <b>símbolos</b>\
-        <br><i class="fa-solid fa-caret-right"></i>\
-            Não utilizes uma palavra que se encontre no dicionário\
-        <br><i class="fa-solid fa-caret-right"></i>\
-            Utiliza autenticação multifator\
-        ';
+            putSubtitle(2) +
+            putCaret() +
+                'No mínimo <b>12 caracteres</b>\
+            <br>' +
+            putCaret() +
+                'Uso de letras <b>maiúsculas</b>, <b>minúsculas</b>, <b>números</b> e <b>símbolos</b>\
+            <br>' +
+            putCaret() +
+                '<b>Não utilizes</b> uma palavra que se encontre no <b>dicionário</b>\
+            <br>' +
+            putCaret() +
+                'Utiliza <b>autenticação multifator</b>';
         //SABIAS QUE --------------------------------------------
         s1H = 
-        '<span class="squote">\
-        Sabias que?\
-        </span>\
-        <br>\
-        <span class="tquote">\
-            “81% dos casos de fuga de informação em empresas são causados por palavras-passe fracas” <br>-<i>Microsoft</i>\
-        </span>\
-        ';
+            '<span class="squote">\
+                Sabias que?\
+            </span>\
+            <br>\
+            <span class="tquote">\
+                “As palavras-passe mais utilizadas em Portugal são admin, 123456 e user”\
+            <br>\
+                <i>- JN, 2023</i>\
+            </span>';
         s2H = 
-        '<span class="squote">\
-        Sabias que?\
-        </span>\
-        <br>\
-        <small>\
-            “As palavras-passe mais utilizadas em Portugal são admin, 123456 e user” <br>-<i>JN, 2023</i>\
-        </small>\
-        ';
+            '<span class="squote">\
+                Sabias que?\
+            </span>\
+            <br>\
+            <span class="tquote">\
+                “A autenticação multifator bloqueia 99.9% de todos os ataques!"\
+            <br>\
+                <i>- FinancesOnline</i>\
+            </span>';
         //RESPOSTAS  --------------------------------------------
         if (pass[1].checked && pass[3].checked) { 
             mPH = 
-                '<center>\
-                <h1 class="right">\
+                '<h1 class="right">\
                     Estás em segurança!\
                 </h1>\
                 <br><br>\
-                <h3>\
+                <h3><center>\
                     Escolheste as palavras-passe mais seguras\
-                </h3>\
-                </center>\
+                </center></h3>\
                 <br>';
         } else {
             mPH = 
-            '<center>\
-            <h1 class="wrong">\
-                NÃO ESTÁS EM SEGURANÇA!\
-            </h1>\
-            <br><br>\
-            <h3>\
-                As palavras-passe seguras são\
-            </h3>\
-            </center>\
-            <br>';
+                '<h1 class="wrong">\
+                    NÃO ESTÁS EM SEGURANÇA!\
+                </h1>\
+                <br><br>\
+                <h3><center>\
+                    As palavras-passe seguras são\
+                </center></h3>\
+                <br>';
         }
 
         mPH += 
-        '<center>\
-        <h4>\
-        <font color=\"#0F3866\">\
-            !LiK3MySch001#*??\
-        <br>\
-            !--Am@z0Pa55--!\
-        </font>\
-        </h4>\
-        </center>\
-        <br><br>\
-        <small>\
-        <justify>\
-        <center>\
-            Um hacker levaria <b> mais de mil anos </b> a decifrá-las.\
-        <br>\
-            As outras em <b> menos de um mês.</b>\
-        </center>\
-        </justify>\
-        </small>';
+            '<center><h4>\
+            <font color=\"#0F3866\">\
+                !LiK3MySch001#*??\
+            <br>\
+                !--Am@z0Pa55--!\
+            </font>\
+            </center></h4>\
+            <br><br>\
+            <small><center>\
+                Um hacker levaria <b> mais de mil anos </b> a decifrá-las.\
+            <br>\
+                As outras em <b> menos de um mês.</b>\
+            </center></small>';
 
         popup.innerHTML = mPH;
         showPopup();
@@ -484,12 +486,28 @@ function submitPass(n) {
 
 function submitSMS(n) {
     let mPH = '';
-    b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Os teus dados pessoais e privados seriam roubados ou perdidos\
-        <br><i class="fa-solid fa-caret-right"></i> O teu dispositivo ficaria infetado com malware\
-        <br><i class="fa-solid fa-caret-right"></i> Teriam acesso ao teu dispositivo sem te aperceberes\
-        <br><i class="fa-solid fa-caret-right"></i> Irias perder dinheiro para uma burla';
-    b2H = '<h3>Como me prevenir?</h3><br>\
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+    '<h2 class="subtitle">\
+        O que poderia ter acontecido?\
+    </h2>\
+    <i class="fa-solid fa-caret-right"></i>\
+        Os teus dados pessoais e privados seriam roubados ou perdidos\
+    <br>\
+    <i class="fa-solid fa-caret-right"></i>\
+        O teu dispositivo ficaria infetado com malware\
+    <br>\
+    <i class="fa-solid fa-caret-right"></i>\
+        Teriam acesso ao teu dispositivo sem te aperceberes\
+    <br>\
+    <i class="fa-solid fa-caret-right"></i>\
+        Irias perder dinheiro para uma burla\
+    ';
+    //COMO ME PREVENIR --------------------------------------    
+    b2H = 
+    '<h2 class="subtitle">\
+        Como me prevenir?\
+    </h2>\
         <i class="fa-solid fa-caret-right"></i> Presta especial atenção às mensagens que fazem pedidos com urgência\
         <br><i class="fa-solid fa-caret-right"></i> Repara nos detalhes. Erros gramáticos e construção frásica errada costumam ser indicadores visíveis de burla\
         <br><i class="fa-solid fa-caret-right"></i> Nunca cliques em um link enviado \
