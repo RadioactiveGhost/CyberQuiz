@@ -682,3 +682,12 @@ function esconder() {
     desafio.style.display = 'none';
 }
 
+function debugging(n) {
+    if (n) {
+        registo.style.display = 'none';
+        block.classList.toggle('registo');
+        mostrarDesafio(quizAtual);
+    }
+}
+
+debugging(true);
