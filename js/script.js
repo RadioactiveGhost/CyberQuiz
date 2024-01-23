@@ -1,9 +1,28 @@
-/*
+/*quiz
     Função usada para apresentar as diferentes atividades do quiz.
     As atividades são guardadas dentro de um Array - as quebras de linha são para leitura mais fácil - em formato HTML.
     A função quiz (linha 77) altera a atividade em ativo.
 
 */
+const helpi = document.getElementById('helpi');
+let helpt = document.getElementById('helpt');
+
+helpi.addEventListener(
+    "mouseenter",
+    (event) => {
+        helpt.style.display = 'block';
+    },
+    false,
+);
+
+helpi.addEventListener(
+    "mouseleave",
+    (event) => {
+        helpt.style.display = 'none';
+    },
+    false,
+);
+
 let ele = document.getElementById("quiz");
 let quizAtual = 3;
 let quizArray = [
@@ -177,7 +196,7 @@ Gabinete da Autoridade Tributária de Portugal\
 ];
 
 let desafioArray = [
-    "Seleciona as <b>2 palavras-passe mais seguras </b> para o teu registo",
+    "Seleciona as <b>2 palavras&#x2011;passe mais seguras </b> para o teu registo",
     "<b>Recebeste esta mensagem</b>! O que vais fazer?",
     "Se achares seguro, <b>faz login na rede social</b>",
     "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
@@ -187,6 +206,7 @@ let desafioArray = [
 ]
 let quizMax = quizArray.length;
 ele.innerHTML = quizArray[quizAtual];
+helpt.innerHTML = desafioArray[quizAtual];
 
 function quiz(n) {
     let str1 = "pages/quiz";
@@ -194,12 +214,14 @@ function quiz(n) {
         if (quizAtual > 0) {
             quizAtual--;
             ele.innerHTML = quizArray[quizAtual];
+            helpt.innerHTML = desafioArray[quizAtual];
         }
     }
     if (n == 1) {
         if (quizAtual < quizMax-1) {
             quizAtual++;
             ele.innerHTML = quizArray[quizAtual];
+            helpt.innerHTML = desafioArray[quizAtual];
         }
     }
     if (quizAtual == 3) {
@@ -277,7 +299,8 @@ let popup = document.getElementById('pop-up');
 let popwindow = document.getElementById('popwindow');
 let balao1 = document.getElementById('balao1');
 let balao2 = document.getElementById('balao2');
-//let nextb = document.getElementById('nextb');
+let nextb = document.getElementById('nextb');
+let prevb = document.getElementById('prevb');
 let nextbdiv = document.getElementById('nextbdiv');
 let sabiasque = document.getElementById('sabiasque');
 let sabias = document.getElementById('sabias');
@@ -359,6 +382,8 @@ function showPopup() {
     popup.style.display = 'block';
     block.style.display = 'block';
     popwindow.style.display = 'block';
+    prevb.setAttribute('disabled', true);
+    nextb.value = 'Seguinte';
 
 }
 
@@ -388,6 +413,8 @@ function nextButton(n) {
         sabias.style.display = 'none';
         sabias1.style.display = 'none';
         sabias2.style.display = 'none';
+        prevb.setAttribute('disabled', true);
+        nextb.value = 'Seguinte';
         return;
     }
     if (buttonmode == 1) {
@@ -397,6 +424,8 @@ function nextButton(n) {
         sabias.style.display = 'block';
         sabias1.style.display = 'block';
         sabias2.style.display = 'none';
+        prevb.removeAttribute('disabled');
+        nextb.value = 'Seguinte';
         return;
     }
     if (buttonmode == 2) {
@@ -406,6 +435,7 @@ function nextButton(n) {
         sabias.style.display = 'block';
         sabias1.style.display = 'none';
         sabias2.style.display = 'block';
+        nextb.value = 'Próximo'
         return;
     }
 
