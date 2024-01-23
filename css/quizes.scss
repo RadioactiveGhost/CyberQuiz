@@ -300,6 +300,7 @@
         background-color: var(--green);
         position: absolute;
         bottom: 0;
+        right: 0;
         margin-bottom: 50px;
         color: white;
         padding: 30px;
@@ -308,6 +309,7 @@
 
         &:hover {
             cursor: pointer;
+            background-color: var(--sapphire);
         }
         i {
             font-size: 30px;

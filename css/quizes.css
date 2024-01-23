@@ -260,6 +260,7 @@
   background-color: var(--green);
   position: absolute;
   bottom: 0;
+  right: 0;
   margin-bottom: 50px;
   color: white;
   padding: 30px;
@@ -268,6 +269,7 @@
 }
 #webspoofing #download:hover {
   cursor: pointer;
+  background-color: var(--sapphire);
 }
 #webspoofing #download i {
   font-size: 30px;
