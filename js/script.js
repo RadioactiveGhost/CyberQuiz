@@ -5,7 +5,7 @@
 
 */
 let ele = document.getElementById("quiz");
-let quizAtual = 2;
+let quizAtual = 3;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
@@ -608,7 +608,7 @@ function submitSpoof(n) {
             <br><br>\
             <small><center>\
                 Este website era uma <b>tentativa de burla.</b>\
-                <br>\
+            <br>\
                 <b>Reparaste no link?</b> Tinha zeros no lugar dos \'o\'s.\
             </center></small>';
 
@@ -618,28 +618,64 @@ function submitSpoof(n) {
 
 function submitEng(n) {
     let mPH = '';
-    b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Acreditares que estavas a falar com alguém que conheces (amigo/ familiar)\
-        <br><i class="fa-solid fa-caret-right"></i> Partilhares informações pessoais e detalhes privados, até mesmo enviares dinheiro.';
-    b2H = '<h3>Como me prevenir?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Desconfia sempre de números novos que se fazem passar por amigos\
-        <br><i class="fa-solid fa-caret-right"></i> Desconfia quando houverem tentativas de suporte técnico, marketing, entre outros\
-        <br><i class="fa-solid fa-caret-right"></i> Nunca forneças informações sensíveis, tais como números de conta ou palavras-passe, em resposta a uma mensagem de texto \
-        <br><i class="fa-solid fa-caret-right"></i> Não carregues em links suspeitos\
-        <br><i class="fa-solid fa-caret-right"></i> Não envies códigos recebidos por SMS a outra pessoa\
-        <br><i class="fa-solid fa-caret-right"></i> Contacta diretamente a pessoa que está a enviar as mensagens de forma a perceber se se trata de um esquema\
-        <br><i class="fa-solid fa-caret-right"></i> Denuncia assim que existir alguma dúvida sobre a legitimidade da mensagem\
-        <br><i class="fa-solid fa-caret-right"></i> Bloquea o contacto';
-        
-    s1H = '<span class="squote">Sabias que?</span><br>“Em Portugal, o ataque “Olá, mãe, Olá, pai” ficou conhecido após fazer diversas vítimas pelo Whatsapp. Os atacantes faziam-se passar por familiares da vítima, mantendo uma conversa com o objetivo de receber dinheiro!” - <i>CNN Portugal</i>';
-    s2H = '<span     class="squote">Sabias que?</span><br>“Entre janeiro e fevereiro de 2023, os ataques com recurso à engenharia social aumentaram 135%, correspondendo ao período de disponibilização mundial do ChatGPT” - <i>Darktrace</i>';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            '<b>Acreditares</b> que estavas a falar com alguém que conheces'
+        + putCaret() +
+            '<b>Partilhares informações</b> pessoais <b>ou</b> até mesmo <b>enviares dinheiro</b>';
+    //COMO ME PREVENIR --------------------------------------
+    b2H =
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Desconfia quando</b> números desconhecidos <b>pedem ou oferecem algo</b>'
+        + putCaret() +
+            '<b>Não forneças informações</b> pessoais <b>em respostas a mensagens</b> de texto'
+        + putCaret() +
+            '<b>Contacta diretamente a pessoa</b> pelo contacto que conheces';
+    //SABIAS QUE --------------------------------------------
+    s1H =
+        putSabiasQue('"Em 2022, um Hacker tentou vender as informações pessoais de 500 milhões de utilizadores do WhatsApp na darkweb"','Cshub');
+    s2H =
+        putSabiasQue('"Entre janeiro e fevereiro de 2023, os ataques com recurso à engenharia social aumentaram 135%, correspondendo ao lançamento mundial do ChatGPT"','Darktrace');
+    //RESPOSTAS  --------------------------------------------
     if (n == 1) {
-        mPH = '<center><h2 class="right">O teu computador está seguro!</h2></center><br><br>';
+        mPH = 
+            '<h1 class="right">\
+                Conseguiste deter uma burla!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Tomaste a decisão mais acertada\
+            </center></h3>\
+            <br>';
     } else {
-        mPH = '<center><h2 class="wrong">Não estás em segurança!</h2></center><br><br>';
+        mPH = 
+            '<h1 class="wrong">\
+                SOFRESTE UMA BURLA!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                A decisão mais acertada seria\
+            </center></h3>\
+            <br>';
     }
-    mPH += 'Interagir com contatos desconhecidos poderá levar à perda de dinheiro e partilha de informações pessoais.<br>\
-    Quando receberes mensagens duvidosas, o aconselhado é denunciar e bloquear.'
+    mPH += 
+        '<center><h4>\
+        <font color=\"#0F3866\">\
+            Denunciar\
+        </font>\
+        /\
+        <font color=\"#0F3866\">\
+            Eliminar\
+        </font>\
+        </center></h4>\
+        <br><br>\
+        <small><center>\
+            Interagir poderá levar à <b>perda de dinheiro e</b> de <b>informações pessoais.</b>\
+        </center></small>';
+
     popup.innerHTML = mPH;
     showPopup();
 }
