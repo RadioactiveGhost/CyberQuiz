@@ -74,7 +74,7 @@
 /*-----   SMS  --------------------------*/
 #smsb {
   height: calc(100% - (var(--titlebarh) + 6px));
-  background-image: url(../assets/img/sms_60_transparencia.jpg);
+  background-image: url(../assets/img/bg2_company.jpg);
   background-size: center;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -607,10 +607,11 @@
 }
 @media only screen and (max-width: 1000px) {
   #email #emailcontent {
-    width: 100%;
+    width: 96%;
+    height: 50vh;
   }
   #email #text {
-    font-size: 0.5em;
+    font-size: 0.65em;
   }
   #email #emailtopbar input {
     width: 40%;
@@ -699,6 +700,23 @@
   background-color: var(--sapphire);
   color: white;
   box-shadow: 0px 2px 4px rgba(88, 88, 88, 0.651);
+}
+@media only screen and (max-width: 600px) {
+  #uacb #uactitle {
+    font-size: 20px;
+  }
+  #uacb #uac {
+    width: 95vw;
+  }
+  #uacb #uaccontent span {
+    font-size: 16px;
+  }
+  #uacb #uacprogram {
+    font-size: 20px;
+  }
+  #uacb #uacbottombar input {
+    width: 80px;
+  }
 }
 
 /*-----   Wi-Fi   -----------------------*/

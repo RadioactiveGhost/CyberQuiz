@@ -851,3 +851,14 @@ function debugging(n) {
 }
 
 debugging(true);
+
+function maximize() {
+    let thingy = document.getElementById('quiz');
+    if (thingy.requestFullscreen) {
+        thingy.requestFullscreen();
+    } else if (thingy.webkitRequestFullscreen) { /* Safari */
+        thingy.webkitRequestFullscreen();
+    } else if (thingy.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}

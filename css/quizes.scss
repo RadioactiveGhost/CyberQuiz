@@ -85,7 +85,7 @@
 
 #smsb {
     height: calc(100% - (var(--titlebarh) + 6px));
-    background-image: url(../assets/img/sms_60_transparencia.jpg);
+    background-image: url(../assets/img/bg2_company.jpg);
     background-size: center;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -703,11 +703,12 @@
 
     @media only screen and (max-width: 1000px) {
         #emailcontent {
-            width: 100%;
+            width: 96%;
+            height: 50vh;
         }
     
         #text {
-            font-size: .5em;
+            font-size: .65em;
         }
     
         #emailtopbar input {
@@ -808,6 +809,27 @@
                 background-color: var(--sapphire);
                 color: white;
                 box-shadow: 0px 2px 4px rgba(88, 88, 88, 0.651);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        #uactitle {
+            font-size: 20px;
+        }
+        #uac {
+            width: 95vw;
+        }
+        #uaccontent span {
+            font-size: 16px;
+        }
+        #uacprogram {
+            font-size: 20px;
+        }
+        #uacbottombar {
+    
+            input {
+                width: 80px;
             }
         }
     }
