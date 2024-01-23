@@ -5,39 +5,41 @@
 
 */
 let ele = document.getElementById("quiz");
-let quizAtual = 0;
+let quizAtual = 6;
 let quizArray = [
-    "<div id='passb'><div id='pass'>\
-        <i class='fa-solid fa-user icon-left'>\
-        </i><input type='text' width=20 value='Utilizador' disabled>\
-        <br>\
-        <i class='fa-solid fa-key icon-left'>\
-        </i><input type='text' width=20>\
-        <div id='passchecks'>\
-            <input type='checkbox' class='pass' id='pass1' name='pass1' value='Password123**'>\
-            <label for='pass1'>Password123**</label>\
+    "<div id='passb'>\
+        <div id='pass' class='center-vert'>\
+            <i class='fa-solid fa-user icon-left'>\
+            </i><input type='text' width=20 value='Utilizador' disabled>\
             <br>\
-            <input type='checkbox' class='pass' id='pass2' name='pass2' value='!LiK3MySch001#*??'>\
-            <label for='pass2'>!LiK3MySch001#*??</label>\
-            <br>\
-            <input type='checkbox' class='pass' id='pass3' name='pass3' value='*Apr1l012000*'>\
-            <label for='pass3'>*Apr1l012000*</label>\
-            <br>\
-            <input type='checkbox' class='pass' id='pass4' name='pass4' value='!--Am@z0n55--!'>\
-            <label for='pass4'>!--Am@z0n55--!</label>\
-            <br>\
-            <input type='checkbox' class='pass' id='pass5' name='pass5' value='1q2w3e4r'>\
-            <label for='pass5'>1q2w3e4r</label>\
-            <br>\
-            <input type='checkbox' class='pass' id='pass6' name='pass6' value='John@1981.Google'>\
-            <label for='pass6'>John@1981.Google</label>\
-            <br>\
-            <input type='button' value='Submeter' onclick='submitPass()'>\
+            <i class='fa-solid fa-key icon-left'>\
+            </i><input type='text' width=20>\
+            <div id='passchecks'>\
+                <input type='checkbox' class='pass' id='pass1' name='pass1' value='Password123**'>\
+                <label for='pass1'>Password123**</label>\
+                <br>\
+                <input type='checkbox' class='pass' id='pass2' name='pass2' value='!LiK3MySch001#*??'>\
+                <label for='pass2'>!LiK3MySch001#*??</label>\
+                <br>\
+                <input type='checkbox' class='pass' id='pass3' name='pass3' value='*Apr1l012000*'>\
+                <label for='pass3'>*Apr1l012000*</label>\
+                <br>\
+                <input type='checkbox' class='pass' id='pass4' name='pass4' value='!--Am@z0n55--!'>\
+                <label for='pass4'>!--Am@z0n55--!</label>\
+                <br>\
+                <input type='checkbox' class='pass' id='pass5' name='pass5' value='1q2w3e4r'>\
+                <label for='pass5'>1q2w3e4r</label>\
+                <br>\
+                <input type='checkbox' class='pass' id='pass6' name='pass6' value='John@1981.Google'>\
+                <label for='pass6'>John@1981.Google</label>\
+                <br>\
+                <input type='button' value='Submeter' onclick='submitPass()'>\
+            </div>\
         </div>\
-    </div></div>",
+    </div>",
 
     "<div id='smsb'>\
-        <div id='sms' class='messagewindow'>\
+        <div id='sms' class='messagewindow center-vert'>\
             <div id='sms-head'>\
                 <span id='mess-number'>(+351) 913071981</span>\
                 <div class='sms-drop'>\
@@ -148,6 +150,16 @@ Gabinete da Autoridade Tributária de Portugal\
     '</div>'",
 
     "<div id='browser'>\
+        <div id='browsererror'>\
+            <img src='../assets/img/dino.png'>\
+            <h2>Sem Ligação à Internet</h2>\
+            <p>Experimente: <br>\
+                - Rever os cabos de rede, o modem e o router<br>\
+                - Ligar novamente à rede Wi-Fi<br>\
+                - <span>Enviar o Diagnóstico de rede do Windows</span><br>\
+                <br>ERR_INTERNET_DISCONNECTED\
+            </p>\
+        </div>\
         <div id='wifi'>\
             <div class='wifientry'>\
                 <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> CFPVR-5\

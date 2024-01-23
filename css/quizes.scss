@@ -94,9 +94,13 @@
         border-radius: 20px;
         background-color: rgb(31, 31, 31);
         width: 300px;
-        margin: 0 auto 0 auto;
         padding: 20px 25px;
         box-shadow: 0 3px 3px var(--surface2);
+        
+        margin: 0 auto;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
 
     #mess-number {
@@ -352,6 +356,11 @@
     border-radius: 20px;
     background-image: url('../assets/img/bg5.jpg');
     background-size: 400px;
+    
+    margin: 0 auto;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 
     .icon {
         color: white;
@@ -720,12 +729,14 @@
     #uac {
         position: relative;
         background-color: rgb(239, 241, 241);
-        ;
         width: 500px;
-        margin: 0 auto 0 auto;
         box-shadow: 0 3px 5px var(--surface2);
         border-radius: 8px;
         user-select: none;
+        margin: 0 auto;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
 
     #uactopbar {
@@ -793,11 +804,30 @@
 
 #browser {
     height: calc(100% - (var(--titlebarh) + 6px));
-    background-color: white;
+    /*background-color: white;
     background-image: url('../assets/img/bg8.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
-    position: relative;
+    position: relative;*/
+
+    #browsererror {
+        width: max-content;
+        position: relative;
+        margin: 0 auto;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        text-align: left;
+
+        span {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+
+        img {
+            width: 140px;
+        }
+    }
 
     #wifi {
         background-color: var(--blue);
