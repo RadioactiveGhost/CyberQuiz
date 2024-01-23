@@ -5,7 +5,7 @@
 
 */
 let ele = document.getElementById("quiz");
-let quizAtual = 0;
+let quizAtual = 2;
 let quizArray = [
     "<div id='passb'>\
         <div id='pass' class='center-vert'>\
@@ -178,12 +178,12 @@ Gabinete da Autoridade Tributária de Portugal\
 
 let desafioArray = [
     "Seleciona as <b>2 palavras-passe mais seguras </b> para o teu registo",
-    "Recebeste esta mensagem! O que vais fazer?",
-    "Se achares seguro, faz login na rede social.",
-    "Estás numa aplicação de mensagens. Toma uma decisão!",
-    "Recebeste este email 2 semanas depois de submeter a declaração de IRS.\n O que fazer?",
-    "Fizeste uma pesquisa por \"Microsoft Word download grátis\" e descarregaste a aplicação.\n Proceder com a instalação?",
-    "Foste a um café e precisas de consultar o email de trabalho."
+    "<b>Recebeste esta mensagem</b>! O que vais fazer?",
+    "Se achares seguro, <b>faz login na rede social</b>",
+    "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
+    "<b>Recebeste este email</b> 2 semanas depois de submeter a declaração de IRS.<br>O que fazer?",
+    "<b>Fizeste uma pesquisa</b> por \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
+    "<b>Foste a um café</b> e precisas de consultar o email de trabalho."
 ]
 let quizMax = quizArray.length;
 ele.innerHTML = quizArray[quizAtual];
@@ -469,7 +469,6 @@ function submitPass(n) {
                 </center></h3>\
                 <br>';
         }
-
         mPH += 
             '<center><h4>\
             <font color=\"#0F3866\">\
@@ -508,49 +507,111 @@ function submitSMS(n) {
             '<b>Nunca cliques em links</b> enviados em mensagens suspeitas'
         + putCaret() +
             '<b>Repara nos detalhes</b>, como erros ortográficos e pedidos com urgência';
-        
+    //SABIAS QUE --------------------------------------------
     s1H = 
-        putSabiasQue('"Smishing é um tipo de ataque que leva as vítimas a fazerem download de malware, partilhar informação pessoal e até enviar dinheiro, através de mensagens de texto"', 'IBM');
+        putSabiasQue('"Em Portugal, de 2021 para 2022, as denúncias de cibercrime aumentaram 73,58%."', 'Ministério Público');
 
     s2H = 
-        putSabiasQue('“Em 2021 os CTT fizeram um comunicado de tentativa de burla em nome da entidade. As vítimas recebiam SMS com a informação que teriam valores por pagar. Ao clicar no link da mensagem, os dados do consumidor eram roubados.”', 'Deco Proteste');
-
+        putSabiasQue('“\'Smishing\' é um tipo de ataque realizado através de SMS.”', 'IBM');
+    //RESPOSTAS  --------------------------------------------
     if (n == 1) {
-        mPH = '<center><h2 class="right">Estás em segurança!</h2></center><br><br>';
+        mPH = 
+            '<h1 class="right">\
+                Estás em segurança!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Escolheste o mais correto a fazer\
+            </center></h3>\
+            <br>';
     } else {
-        mPH = '<center><h2 class="wrong">Sofreste uma burla!</h2></center><br><br>';
+        mPH = 
+            '<h1 class="wrong">\
+                SOFRESTE UMA BURLA!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                O mais correto a fazer seria\
+            </center></h3>\
+            <br>';
     }
-    mPH += 'Denunciar ou bloquear o contacto seria o mais certo a fazer<br>\
-    Ao clicares no link, estarias a correr o risco de sofrer um ciberataque.'
+    mPH += 
+            '<center><h4>\
+            <font color=\"#0F3866\">\
+                Denunciar\
+            </font>\
+            /\
+            <font color=\"#0F3866\">\
+                Bloquear\
+            </font>\
+            </center></h4>\
+            <br><br>\
+            <small><center>\
+                Ao <b>clicares no link</b>, estarias a correr o risco de <b>sofrer um ciberataque</b>.\
+            </center></small>';
+
     popup.innerHTML = mPH;
     showPopup();
 }
 
 function submitSpoof(n) {
     let mPH = '';
-    b1H = '<h3>O que poderia ter acontecido?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> O teu sistema ficaria infetado com um malware\
-        <br><i class="fa-solid fa-caret-right"></i> Ao fazeres login / registo, os cibercriminosos ficariam com os teus dados\
-        <br><i class="fa-solid fa-caret-right"></i> Perderias acesso aos teus ficheiross\
-        <br><i class="fa-solid fa-caret-right"></i> Todas as tuas informações seriam destruídas\
-        <br><i class="fa-solid fa-caret-right"></i> Perderias a tua confiança na entidade real, pela qual se estão a fazer passar.';
-    b2H = '<h3>Como me prevenir?</h3><br>\
-        <i class="fa-solid fa-caret-right"></i> Antes de prosseguires num website, verifica sempre o link\
-        <br><i class="fa-solid fa-caret-right"></i> Desconfia de websites que iniciam por http, e não por https\
-        <br><i class="fa-solid fa-caret-right"></i> Atualizar, sempre que possível, o browser e o anti-vírus \
-        <br><i class="fa-solid fa-caret-right"></i> Não faças registo / login em websites enviados por email\
-        <br><i class="fa-solid fa-caret-right"></i> Se o preenchimento automático do browser não funcionar num website em que o costumas usar, é provável que estejas num website falso\
-        <br><i class="fa-solid fa-caret-right"></i> Utiliza autenticação multi-fator.';
-        
-    s1H = '<span class="squote">Sabias que?</span><br>“Marcas conhecidas, tal como a Microsoft, Google e o LinkedIn, são frequentemente replicadas na internet por cibercriminosos, que tentam roubar informações pessoais e dados dos cartões bancários dos utilizadores” - <i>Blog Checkpoint</i>';
-    s2H = '<span class="squote">Sabias que?</span><br>“Spoofing é uma técnica de fraude online que engana os utilizadores pela mera aparência do conteúdo apresentado” - <i>Gridinsoft</i>';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            'Ao fazeres login, os <b>cibercriminosos ficariam com os teus dados</b>'
+        + putCaret() +
+            '<b>Perdias acesso</b> aos teus ficheiros <b>até pagares um resgate</b> por eles';
+    //COMO ME PREVENIR --------------------------------------
+    b2H =
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Atualiza o browser e anti-vírus</b> sempre que possível'
+        + putCaret() +
+            '<b>Tem cuidado</b> com websites iniciados <b>com o protocolo http</b>'
+        + putCaret() +
+            'Não faças login/registo em <b>websites enviados por email</b>';
+    //SABIAS QUE --------------------------------------------
+    s1H =
+        putSabiasQue('"Marcas, tais como a Microsoft e a Google, são frequentemente replicadas na internet para o roubo de informação pessoal e bancária."','Blog Checkpoint');
+    s2H =
+        putSabiasQue('"O serviço \'Navegação Segura\' foi criado pela equipa de segurança da Google para identificar websites não seguros em toda a Web"','Google');
+    //RESPOSTAS  --------------------------------------------
     if (n == 1) {
-        mPH = '<center><h2 class="right">O teu computador está seguro!</h2></center><br><br>';
+        mPH = 
+            '<h1 class="right">\
+                O teu computador está seguro!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Tomaste a decisão certa\
+            </center></h3>\
+            <br>';
     } else {
-        mPH = '<center><h2 class="wrong">O teu computador está infectado!</h2></center><br><br>';
+        mPH = 
+            '<h1 class="wrong">\
+                O TEU COMPUTADOR ESTÁ INFECTADO!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                O mais correto a fazer era\
+            </center></h3>\
+            <br>';
     }
-    mPH += 'O website é uma burla. Reparaste no link? Tem zeros no lugar dos “o”s.<br>\
-    O botão de download iria descarregar um malware.'
+    mPH += 
+            '<center><h4>\
+            <font color=\"#0F3866\">\
+                Sair do website\
+            </font>\
+            </center></h4>\
+            <br><br>\
+            <small><center>\
+                Este website era uma <b>tentativa de burla.</b>\
+                <br>\
+                <b>Reparaste no link?</b> Tinha zeros no lugar dos \'o\'s.\
+            </center></small>';
+
     popup.innerHTML = mPH;
     showPopup();
 }
