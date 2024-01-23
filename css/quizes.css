@@ -13,6 +13,7 @@
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
+  border-radius: 0 0 10px 10px;
 }
 #passb #pass {
   position: relative;
@@ -52,7 +53,7 @@
   width: 90%;
   box-shadow: 0 3px 3px var(--surface2);
 }
-#passb #pass input[type=button] :hover {
+#passb #pass input[type=button]:hover {
   background-color: var(--sapphire);
   color: white;
   cursor: pointer;
@@ -77,6 +78,7 @@
   background-size: center;
   background-position: bottom;
   background-repeat: no-repeat;
+  border-radius: 0 0 10px 10px;
 }
 #smsb .messagewindow {
   position: relative;
@@ -201,6 +203,7 @@
   background: rgb(255, 255, 255);
   height: calc(100% - (var(--titlebarh) + 6px));
   position: relative;
+  border-radius: 0 0 10px 10px;
 }
 #webspoofing #urlbar {
   background: var(--blue);
@@ -462,13 +465,14 @@
 /*-----   Verificação de Email   --------*/
 #email {
   background-color: var(--mantle);
+  border-radius: 0 0 10px 10px;
   height: calc(100% - (var(--titlebarh) + 6px));
   position: relative;
   display: flex;
   flex-direction: column;
 }
 #email #emailtopbar {
-  background-color: var(--gold);
+  background-color: var(--p1);
   padding: 20px 0;
   position: relative;
   box-shadow: 0 2px 5px grey;
@@ -526,7 +530,7 @@
 }
 #email #iremetente {
   float: left;
-  background: var(--gold);
+  background: var(--p2);
   border-radius: 50px;
   padding: 5px;
   width: 23px;
@@ -567,8 +571,9 @@
 }
 #email #emailimghover {
   border: 1px solid var(--surface2);
+  background: white;
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   width: 85%;
   padding: 3px;
   display: none;
@@ -579,7 +584,11 @@
 #email #signimg {
   float: left;
 }
-#email .emailb {
+#email #buttons {
+  padding: 8px;
+  clear: both;
+}
+#email #buttons .emailb {
   box-shadow: 0px 2px 6px grey;
   background: white;
   border: none;
@@ -589,7 +598,7 @@
   padding: 10px 20px;
   margin-left: 10px;
 }
-#email .emailb:hover {
+#email #buttons .emailb:hover {
   background-color: var(--sapphire);
   color: white;
   cursor: pointer;
@@ -623,6 +632,7 @@
   background-size: center;
   background-position: bottom;
   background-repeat: no-repeat;
+  border-radius: 0 0 10px 10px;
 }
 #uacb #uac {
   position: relative;
