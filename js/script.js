@@ -1,19 +1,26 @@
-/*quiz
-    Função usada para apresentar as diferentes atividades do quiz.
-    As atividades são guardadas dentro de um Array - as quebras de linha são para leitura mais fácil - em formato HTML.
-    A função quiz (linha 77) altera a atividade em ativo.
+// Este array é o conjunto de desafios no HTML (definidos pela classe qframe)
+var qArray = document.getElementsByClassName("qframe");
 
-*/
+// Esta função esconde todos os desafios menos o primeiro,
+// uma vez que o objetivo é mostrar um a um
+function onStart() {
+    for (i = 1; i < qArray.length; i++) {
+        qArray[i].style.display = "none";
+    }
+}
+onStart()
 
 
+// Variável que guarda a posição atual
 let positione = 0;
+// Esta função é usada para a mudança de desafios, sempre
+// para o seguinte
 function changeQuiz() {
-    var qArray = document.getElementsByClassName("qframe");
     positione++;
     if (positione < qArray.length) {
         for (i = 0; i < qArray.length; i++) {
             if (i == positione) {
-                qArray[i].style.display = "block";
+                qArray[i].style.display = "flex";
     
             } else {
                 qArray[i].style.display = "none";
@@ -21,29 +28,67 @@ function changeQuiz() {
         }
     }
 }
-const helpi = document.getElementById('helpi');
-let helpt = document.getElementById('helpt');
 
-helpi.addEventListener(
-    "mouseenter",
-    (event) => {
-        helpt.style.display = 'block';
-    },
-    false,
-);
+// Variável e função para modo de botão
+// 0 Passa de Pop para Balões/Sabias que, 1 passa do anterior para vazio
+let buttonmode = 0;
+function nextButton(n) {
+    console.log(buttonmode);
+    if (n == 0 && buttonmode != 0) {
+        buttonmode--;
+    }
+    if (n == 1 && buttonmode !=3) {
+        buttonmode++;
+    }
+    if (n == 1 && buttonmode == 3) {
+        //quiz(1);
+        changeQuiz();
+        buttonmode = 0;
+        block.style.display = 'none';
+        balao1.style.display = 'none';
+        balao2.style.display = 'none';
+        sabias.style.display = 'none';
+        helpt.innerHTML = desafioArray[positione];
+        mostrarJanelaDesafio(positione);
+        return;
+    }
+    //window.alert(buttonmode);
+    if (buttonmode == 0) {
+        popup.style.display = 'block';
+        balao1.style.display = 'none';
+        balao2.style.display = 'none';
+        sabias.style.display = 'none';
+        sabias1.style.display = 'none';
+        sabias2.style.display = 'none';
+        prevb.setAttribute('disabled', true);
+        nextb.value = 'Seguinte';
+        return;
+    }
+    if (buttonmode == 1) {
+        popup.style.display = 'none';
+        balao1.style.display = 'block';
+        balao2.style.display = 'none';
+        sabias.style.display = 'block';
+        sabias1.style.display = 'block';
+        sabias2.style.display = 'none';
+        prevb.removeAttribute('disabled');
+        nextb.value = 'Seguinte';
+        return;
+    }
+    if (buttonmode == 2) {
+        popup.style.display = 'none';
+        balao1.style.display = 'none';
+        balao2.style.display = 'block';
+        sabias.style.display = 'block';
+        sabias1.style.display = 'none';
+        sabias2.style.display = 'block';
+        nextb.value = 'Próximo';
+        return;
+    }
+}
 
-helpi.addEventListener(
-    "mouseleave",
-    (event) => {
-        helpt.style.display = 'none';
-    },
-    false,
-);
-
-let ele = document.getElementById("quiz");
-let quizAtual = 5;
-//let quizArray
-
+// Array aonde são guardados as especificações de cada
+// desafio
 let desafioArray = [
     "Seleciona as <b>2 palavras&#x2011;passe mais seguras </b> para o teu registo",
     "<b>Recebeste esta mensagem</b>! O que vais fazer?",
@@ -53,32 +98,14 @@ let desafioArray = [
     "<b>Fizeste uma pesquisa</b> por \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
     "Foste a um café e precisas de consultar o email. <b>Conecta a uma rede.</b>"
 ]
-helpt.innerHTML = desafioArray[quizAtual];
-/*--------------------------------------------------------------------*/
 
+// Variáveis para balão de ajuda
+let helpi = document.getElementById('helpi');
+let helpt = document.getElementById('helpt');
+helpt.innerHTML = desafioArray[positione];
 
-hover("download", "downloadhover");
-hover("emailimg", "emailimghover");
-
-function dropdown() {
-    document.getElementById("dropdown").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-} 
-
-/*--------------------------------------------------------------------*/
-
+// Função para mostrar um elemento (s2) ao passar o rato
+// em cima de outro (s1), e esconder quando o rato sai
 function hover(s1, s2) {
     const se1 = document.getElementById(s1);
     const se2 = document.getElementById(s2);
@@ -99,29 +126,26 @@ function hover(s1, s2) {
         false,
     );
 }
+hover("download", "downloadhover");
+hover("emailimg", "emailimghover");
+hover("helpi", "helpt");
 
-/*--------------------------------------------------------------------*/
-
-function uacdetalhes() {
-    let uacaddress = document.getElementById('uacaddress');
-    if (uacaddress.style.display === 'none') {
-        uacaddress.style.display = 'block';
-    } else{
-        uacaddress.style.display = 'none';
-    }
-}
-
-/* -----------------------------------*/
+// Variáveis das várias janelas principais
 let block = document.getElementById('block');
 let registo = document.getElementById('registo');
 let popup = document.getElementById('pop-up');
 let popwindow = document.getElementById('popwindow');
+
+// Variáveis das janelas de informação
 let balao1 = document.getElementById('balao1');
 let balao2 = document.getElementById('balao2');
+
+// Variáveis de botões de janelas
 let nextb = document.getElementById('nextb');
 let prevb = document.getElementById('prevb');
-let proxb = document.getElementById('proxb');
 let nextbdiv = document.getElementById('nextbdiv');
+
+// Variáveis das janelas de Sabias que
 let sabiasque = document.getElementById('sabiasque');
 let sabias = document.getElementById('sabias');
 let sabias1 = document.getElementById('sabias1');
@@ -129,12 +153,7 @@ let sabias2 = document.getElementById('sabias2');
 let desafio = document.getElementById('desafio');
 let desafiot = document.getElementById('desafiot');
 
-let nomeP = '';
-let nomeS = '';
-let cidade = '';
-
-// 0 Passa de Pop para Balões/Sabias que, 1 passa do anterior para vazio
-let buttonmode = 0;
+// Estado inicial de determinadas divs
 block.style.display = 'block';
 balao1.style.display = 'none';
 balao2.style.display = 'none';
@@ -142,7 +161,75 @@ sabias.style.display = 'none';
 desafio.style.display = 'none';
 popwindow.style.display = 'none';
 
+// Variáveis para janelas de informação e Sabias que
 let mPH = '', b1H = '', b2H = '', s1H = '', s2H = '';
+
+// Função para menus de dropdown
+function dropdown() {
+    document.getElementById("dropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+
+// Variáveis de detalhes da pessoa
+let nomeP = '';
+let nomeS = '';
+let cidade = '';
+function startQuiz() {
+    nomeP = document.getElementById('nomeP').value;
+    nomeS = document.getElementById('nomeS').value;
+    cidade = document.getElementById('cidade').value;
+    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
+        block.classList.toggle('registo');
+        block.style.display = 'none';
+        registo.style.display = 'none';
+        document.getElementById("login").value = nomeP;
+        document.getElementById('engNome').innerText = nomeP;
+        document.getElementById('engCidade').innerText = cidade;
+        document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
+        document.getElementById('uacaddress').style.display = 'none';
+        document.getElementById('wifiNome').innerText = nomeP;
+    } else {
+        window.alert("Hey");
+    }
+}
+
+function showPopup() {
+    balao1.innerHTML = b1H;
+    balao2.innerHTML = b2H;
+    sabias1.innerHTML = s1H;
+    sabias2.innerHTML = s2H;
+    popup.style.display = 'block';
+    block.style.display = 'block';
+    popwindow.style.display = 'block';
+    prevb.setAttribute('disabled', true);
+    nextb.value = 'Seguinte';
+
+}
+
+function esconderJanelaDesafio() {
+    block.style.display = 'none';
+    desafio.style.display = 'none';
+}
+
+function mostrarJanelaDesafio (n){
+    desafiot.innerHTML = "<h1><center><font color=\"#0F3866\">Desafio " + (positione + 1) + "</font></center></h1><br><br>";
+    desafiot.innerHTML += desafioArray[n];
+    popwindow.style.display = 'none';
+    block.style.display = 'block';
+    desafio.style.display = 'block';
+}
 
 //1 para "o que poderia ter acontecido"
 //2 para "como me prevenir"
@@ -179,93 +266,6 @@ function putSabiasQue(t1, t2){
     return(texto);
 }
 
-function start() {
-    nomeP = document.getElementById('nomeP').value;
-    nomeS = document.getElementById('nomeS').value;
-    cidade = document.getElementById('cidade').value;
-    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
-        block.classList.toggle('registo');
-        block.style.display = 'none';
-        registo.style.display = 'none';
-        document.getElementById("login").value = nomeP;
-        document.getElementById('engNome').innerText = nomeP;
-        document.getElementById('engCidade').innerText = cidade;
-        document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
-        document.getElementById('uacaddress').style.display = 'none';
-        document.getElementById('wifiNome').innerText = nomeP;
-    } else {
-        window.alert("Hey");
-    }
-}
-
-function showPopup() {
-    balao1.innerHTML = b1H;
-    balao2.innerHTML = b2H;
-    sabias1.innerHTML = s1H;
-    sabias2.innerHTML = s2H;
-    popup.style.display = 'block';
-    block.style.display = 'block';
-    popwindow.style.display = 'block';
-    prevb.setAttribute('disabled', true);
-    nextb.value = 'Seguinte';
-
-}
-
-function nextButton(n) {
-    console.log(buttonmode);
-    if (n == 0 && buttonmode != 0) {
-        buttonmode--;
-    }
-    if (n == 1 && buttonmode !=3) {
-        buttonmode++;
-    }
-    if (n == 1 && buttonmode == 3) {
-        //quiz(1);
-        changeQuiz();
-        buttonmode = 0;
-        block.style.display = 'none';
-        balao1.style.display = 'none';
-        balao2.style.display = 'none';
-        sabias.style.display = 'none';
-        //mostrarDesafio(quizAtual);
-        return;
-    }
-    //window.alert(buttonmode);
-    if (buttonmode == 0) {
-        popup.style.display = 'block';
-        balao1.style.display = 'none';
-        balao2.style.display = 'none';
-        sabias.style.display = 'none';
-        sabias1.style.display = 'none';
-        sabias2.style.display = 'none';
-        prevb.setAttribute('disabled', true);
-        nextb.value = 'Seguinte';
-        return;
-    }
-    if (buttonmode == 1) {
-        popup.style.display = 'none';
-        balao1.style.display = 'block';
-        balao2.style.display = 'none';
-        sabias.style.display = 'block';
-        sabias1.style.display = 'block';
-        sabias2.style.display = 'none';
-        prevb.removeAttribute('disabled');
-        nextb.value = 'Seguinte';
-        return;
-    }
-    if (buttonmode == 2) {
-        popup.style.display = 'none';
-        balao1.style.display = 'none';
-        balao2.style.display = 'block';
-        sabias.style.display = 'block';
-        sabias1.style.display = 'none';
-        sabias2.style.display = 'block';
-        nextb.value = 'Próximo';
-        return;
-    }
-
-}
-
 function submitPass(n) {
     let pass = document.getElementsByClassName('pass');
     let checked = 0;
@@ -275,7 +275,7 @@ function submitPass(n) {
         }
     }
     if (checked < 2 || checked > 2) {
-        mostrarDesafio(0);
+        mostrarJanelaDesafio(0);
     }
     else {
         let messagePop = '';
@@ -717,6 +717,17 @@ function submitWifi(n) {
     showPopup();
 }
 
+// Função para mostrar o caminho do ficheiro na janela de UAC
+function uacdetalhes() {
+    let uacaddress = document.getElementById('uacaddress');
+    if (uacaddress.style.display === 'none') {
+        uacaddress.style.display = 'block';
+    } else{
+        uacaddress.style.display = 'none';
+    }
+}
+
+// Função para mostrar opções extra nas ligações Wi-Fi
 function showWifi(n) {
     let wifiExtras = document.getElementsByClassName('extra');
     for (i = 0; i < wifiExtras.length; i++) {
@@ -728,25 +739,11 @@ function showWifi(n) {
     }
 }
 
-function mostrarDesafio (n){
-    desafiot.innerHTML = "<h1><center><font color=\"#0F3866\">Desafio " + (quizAtual + 1) + "</font></center></h1><br><br>";
-    desafiot.innerHTML += desafioArray[n];
-    popwindow.style.display = 'none';
-    block.style.display = 'block';
-    desafio.style.display = 'block';
-}
-
-
-function esconder() {
-    block.style.display = 'none';
-    desafio.style.display = 'none';
-}
-
 function debugging(n) {
     if (n) {
         registo.style.display = 'none';
         block.classList.toggle('registo');
-        mostrarDesafio(quizAtual);
+        mostrarJanelaDesafio(positione);
     }
     else {
         document.getElementById('debugPrev').style.display = 'none';
@@ -755,4 +752,3 @@ function debugging(n) {
 }
 
 debugging(1);
-

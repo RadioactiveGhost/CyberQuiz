@@ -12,7 +12,7 @@
   align-items: center;
   overflow: hidden;
 }
-.background img {
+.background > img {
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
@@ -210,19 +210,27 @@
   position: relative;
   border-radius: 0 0 10px 10px;
 }
-#webspoofing #urlbar {
+#webspoofing #browser {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#webspoofing #browser #urlbar {
   background: var(--blue);
   padding: 9px;
   height: 23px;
 }
-#webspoofing #urlbar #lock {
+#webspoofing #browser #urlbar #lock {
   float: left;
   background-color: var(--yellow);
   padding: 4px;
   margin-right: 4px;
   border-radius: 6px;
 }
-#webspoofing #urlbar > input {
+#webspoofing #browser #urlbar > input {
   float: left;
   clear: right;
   width: 70%;
@@ -232,36 +240,39 @@
   border-radius: 5px;
   padding: 4px;
 }
-#webspoofing #urlbar .hammenubar {
+#webspoofing #browser #urlbar .hammenubar {
   float: right;
   color: white;
   background-color: rgba(255, 255, 255, 0);
   margin-left: 20px;
   margin-top: 4px;
 }
-#webspoofing #urlbar .fa-right-from-bracket {
+#webspoofing #browser #urlbar .fa-right-from-bracket {
   margin-top: 0;
   background-color: #ffa600;
   color: var(--text);
   padding: 4px;
   border-radius: 6px;
 }
-#webspoofing #urlbar .fa-right-from-bracket:hover {
+#webspoofing #browser #urlbar .fa-right-from-bracket:hover {
   cursor: pointer;
 }
-#webspoofing #spoofing-content .txt {
+#webspoofing #browser #logofb {
+  width: 250px !important;
+}
+#webspoofing #browser #spoofing-content .txt {
   float: left;
   width: 100px;
   text-align: right;
   margin-right: 20px;
 }
-#webspoofing .spoofdownload {
+#webspoofing #browser .spoofdownload {
   width: 100px;
 }
-#webspoofing .spoofdownload:hover {
+#webspoofing #browser .spoofdownload:hover {
   cursor: pointer;
 }
-#webspoofing #download {
+#webspoofing #browser #download {
   background-color: var(--green);
   position: absolute;
   bottom: 0;
@@ -272,14 +283,14 @@
   margin-left: auto;
   margin-right: auto;
 }
-#webspoofing #download:hover {
+#webspoofing #browser #download:hover {
   cursor: pointer;
   background-color: var(--sapphire);
 }
-#webspoofing #download i {
+#webspoofing #browser #download i {
   font-size: 30px;
 }
-#webspoofing #downloadhover {
+#webspoofing #browser #downloadhover {
   border: 1px solid var(--surface2);
   background: white;
   position: absolute;
@@ -327,8 +338,15 @@
   background-image: linear-gradient(45deg, var(--p1), var(--p2));
   border-radius: 0 0 10px 10px;
 }
+#engb #engwindow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
 #engb #engsocial {
-  position: absolute;
   border-radius: 20px;
   background-image: url("../assets/img/bg5.jpg");
   background-size: 400px;
@@ -493,37 +511,45 @@
   display: flex;
   flex-direction: column;
 }
-#email #emailtopbar {
+#email #emailbrowser {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#email #emailbrowser #emailtopbar {
   background-color: var(--p1);
   padding: 20px 0;
   position: relative;
   box-shadow: 0 2px 5px grey;
   z-index: 1;
 }
-#email #emailtopbar span {
+#email #emailbrowser #emailtopbar span {
   float: left;
   color: white;
   font-weight: bolder;
   margin-left: 40px;
 }
-#email #emailtopbar .fa-circle-user {
+#email #emailbrowser #emailtopbar .fa-circle-user {
   float: right;
   color: white;
   font-size: 25px;
   margin-right: 40px;
 }
-#email #emailtopbar .fa-magnifying-glass {
+#email #emailbrowser #emailtopbar .fa-magnifying-glass {
   margin-left: -30px;
   color: white;
 }
-#email #emailtopbar input {
+#email #emailbrowser #emailtopbar input {
   width: 60%;
   height: 25px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(22, 22, 22, 0.747);
   border: none;
 }
-#email #emailcontent {
+#email #emailbrowser #emailcontent {
   width: 70%;
   height: -moz-min-content;
   height: min-content;
@@ -533,11 +559,11 @@
   padding: 20px 0 0 5px;
   box-shadow: 0 2px 5px grey;
 }
-#email #emailcontent #text {
+#email #emailbrowser #emailcontent #text {
   text-align: left;
   padding: 20px;
 }
-#email #assunto {
+#email #emailbrowser #assunto {
   margin: 20px auto 0 auto;
   padding: 10px;
   height: 30px;
@@ -545,12 +571,12 @@
   border-radius: 10px;
   box-shadow: 0 2px 3px grey;
 }
-#email #emailheader {
+#email #emailbrowser #emailheader {
   border-bottom: 1px solid rgba(128, 128, 128, 0.493);
   position: relative;
   padding: 0 20px 5px 20px;
 }
-#email #iremetente {
+#email #emailbrowser #iremetente {
   float: left;
   background: var(--p2);
   border-radius: 50px;
@@ -558,20 +584,20 @@
   width: 23px;
   margin-right: 30px;
 }
-#email #remetente {
+#email #emailbrowser #remetente {
   padding: 10px;
   position: relative;
   font-weight: bold;
   text-align: left;
   width: 350px;
 }
-#email #remetente:hover {
+#email #emailbrowser #remetente:hover {
   cursor: pointer;
 }
-#email #remetente:hover div {
+#email #emailbrowser #remetente:hover div {
   display: block;
 }
-#email #emailhover {
+#email #emailbrowser #emailhover {
   position: absolute;
   top: 40px;
   left: 60px;
@@ -582,16 +608,16 @@
   box-shadow: 0 1px 3px grey;
   color: var(--blue);
 }
-#email .imail {
+#email #emailbrowser .imail {
   position: relative;
   margin: auto;
   width: -moz-fit-content;
   width: fit-content;
 }
-#email .imail img {
+#email #emailbrowser .imail img {
   width: 150px;
 }
-#email #emailimghover {
+#email #emailbrowser #emailimghover {
   border: 1px solid var(--surface2);
   background: white;
   position: absolute;
@@ -600,17 +626,17 @@
   padding: 3px;
   display: none;
 }
-#email #emailimg:hover {
+#email #emailbrowser #emailimg:hover {
   cursor: pointer;
 }
-#email #signimg {
+#email #emailbrowser #signimg {
   float: left;
 }
-#email #buttons {
+#email #emailbrowser #buttons {
   padding: 8px;
   clear: both;
 }
-#email #buttons .emailb {
+#email #emailbrowser #buttons .emailb {
   box-shadow: 0px 2px 6px grey;
   background: white;
   border: none;
@@ -620,7 +646,7 @@
   padding: 10px 20px;
   margin-left: 10px;
 }
-#email #buttons .emailb:hover {
+#email #emailbrowser #buttons .emailb:hover {
   background-color: var(--sapphire);
   color: white;
   cursor: pointer;
