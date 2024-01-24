@@ -56,6 +56,7 @@
     <div class="quiz-area">
         <div class="title-bar">
             <div class="title"><i class="fa-solid fa-gamepad"></i>  CyberQuiz</div>
+            <input type="button" value="Next" onclick="changeQuiz()"> 
             <div class="window-icons"><i class="fa-solid fa-window-minimize"></i><i class="fa-solid fa-window-maximize" onclick="maximize()"></i><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div id="help">
@@ -66,26 +67,199 @@
                 Help!
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <!--<div class="quiz" id="quiz">
+        </div>-->
+        <div id="test">
+            <div id='passb' class='background qframe'>
+                <img src='../assets/img/bg1.jpg'>
+                <div id='pass' class='center-vert'>
+                    <i class='fa-solid fa-user icon-left'>
+                    </i><input type='text' width=20 value='Utilizador' id='login' disabled>
+                    <br>
+                    <i class='fa-solid fa-key icon-left'>
+                    </i><input type='text' width=20>
+                    <div id='passchecks'>
+                        <input type='checkbox' class='pass' id='pass1' name='pass1' value='Password123**'>
+                        <label for='pass1'>Password123**</label>
+                        <br>
+                        <input type='checkbox' class='pass' id='pass2' name='pass2' value='!LiK3MySch001#*??'>
+                        <label for='pass2'>!LiK3MySch001#*??</label>
+                        <br>
+                        <input type='checkbox' class='pass' id='pass3' name='pass3' value='*Apr1l012000*'>
+                        <label for='pass3'>*Apr1l012000*</label>
+                        <br>
+                        <input type='checkbox' class='pass' id='pass4' name='pass4' value='!--Am@z0n55--!'>
+                        <label for='pass4'>!--Am@z0n55--!</label>
+                        <br>
+                        <input type='checkbox' class='pass' id='pass5' name='pass5' value='1q2w3e4r'>
+                        <label for='pass5'>1q2w3e4r</label>
+                        <br>
+                        <input type='checkbox' class='pass' id='pass6' name='pass6' value='John@1981.Google'>
+                        <label for='pass6'>John@1981.Google</label>
+                        <br>
+                        <input type='button' value='Submeter' onclick='submitPass()'>
+                    </div>
+                </div>
+            </div>
+        
+            <div id='smsb' class='background qframe' style="display:none">
+                <img src='../assets/img/bg2_company.jpg'>
+                <div id='sms' class='messagewindow center-vert'>
+                    <div id='sms-head'>
+                        <span id='mess-number'>(+351) 913071981</span>
+                        <div class='sms-drop'>
+                            <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown()'></i>
+                            <div id='dropdown' class='dropdown-content'>
+                                <p href='#' onclick='submitSMS(1)'>Denunciar</p>
+                                <p href='#'>Eliminar</p>
+                            </div>
+                        </div>div>
+                    </div>
+                    <div class='message'>Aviso importante: confirme os detalhes para entrega do pacote hoje. Caso contrario, ele sera devolvido ao remetente:  <span class='link' onclick='submitSMS(0)'>http://cttxpresso.com/RTiLJOD</span></div>
+                    <div id='sms-bottom'>
+                        <input type='text' id='sms-input' placeholder='Não é possível responder' disabled><i class='fa-solid fa-message sms-send'></i>
+                    </div>
+                </div>
+            </div>
+        
+            <div id='webspoofing' class='qframe' style="display:none">
+                <div id='urlbar'>
+                    <i class='fa-solid fa-lock-open lock' id='lock'></i><input type='text' value='http://faceb00k.com' disabled>\<i class='fa-solid fa-right-from-bracket hammenubar' onclick='submitSpoof(1)'></i>
+                    <i class='fa-solid fa-bars hammenubar'></i>
+                </div>
+                <div id='spoofing-content'>
+                    <img src='../assets/img/facebook.png'>
+                    <div id='login'>
+                        <div class='txt'>Email</div><input type='text' width=60 value='global@via.com' disabled>
+                        <br><br>
+                        <div class='txt'>Password</div><input type='password' width=60 value='testepass' disabled>
+                        <br><br><input type='button' value='Login' class='spoofdownload' onclick='submitSpoof(0)'>
+                    </div>
+                </div>
+                <div id='download' onclick='submitSpoof(0)'>
+                    <i class=' fa-solid fa-download' ></i> Descarregue aqui a aplicação
+                </div>
+                <div id='downloadhover'>
+                    http://www.faceb00k.com/eheheh/jafoste/facebok.exe
+                </div>
+            </div>
+
+            <div id='engb' class='qframe' style="display:none">
+                <div id='engsocial' class='messagewindow'>
+                    <div id='sms-head'>
+                        <i class='fa-solid fa-circle-user icon'></i>
+                        <span id='mess-number'>(+351) 913071981</span>
+                        <div class='sms-drop'>
+                            <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown()'></i>
+                            <div id='dropdown' class='dropdown-content'>
+                                <p href='#' onclick='submitEng(1)'>Denunciar</p>
+                                <p href='#'>Eliminar</p>
+                            </div>
+                        </div>div>
+                    </div>
+                    <div class='message'>Olá <span id='engNome'></span>, estou aqui em <span id='engCidade'></span> e preciso de 10€ para almoçar. Podes mandar por mbway? Já agora, guarda este número que é o novo. Beijinhos, mãe 😘</span></div>
+                    <div class='message warning'>Este número não se encontra guardado nos seus contactos.
+                    <input type='button' value='Adicionar aos contactos' onclick='submitEng(0)'></div>
+                    <div id='sms-bottom'>
+                        <input type='text' id='sms-input' disabled><i class='fa-solid fa-paperclip sms-send'></i><i class='fa-solid fa-message sms-send'></i>
+                    </div>
+                </div>
+            </div>
+        
+            <div id='email' class='qframe' style="display:none">
+                <div id='emailtopbar'>
+                    <span><i class='fa-solid fa-envelope-open-text'></i> GlobalMail</span>
+                    <input type='text' width=60 disabled>
+                    <i class='fa-solid fa-magnifying-glass'></i>
+                    <i class='fa-solid fa-circle-user'></i>
+                </div>
+                <div id='emailcontent'>
+                    <span id='assunto'>Assunto: Contraordenação Fiscal - Declaração de IRS</span><br><br>
+                    <div id='emailheader'>
+                        <div id='iremetente'><i class='fa-regular fa-user'></i></div>
+                        <div id='remetente'>
+                            Autoridade Tributária Portuguesa <i class='fa-solid fa-caret-down'></i>
+                            <div id='emailhover'>governo_de_portugal@outlouk.com</div>
+                        </div>
+                    </div>
+                    <div id='text'>
+                        <p>Exmo(a) <span id='emailNome'></span>,<br><br>
+                        É com urgência que entramos em contacto consigo referente a uma contraordenação fiscal associada à sua declaração de IRS.<br>
+                        Após uma análise minuciosa, detectamos irregularidades que exigem a sua imediata atenção. O não cumprimento das orientações que se seguem poderá resultar numa coima substancial.<br>
+                        Para resolver a sua situação, solicitamos que clique no botão abaixo para aceder ao portal da Autoridade Tributária e proceder à validação dos seus dados fiscais:<br>
+                        <div id='emailimg' class='imail' onclick='submitEmail(0)'><img src='../assets/img/clique.png'><br></div>
+                        Agradecemos a sua colaboração e compreensão neste assunto delicado.<br><br>
+        Com os melhores cumprimentos,<br>
+        Gabinete da Autoridade Tributária de Portugal
+                        </p>
+                        <div id='signimg' class='imail'>
+                            <img src='../assets/img/atea.png'><br>
+                        </div>
+                        <div id='emailimghover'>
+                            http://www.portaldasfinancas-portugal.pt/validacaoIRS.php
+                        </div>
+                    </div>
+                    <div id='buttons'>
+                        <button class='emailb' onclick='submitEmail(0)'><i class='fa-solid fa-reply'></i> Responder</button><button class='emailb' onclick='submitEmail(1)'><i class='fa-solid fa-flag'></i> Denunciar</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div id='uacb' class='background qframe' style="display:none">
+                <img src='../assets/img/bg7.jpg'>
+                <div id='uac'>
+                    <div id='uactopbar'>
+                        <span>Controlo de Conta de Utilizador</span><br>
+                        <span id='uactitle'>Pretende permitir que esta aplicação faça alterações ao seu dispositivo?</span>
+                    </div>
+                    <div id='uaccontent'>
+                        <span id='uacprogram'><i class='fa-solid fa-file-word'></i> Microsoft Word 2023/24 ® Microsoft</span><br><br>
+                        <span id='uacorigin'>Editor verificado: Free MS Word for Everyone<br>Origem do ficheiro: Disco neste computador</span><br><br>
+                        <span id='uaclink' onclick='uacdetalhes()'>Mostrar mais detalhes</span>
+                        <span id='uacaddress'>C:\\Users\\NOME\\Transferencias\\Wormzy.exe</span>
+                    </div>
+                    <div id='uacbottombar'>
+                        <input type='button' value='Sim' onclick='submitUAC(0)'><input type='button' value='Não' onclick='submitUAC(1)'>
+                    </div>
+                </div>
+            </div>
+        
+            <div id='browser' class='qframe' style="display:none">
+                <div id='browsererror'>
+                    <img src='../assets/img/dino.png'>
+                    <h2>Sem Internet</h2><br>
+                    <p class='error'>Experimente: <br>
+                        <pre class='error'>       - Rever os cabos de rede, o modem e o router</pre>
+                        <pre class='error'>       - Ligar novamente à rede Wi-Fi</pre>
+                        <pre class='error'>       - <span class='diaglink'>Enviar o Diagnóstico de rede do Windows</span></pre>
+                        <br><span class='err'>ERR_INTERNET_DISCONNECTED</span>
+                    </p>
+                </div>
+                <div id='wifi'>
+                    <div class='wifientry' onclick='showWifi(0)'>
+                        <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> CFPVR-5
+                        <div class='extra'>
+                            Não sabes a palavra-passe desta rede
+                        </div>
+                    </div>
+                    <div class='wifientry' onclick='showWifi(1)'>
+                        <i class='fa-solid fa-wifi'></i> Cafe-Gratis
+                        <div class='extra'>
+                            <input type='button' value='Prosseguir' onclick='submitWifi(0)'>
+                        </div>
+                    </div>
+                    <div class='wifientry' onclick='showWifi(2)'>
+                        <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> Hotspot-<span id='wifiNome'></span>
+                        <div class='extra'>
+                            Vais gastar os teus dados móveis
+                            <input type='button' value='Prosseguir' onclick='submitWifi(1)'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!--<div class="taskbar">
-        <i class="fa-solid fa-spinner menu"></i>
-        <span id="clock"></span>
-    </div>-->
-    <!--<div class="nav-container">
-        <div class="navigation prev" onclick="quiz(0)">
-            <i class="fa-solid fa-circle-chevron-left"></i>
-        </div>
-        <div class="padding"> </div>
-        <div class="points">
-            1/10 <i class="fa-solid fa-trophy"></i>
-        </div>
-        <div class="padding"> </div>
-        <div class="navigation next" onclick="quiz(1)">
-            <i class="fa-solid fa-circle-chevron-right"></i>
-        </div>
-    </div>-->
     <footer>
         <img src="assets/img/transmontana.png" alt="">
     </footer>

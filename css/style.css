@@ -256,9 +256,12 @@ body .quiz-area #help #helpt {
   display: none;
   border: 1px solid var(--p1);
 }
-body .quiz {
+body .quiz, body #test {
   text-align: center;
   height: 100%;
+}
+body .quipdisabled {
+  display: none !important;
 }
 @media only screen and (max-width: 700px) {
   body .quiz-area {
