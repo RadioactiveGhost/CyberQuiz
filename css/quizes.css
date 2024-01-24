@@ -669,20 +669,26 @@
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   width: calc(100% - 40px);
-  background: #e0edf3;
+  background: #76b9ed;
   text-align: left;
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
 }
 #uacb #uactitle {
-  font-size: 26px;
+  font-size: 22px;
+  display: inline-block;
+  margin-top: 10px;
 }
 #uacb #uaccontent {
   padding: 20px 30px;
   text-align: left;
 }
+#uacb #uacorigin {
+  font-size: 15px;
+}
 #uacb #uacprogram {
-  font-size: 30px;
+  font-size: 22px;
 }
 #uacb #uacprogram i {
   color: rgb(0, 140, 255);
@@ -694,7 +700,7 @@
   cursor: pointer;
 }
 #uacb #uacbottombar {
-  background-color: rgb(217, 225, 240);
+  background-color: rgb(239, 241, 241);
   padding: 8px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -718,7 +724,7 @@
 }
 @media only screen and (max-width: 600px) {
   #uacb #uactitle {
-    font-size: 20px;
+    font-size: 18px;
   }
   #uacb #uac {
     width: 95vw;
@@ -729,8 +735,14 @@
   #uacb #uacprogram {
     font-size: 20px;
   }
+  #uacb #uacorigin {
+    font-size: 13px !important;
+  }
   #uacb #uacbottombar input {
     width: 80px;
+  }
+  #uacb #uactopbar {
+    font-size: 11px;
   }
 }
 
