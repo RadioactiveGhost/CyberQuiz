@@ -875,41 +875,49 @@
 
 #browser {
     height: calc(100% - (var(--titlebarh) + 6px));
-    /*background-color: white;
-    background-image: url('../assets/img/bg8.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;*/
 
     #browsererror {
         width: max-content;
         position: relative;
         margin: 0 auto;
-        top: 50%;
+        top: 35%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
         text-align: left;
 
-        span {
+        .error, .err {
+            color: rgb(126, 124, 124);
+        }
+
+        .err {
+            font-size: 13px;
+        }
+        
+        span.diaglink {
             color: var(--blue);
             text-decoration: underline;
         }
 
         img {
-            width: 140px;
+            width: 60px;
+            margin-bottom: 15px;
         }
     }
 
     #wifi {
-        background-color: var(--blue);
+        background-color: var(--p2);
         border-radius: 8px 8px 0 0;
+        border: 1px solid var(--p1);
+        border-bottom: none;
         position: absolute;
         bottom: 0;
         right: 20px;
-        color: white;
+        color: var(--p1);
         height: 400px;
         margin-left: auto;
         margin-right: auto;
+        font-weight: bold;
+        width: 300px;
         box-shadow: 0px 2px 4px rgb(88, 88, 88);
     }
 
@@ -917,6 +925,7 @@
         text-align: left;
         padding: 20px 40px 20px 20px;
         position: relative;
+        transition-duration: 0ms !important;
 
         &>.fa-wifi {
             font-size: 24px;
@@ -930,13 +939,35 @@
             font-size: 13px;
         
         }
+
+        .extra {
+            font-weight: normal;
+            padding: 20px 0 25px 20px;
+            display: none;
+            input {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                border:none;
+                outline: none;
+                border-radius: 0px;
+                padding: 5px 30px;
+                transition-duration: 0ms !important;
+
+                &:hover {
+                    cursor: pointer;
+                    outline: 3px solid gray;
+                }
+            }
+        }
         
         &:first-child {
             border-radius: 8px 8px 0 0;
         }
         
         &:hover {
-            background-color: rgba(7, 7, 7, 0.555);
+            background-color: var(--p1);
+            color: white;
             cursor: pointer;
         }
     }

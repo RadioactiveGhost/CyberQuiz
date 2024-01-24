@@ -254,6 +254,7 @@ body .quiz-area #help #helpt {
   border-radius: 10px;
   background-color: white;
   display: none;
+  border: 1px solid var(--p1);
 }
 body .quiz {
   text-align: center;

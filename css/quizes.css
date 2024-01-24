@@ -759,44 +759,51 @@
 /*-----   Wi-Fi   -----------------------*/
 #browser {
   height: calc(100% - (var(--titlebarh) + 6px));
-  /*background-color: white;
-  background-image: url('../assets/img/bg8.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  position: relative;*/
 }
 #browser #browsererror {
   width: -moz-max-content;
   width: max-content;
   position: relative;
   margin: 0 auto;
-  top: 50%;
+  top: 35%;
   transform: translateY(-50%);
   text-align: left;
 }
-#browser #browsererror span {
+#browser #browsererror .error, #browser #browsererror .err {
+  color: rgb(126, 124, 124);
+}
+#browser #browsererror .err {
+  font-size: 13px;
+}
+#browser #browsererror span.diaglink {
   color: var(--blue);
   text-decoration: underline;
 }
 #browser #browsererror img {
-  width: 140px;
+  width: 60px;
+  margin-bottom: 15px;
 }
 #browser #wifi {
-  background-color: var(--blue);
+  background-color: var(--p2);
   border-radius: 8px 8px 0 0;
+  border: 1px solid var(--p1);
+  border-bottom: none;
   position: absolute;
   bottom: 0;
   right: 20px;
-  color: white;
+  color: var(--p1);
   height: 400px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: bold;
+  width: 300px;
   box-shadow: 0px 2px 4px rgb(88, 88, 88);
 }
 #browser .wifientry {
   text-align: left;
   padding: 20px 40px 20px 20px;
   position: relative;
+  transition-duration: 0ms !important;
 }
 #browser .wifientry > .fa-wifi {
   font-size: 24px;
@@ -808,10 +815,30 @@
   margin-top: 14px;
   font-size: 13px;
 }
+#browser .wifientry .extra {
+  font-weight: normal;
+  padding: 20px 0 25px 20px;
+  display: none;
+}
+#browser .wifientry .extra input {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border: none;
+  outline: none;
+  border-radius: 0px;
+  padding: 5px 30px;
+  transition-duration: 0ms !important;
+}
+#browser .wifientry .extra input:hover {
+  cursor: pointer;
+  outline: 3px solid gray;
+}
 #browser .wifientry:first-child {
   border-radius: 8px 8px 0 0;
 }
 #browser .wifientry:hover {
-  background-color: rgba(7, 7, 7, 0.555);
+  background-color: var(--p1);
+  color: white;
   cursor: pointer;
 }/*# sourceMappingURL=quizes.css.map */

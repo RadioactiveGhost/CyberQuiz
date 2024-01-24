@@ -183,23 +183,33 @@ Gabinete da Autoridade Tributária de Portugal\
     "<div id='browser'>\
         <div id='browsererror'>\
             <img src='../assets/img/dino.png'>\
-            <h2>Sem Ligação à Internet</h2>\
-            <p>Experimente: <br>\
-                - Rever os cabos de rede, o modem e o router<br>\
-                - Ligar novamente à rede Wi-Fi<br>\
-                - <span>Enviar o Diagnóstico de rede do Windows</span><br>\
-                <br>ERR_INTERNET_DISCONNECTED\
+            <h2>Sem Internet</h2><br>\
+            <p class='error'>Experimente: <br>\
+                <pre class='error'>       - Rever os cabos de rede, o modem e o router</pre>\
+                <pre class='error'>       - Ligar novamente à rede Wi-Fi</pre>\
+                <pre class='error'>       - <span class='diaglink'>Enviar o Diagnóstico de rede do Windows</span></pre>\
+                <br><span class='err'>ERR_INTERNET_DISCONNECTED</span>\
             </p>\
         </div>\
         <div id='wifi'>\
-            <div class='wifientry'>\
+            <div class='wifientry' onclick='showWifi(0)'>\
                 <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> CFPVR-5\
+                <div class='extra'>\
+                    Não sabes a palavra-passe desta rede\
+                </div>\
             </div>\
-            <div class='wifientry' onclick='submitWifi(0)'>\
+            <div class='wifientry' onclick='showWifi(1)'>\
                 <i class='fa-solid fa-wifi'></i> Cafe-Gratis\
+                <div class='extra'>\
+                    <input type='button' value='Prosseguir' onclick='submitWifi(0)'>\
+                </div>\
             </div>\
-            <div class='wifientry' onclick='submitWifi(1)'>\
+            <div class='wifientry' onclick='showWifi(2)'>\
                 <i class='fa-solid fa-wifi'></i><i class='fa-solid fa-lock'></i> Hotspot-<span id='wifiNome'></span>\
+                <div class='extra'>\
+                    Vais gastar os teus dados móveis\
+                    <input type='button' value='Prosseguir' onclick='submitWifi(1)'>\
+                </div>\
             </div>\
         </div>\
     </div>"
@@ -906,6 +916,17 @@ function submitWifi(n) {
     showPopup();
 }
 
+function showWifi(n) {
+    let wifiExtras = document.getElementsByClassName('extra');
+    for (i = 0; i < wifiExtras.length; i++) {
+        if (i == n) {
+            wifiExtras[i].style.display = 'block';
+        } else {
+            wifiExtras[i].style.display = 'none';
+        }
+    }
+}
+
 function mostrarDesafio (n){
     desafiot.innerHTML = "<h1><center><font color=\"#0F3866\">Desafio " + (quizAtual + 1) + "</font></center></h1><br><br>";
     desafiot.innerHTML += desafioArray[n];
@@ -929,14 +950,3 @@ function debugging(n) {
 }
 
 debugging(true);
-
-function maximize() {
-    let thingy = document.getElementById('quiz');
-    if (thingy.requestFullscreen) {
-        thingy.requestFullscreen();
-    } else if (thingy.webkitRequestFullscreen) { /* Safari */
-        thingy.webkitRequestFullscreen();
-    } else if (thingy.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-    }
-}
