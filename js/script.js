@@ -234,8 +234,21 @@ function showPopup() {
 
 }
 
+// /!\ O primeiro desafio não tem quebra /!\
+quebraA = ['2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7'];
+
+function inserirQuebra() {
+    quebrat.innerHTML = quebraA[positione-1];
+}
+
 function mostrarQuebra() {
     changeBG(1);
+    inserirQuebra();
     block.style.display = 'block';
     quebra.style.display = 'block';
     popwindow.style.display = 'none';
@@ -294,11 +307,11 @@ function mostrarPontos() {
     document.getElementById('quiz').style.display = 'none';
     pontos.style.display = 'block';
     let mensagem = '';
-    let percen = points/qArray;
+    let percen = points/qArray.length;
     if (percen < .5) {
         mensagem += '<h2>Que pena!</h2><br>Não conseguiste acertar nem a metade!<br>Levavas umas lambadas.';
     }
-    if (percen < .9) {
+    else if (percen < .9) {
         mensagem += '<h2>Parabéns '+ nomeP +'!</h2><br>Conseguiste acertar à maior parte das perguntas!';
     }
     else {
@@ -835,4 +848,4 @@ function debugging(n) {
     }
 }
 
-debugging(1);
+debugging(0);
