@@ -4,6 +4,7 @@
     A função quiz (linha 77) altera a atividade em ativo.
 
 */
+//COMENTARIO NOVO
 const helpi = document.getElementById('helpi');
 let helpt = document.getElementById('helpt');
 
