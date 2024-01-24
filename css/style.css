@@ -129,7 +129,7 @@ body #balao1 .fa-caret-right, body #balao2 .fa-caret-right {
   margin: 10px;
   color: #5ba08c;
 }
-body .nextb {
+body .popbutton {
   border: none;
   outline: none;
   width: 200px;
@@ -140,7 +140,7 @@ body .nextb {
   box-shadow: 0px 1px 5px rgba(88, 88, 88, 0.719);
   font-size: 16px;
 }
-body .nextb:hover:not([disabled]) {
+body .popbutton:hover:not([disabled]) {
   cursor: pointer;
   background-color: #5ba08c;
   color: white;
@@ -256,9 +256,12 @@ body .quiz-area #help #helpt {
   display: none;
   border: 1px solid var(--p1);
 }
-body .quiz {
+body .quiz, body #test {
   text-align: center;
   height: 100%;
+}
+body .quipdisabled {
+  display: none !important;
 }
 @media only screen and (max-width: 700px) {
   body .quiz-area {
@@ -304,7 +307,7 @@ body footer img {
   #pop-up, #balao1, #balao2 {
     padding: 20px;
   }
-  .nextb {
+  .popbutton {
     width: -moz-fit-content !important;
     width: fit-content !important;
     padding: 20px !important;

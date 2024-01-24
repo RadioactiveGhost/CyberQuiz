@@ -149,7 +149,7 @@ body {
         color: #5ba08c;
     }
 
-    .nextb{
+    .popbutton{
         border: none;
         outline: none;
         width: 200px;
@@ -297,10 +297,13 @@ body {
         }
     }
 
-    .quiz {
+    .quiz, #test {
         text-align: center;
         height: 100%;
     }
+
+    .quipdisabled {
+    display:none !important}
 
     @media only screen and (max-width: 700px) {
         .quiz-area {
@@ -350,7 +353,7 @@ body {
         padding: 20px;
     }
 
-    .nextb {
+    .popbutton {
         width: fit-content !important;
         padding: 20px !important;
     }
