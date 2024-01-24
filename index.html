@@ -27,6 +27,17 @@
             <br>
             <input type="button" value="Iniciar" onclick="startQuiz()">
         </div>
+        <div id="pontos">
+            <div id="pontost">
+                ?
+            </div>
+        </div>
+        <div id="quebra">
+            <div id="quebrat">
+                Hiiiiiii cutie!
+            </div>
+            <input type="button" value="Continuar" class="popbutton" id="prevb" onclick="esconderQuebra()">
+        </div>
         <div id="desafio">
             <div id="desafiot"></div>
             <div id="confirmdiv">
@@ -110,8 +121,8 @@
                     <div id='sms-head'>
                         <span id='mess-number'>(+351) 913071981</span>
                         <div class='sms-drop'>
-                            <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown()'></i>
-                            <div id='dropdown' class='dropdown-content'>
+                            <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown("dropsms")'></i>
+                            <div id='dropsms' class='dropdown-content'>
                                 <p href='#' onclick='submitSMS(1)'>Denunciar</p>
                                 <p href='#'>Eliminar</p>
                             </div>
@@ -155,8 +166,8 @@
                             <i class='fa-solid fa-circle-user icon'></i>
                             <span id='mess-number'>(+351) 913071981</span>
                             <div class='sms-drop'>
-                                <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown()'></i>
-                                <div id='dropdown' class='dropdown-content'>
+                                <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown("dropeng")'></i>
+                                <div id='dropeng' class='dropdown-content'>
                                     <p href='#' onclick='submitEng(1)'>Denunciar</p>
                                     <p href='#'>Eliminar</p>
                                 </div>

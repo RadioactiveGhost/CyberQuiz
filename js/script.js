@@ -1,5 +1,5 @@
 // Este array é o conjunto de desafios no HTML (definidos pela classe qframe)
-var qArray = document.getElementsByClassName("qframe");
+let qArray = document.getElementsByClassName("qframe");
 
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
@@ -10,6 +10,8 @@ function onStart() {
 }
 onStart()
 
+//
+let points = 0;
 
 // Variável que guarda a posição atual
 let positione = 0;
@@ -41,6 +43,10 @@ function nextButton(n) {
         buttonmode++;
     }
     if (n == 1 && buttonmode == 3) {
+        if (positione == qArray.length-1) {
+            mostrarPontos();
+            return;
+        }
         //quiz(1);
         changeQuiz();
         buttonmode = 0;
@@ -49,7 +55,8 @@ function nextButton(n) {
         balao2.style.display = 'none';
         sabias.style.display = 'none';
         helpt.innerHTML = desafioArray[positione];
-        mostrarJanelaDesafio(positione);
+        mostrarQuebra();
+        //mostrarJanelaDesafio(positione);
         return;
     }
     //window.alert(buttonmode);
@@ -83,6 +90,9 @@ function nextButton(n) {
         sabias1.style.display = 'none';
         sabias2.style.display = 'block';
         nextb.value = 'Próximo';
+        if (positione == qArray.length-1) {
+            nextb.value = 'Finalizar';
+        }
         return;
     }
 }
@@ -135,6 +145,10 @@ let block = document.getElementById('block');
 let registo = document.getElementById('registo');
 let popup = document.getElementById('pop-up');
 let popwindow = document.getElementById('popwindow');
+let quebra = document.getElementById('quebra');
+let quebrat = document.getElementById('quebrat');
+let pontos = document.getElementById('pontos');
+let pontost = document.getElementById('pontost');
 
 // Variáveis das janelas de informação
 let balao1 = document.getElementById('balao1');
@@ -160,13 +174,15 @@ balao2.style.display = 'none';
 sabias.style.display = 'none';
 desafio.style.display = 'none';
 popwindow.style.display = 'none';
+quebra.style.display = 'none';
+pontos.style.display = 'none';
 
 // Variáveis para janelas de informação e Sabias que
 let mPH = '', b1H = '', b2H = '', s1H = '', s2H = '';
 
 // Função para menus de dropdown
-function dropdown() {
-    document.getElementById("dropdown").classList.toggle("show");
+function dropdown(n) {
+    document.getElementById(n).classList.toggle("show");
 }
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -218,9 +234,43 @@ function showPopup() {
 
 }
 
-function esconderJanelaDesafio() {
-    block.style.display = 'none';
-    desafio.style.display = 'none';
+function mostrarQuebra() {
+    changeBG(1);
+    block.style.display = 'block';
+    quebra.style.display = 'block';
+    popwindow.style.display = 'none';
+}
+
+function esconderQuebra() {
+    changeBG(0);
+    quebra.style.display = 'none';
+    mostrarJanelaDesafio(positione);
+}
+
+function changeBG(n) {
+    if (n) {
+        if (positione == 1) {
+            block.style.backgroundImage = "url(../assets/img/bg2_company.jpg)";
+        }
+        if (positione == 2) {
+            block.style.backgroundImage = "linear-gradient(120deg, #1e66f5 0%, rgb(241,205,1) 100%)";
+        }
+        if (positione == 3) {
+            block.style.backgroundImage = "linear-gradient(45deg, #0f3866 , #94e8bf)";
+        }
+        if (positione == 4) {
+            block.style.backgroundColor = "#0f3866";
+        }
+        if (positione == 5) {
+            block.style.backgroundImage = "url(../assets/img/bg7.jpg)";
+        }
+        if (positione == 3) {
+            block.style.backgroundImage = "linear-gradient(45deg, #ffffff , #767676)";
+        }
+    } else {
+        block.style.backgroundImage = "none";
+        block.style.backgroundColor = "rgba(0, 0, 0, 0.8";
+    }
 }
 
 function mostrarJanelaDesafio (n){
@@ -229,6 +279,33 @@ function mostrarJanelaDesafio (n){
     popwindow.style.display = 'none';
     block.style.display = 'block';
     desafio.style.display = 'block';
+}
+
+function esconderJanelaDesafio() {
+    block.style.display = 'none';
+    desafio.style.display = 'none';
+}
+
+function mostrarPontos() {
+    balao1.style.display = 'none';
+    balao2.style.display = 'none';
+    sabias.style.display = 'none';
+    popwindow.style.display = 'none';
+    document.getElementById('quiz').style.display = 'none';
+    pontos.style.display = 'block';
+    let mensagem = '';
+    let percen = points/qArray;
+    if (percen < .5) {
+        mensagem += '<h2>Que pena!</h2><br>Não conseguiste acertar nem a metade!<br>Levavas umas lambadas.';
+    }
+    if (percen < .9) {
+        mensagem += '<h2>Parabéns '+ nomeP +'!</h2><br>Conseguiste acertar à maior parte das perguntas!';
+    }
+    else {
+        mensagem += '<h2>Muitos Parabéns '+ nomeP +'!</h2><br>Superaste as espectativas!';
+    }
+    mensagem += '<br><br>Acertaste ' + points + ' de ' + qArray.length + ' perguntas.';
+    pontost.innerHTML = mensagem;
 }
 
 //1 para "o que poderia ter acontecido"
@@ -313,6 +390,7 @@ function submitPass(n) {
                     Escolheste as palavras-passe mais seguras\
                 </center></h3>\
                 <br>';
+            points++;
         } else {
             mPH = 
                 '<h1 class="wrong">\
@@ -379,6 +457,7 @@ function submitSMS(n) {
                 Escolheste o mais correto a fazer\
             </center></h3>\
             <br>';
+        points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -443,6 +522,7 @@ function submitSpoof(n) {
                 Tomaste a decisão certa\
             </center></h3>\
             <br>';
+        points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -505,6 +585,7 @@ function submitEng(n) {
                 Tomaste a decisão mais acertada\
             </center></h3>\
             <br>';
+        points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -569,6 +650,7 @@ function submitEmail(n) {
                 Fizeste aquilo que era mais seguro\
             </center></h3>\
             <br>';
+        points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -629,6 +711,7 @@ function submitUAC(n) {
                 Fizeste o mais seguro perante a instalação\
             </center></h3>\
             <br>';
+        points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -690,6 +773,7 @@ function submitWifi(n) {
                 Conectaste à rede mais segura\
             </center></h3>\
             <br>';
+        points++;
     } else {
         mPH = 
             '<h1 class="wrong">\

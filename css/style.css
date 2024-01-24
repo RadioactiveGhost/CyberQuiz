@@ -85,7 +85,7 @@ body #block.registo input[type=button]:hover {
   color: white;
   box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
 }
-body #popwindow, body #sabias, body #desafio, body #registo {
+body #popwindow, body #sabias, body #desafio, body #registo, body #quebra, body #pontos {
   position: relative;
   border-radius: 20px;
   background-color: white;
@@ -112,7 +112,7 @@ body #registo input[type=text] {
 body #registo input[type=text]:hover, body #registo input[type=text]:focus {
   border-bottom: 2px solid var(--p2) !important;
 }
-body #desafio {
+body #desafio, body #quebra, body #pontos {
   text-align: center;
 }
 body #popwindow {

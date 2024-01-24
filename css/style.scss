@@ -92,7 +92,7 @@ body {
         }
     }
     
-    #popwindow, #sabias, #desafio, #registo{
+    #popwindow, #sabias, #desafio, #registo, #quebra, #pontos{
         position:relative;
         border-radius: 20px;
         background-color: white;
@@ -128,7 +128,7 @@ body {
 
     }
     
-    #desafio {
+    #desafio, #quebra, #pontos {
         text-align: center;
     }
     
