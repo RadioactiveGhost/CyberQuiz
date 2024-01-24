@@ -801,10 +801,15 @@
     }
     
     #uaclink {
+        font-size: 15px;
         color: var(--blue);
         &:hover {
             cursor: pointer;
         }
+    }
+
+    #uacaddress {
+        font-size: 15px;
     }
     
     #uacbottombar {
@@ -856,6 +861,12 @@
         }
         #uactopbar{
             font-size: 11px;
+        }
+        #uaclink {
+            font-size: 13px !important;
+        }
+        #uacaddress {
+            font-size: 13px !important;
         }
     }
 }
