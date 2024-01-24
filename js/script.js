@@ -24,9 +24,10 @@ helpi.addEventListener(
 );
 
 let ele = document.getElementById("quiz");
-let quizAtual = 6;
+let quizAtual = 5;
 let quizArray = [
-    "<div id='passb'>\
+    "<div id='passb' class='background'>\
+        <img src='../assets/img/bg1.jpg'>\
         <div id='pass' class='center-vert'>\
             <i class='fa-solid fa-user icon-left'>\
             </i><input type='text' width=20 value='Utilizador' id='login' disabled>\
@@ -57,7 +58,8 @@ let quizArray = [
         </div>\
     </div>",
 
-    "<div id='smsb'>\
+    "<div id='smsb' class='background'>\
+        <img src='../assets/img/bg2_company.jpg'>\
         <div id='sms' class='messagewindow center-vert'>\
             <div id='sms-head'>\
                 <span id='mess-number'>(+351) 913071981</span>\
@@ -84,34 +86,39 @@ let quizArray = [
         <div id='spoofing-content'>\
             <img src='../assets/img/facebook.png'>\
             <div id='login'>\
-                <div class='txt'>E-mail</div><input type='text' width=60 value='global@via.com' disabled>\
+                <div class='txt'>Email</div><input type='text' width=60 value='global@via.com' disabled>\
                 <br><br>\
                 <div class='txt'>Password</div><input type='password' width=60 value='testepass' disabled>\
                 <br><br><input type='button' value='Login' class='spoofdownload' onclick='submitSpoof(0)'>\
             </div>\
         </div>\
         <div id='download' onclick='submitSpoof(0)'>\
-        <i class=' fa-solid fa-download' ></i> Descarregue aqui a aplicação\
+            <i class=' fa-solid fa-download' ></i> Descarregue aqui a aplicação\
+        </div>\
+        <div id='downloadhover'>\
+            http://www.faceb00k.com/eheheh/jafoste/facebok.exe\
         </div>\
     </div>",
 
-    "<div id='engsocial' class='messagewindow'>\
-        <div id='sms-head'>\
-            <i class='fa-solid fa-circle-user icon'></i>\
-            <span id='mess-number'>(+351) 913071981</span>\
-            <div class='sms-drop'>\
-                <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown()'></i>\
-                <div id='dropdown' class='dropdown-content'>\
-                    <p href='#' onclick='submitEng(1)'>Denunciar</p>\
-                    <p href='#'>Eliminar</p>\
-                </div>\
-            <div>\
-        </div>\
-        <div class='message'>Olá <span id='engNome'></span>, estou aqui em <span id='engCidade'></span> e preciso de 10€ para almoçar. Podes mandar por mbway? Já agora, guarda este número que é o novo. Beijinhos, mãe 😘</span></div>\
-        <div class='message warning'>Este número não se encontra guardado nos seus contactos.\
-        <input type='button' value='Adicionar aos contactos' onclick='submitEng(0)'></div>\
-        <div id='sms-bottom'>\
-            <input type='text' id='sms-input' disabled><i class='fa-solid fa-paperclip sms-send'></i><i class='fa-solid fa-message sms-send'></i>\
+    "<div id='engb'>\
+        <div id='engsocial' class='messagewindow'>\
+            <div id='sms-head'>\
+                <i class='fa-solid fa-circle-user icon'></i>\
+                <span id='mess-number'>(+351) 913071981</span>\
+                <div class='sms-drop'>\
+                    <i class='fa-solid fa-ellipsis-vertical mess-menu dropbtn' onclick='dropdown()'></i>\
+                    <div id='dropdown' class='dropdown-content'>\
+                        <p href='#' onclick='submitEng(1)'>Denunciar</p>\
+                        <p href='#'>Eliminar</p>\
+                    </div>\
+                <div>\
+            </div>\
+            <div class='message'>Olá <span id='engNome'></span>, estou aqui em <span id='engCidade'></span> e preciso de 10€ para almoçar. Podes mandar por mbway? Já agora, guarda este número que é o novo. Beijinhos, mãe 😘</span></div>\
+            <div class='message warning'>Este número não se encontra guardado nos seus contactos.\
+            <input type='button' value='Adicionar aos contactos' onclick='submitEng(0)'></div>\
+            <div id='sms-bottom'>\
+                <input type='text' id='sms-input' disabled><i class='fa-solid fa-paperclip sms-send'></i><i class='fa-solid fa-message sms-send'></i>\
+            </div>\
         </div>\
     </div>",
 
@@ -141,9 +148,11 @@ let quizArray = [
 Com os melhores cumprimentos,<br>\
 Gabinete da Autoridade Tributária de Portugal\
                 </p>\
-                <div id='signimg' class='imail'><img src='../assets/img/atea.png'><br></div>\
+                <div id='signimg' class='imail'>\
+                    <img src='../assets/img/atea.png'><br>\
+                </div>\
                 <div id='emailimghover'>\
-                http://www.portaldasfinancas-portugal.pt/validacaoIRS.php\
+                    http://www.portaldasfinancas-portugal.pt/validacaoIRS.php\
                 </div>\
             </div>\
             <div id='buttons'>\
@@ -152,7 +161,8 @@ Gabinete da Autoridade Tributária de Portugal\
         </div>\
     </div>",
 
-    "<div id='uacb'>\
+    "<div id='uacb' class='background'>\
+        <img src='../assets/img/bg7.jpg'>\
         <div id='uac'>\
             <div id='uactopbar'>\
                 <span>Controlo de Conta de Utilizador</span><br>\
@@ -224,13 +234,16 @@ function quiz(n) {
             helpt.innerHTML = desafioArray[quizAtual];
         }
     }
+    if (quizAtual == 2) {
+        hover("download", "downloadhover");
+    }
     if (quizAtual == 3) {
         document.getElementById('engNome').innerText = nomeP;
         document.getElementById('engCidade').innerText = cidade;
     }
     if (quizAtual == 4) {
         document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
-        emailHover();
+        hover("emailimg", "emailimghover");
     }
     if(quizAtual == 5) {
         document.getElementById('uacaddress').style.display = 'none';
@@ -260,22 +273,23 @@ window.onclick = function(event) {
 } 
 
 /*--------------------------------------------------------------------*/
-function emailHover() {
-    const imail = document.getElementById('emailimg');
-    const imailtxt = document.getElementById('emailimghover');
 
-    imail.addEventListener(
+function hover(s1, s2) {
+    const se1 = document.getElementById(s1);
+    const se2 = document.getElementById(s2);
+
+    se1.addEventListener(
         "mouseenter",
         (event) => {
-            imailtxt.style.display = 'block';
+            se2.style.display = 'block';
         },
         false,
     );
 
-    imail.addEventListener(
+    se1.addEventListener(
         "mouseleave",
         (event) => {
-            imailtxt.style.display = 'none';
+            se2.style.display = 'none';
         },
         false,
     );
@@ -716,9 +730,9 @@ function submitEmail(n) {
     b1H = 
         putSubtitle(1) +
         putCaret() +
-            '<b>Perderes acesso</b> à tua conta de e-mail'
+            '<b>Perderes acesso</b> à tua conta de email'
         + putCaret() +
-            '<b>Receberes e-mails fraudulentos</b> com mais frequência';
+            '<b>Receberes emails fraudulentos</b> com mais frequência';
     //COMO ME PREVENIR --------------------------------------
     b2H =
         putSubtitle(2) +

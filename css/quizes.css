@@ -5,18 +5,27 @@
   transition-duration: 250ms;
 }
 
+.background {
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.background img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 /*-----   Passwords  --------------------*/
 #passb {
   width: 100%;
   height: calc(100% - (var(--titlebarh) + 6px));
-  background-image: url(../assets/img/bg1.jpg);
-  background-size: 100%;
-  background-position: bottom;
-  background-repeat: no-repeat;
   border-radius: 0 0 10px 10px;
 }
 #passb #pass {
-  position: relative;
+  position: absolute;
   border-radius: 5px;
   background-color: var(--crust);
   width: -moz-max-content;
@@ -74,14 +83,10 @@
 /*-----   SMS  --------------------------*/
 #smsb {
   height: calc(100% - (var(--titlebarh) + 6px));
-  background-image: url(../assets/img/bg2_company.jpg);
-  background-size: center;
-  background-position: bottom;
-  background-repeat: no-repeat;
   border-radius: 0 0 10px 10px;
 }
 #smsb .messagewindow {
-  position: relative;
+  position: absolute;
   border-radius: 20px;
   background-color: rgb(31, 31, 31);
   width: 300px;
@@ -274,6 +279,16 @@
 #webspoofing #download i {
   font-size: 30px;
 }
+#webspoofing #downloadhover {
+  border: 1px solid var(--surface2);
+  background: white;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 85%;
+  padding: 3px;
+  display: none;
+}
 @media only screen and (min-width: 600px) {
   #webspoofing #urlbar {
     padding-left: 130px;
@@ -307,7 +322,12 @@
 }
 
 /*-----   Engenharia Social   -----------*/
-#engsocial {
+#engb {
+  height: calc(100% - (var(--titlebarh) + 6px));
+  background-image: linear-gradient(45deg, var(--p1), var(--p2));
+  border-radius: 0 0 10px 10px;
+}
+#engb #engsocial {
   border-radius: 20px;
   background-image: url("../assets/img/bg5.jpg");
   background-size: 400px;
@@ -315,25 +335,25 @@
   top: 50%;
   transform: translateY(-50%);
 }
-#engsocial .icon {
+#engb #engsocial .icon {
   color: white;
   float: left;
   font-size: 25px;
   margin: 0 5px 5px 0;
 }
-#engsocial #sms-input {
+#engb #engsocial #sms-input {
   width: 64%;
   background-color: #575757;
 }
-#engsocial .sms-send {
+#engb #engsocial .sms-send {
   background: none;
   padding-left: 4px;
 }
-#engsocial .message.warning {
+#engb #engsocial .message.warning {
   background: none;
   font-style: italic;
 }
-#engsocial .message.warning input {
+#engb #engsocial .message.warning input {
   width: 100%;
   background: none;
   outline: none;
@@ -343,33 +363,32 @@
   font-size: 16px;
   margin-top: 10px;
 }
-#engsocial .message.warning input:hover {
+#engb #engsocial .message.warning input:hover {
   cursor: pointer;
   background-color: var(--sapphire);
   color: white;
 }
-#engsocial.messagewindow {
+#engb #engsocial.messagewindow {
   position: relative;
   border-radius: 20px;
   background-color: rgb(31, 31, 31);
   width: 300px;
-  margin: 20px auto -20px auto;
   padding: 20px 25px;
   box-shadow: 0 3px 3px var(--surface2);
 }
-#engsocial #mess-number {
+#engb #engsocial #mess-number {
   position: relative;
   font-weight: bold;
   float: left;
   color: white;
 }
-#engsocial .mess-menu {
+#engb #engsocial .mess-menu {
   position: relative;
   float: right;
   top: -9px;
   color: white;
 }
-#engsocial .message {
+#engb #engsocial .message {
   clear: both;
   position: relative;
   border-radius: 10px;
@@ -382,19 +401,19 @@
   margin-bottom: 5px;
   margin-top: 10px;
 }
-#engsocial .link {
+#engb #engsocial .link {
   text-decoration: underline;
   color: rgb(0, 174, 255) !important;
 }
-#engsocial .link:hover {
+#engb #engsocial .link:hover {
   cursor: pointer;
 }
-#engsocial #sms-bottom {
+#engb #engsocial #sms-bottom {
   margin-top: 100px;
   margin-bottom: 10px;
   position: relative;
 }
-#engsocial #sms-input {
+#engb #engsocial #sms-input {
   float: left;
   position: relative;
   width: 55%;
@@ -406,7 +425,7 @@
   background-color: black;
   color: rgba(255, 255, 255, 0.664);
 }
-#engsocial .sms-send {
+#engb #engsocial .sms-send {
   position: relative;
   color: white;
   background-color: var(--sapphire);
@@ -414,22 +433,22 @@
   border-radius: 20px;
   margin-left: 5px;
 }
-#engsocial .dropbtn {
+#engb #engsocial .dropbtn {
   padding: 10px;
   font-size: 16px;
   border-radius: 50px;
   width: 15px;
   cursor: pointer;
 }
-#engsocial .dropbtn:hover, #engsocial .dropbtn:focus {
+#engb #engsocial .dropbtn:hover, #engb #engsocial .dropbtn:focus {
   background-color: var(--sapphire);
   color: white;
 }
-#engsocial .dropdown {
+#engb #engsocial .dropdown {
   position: relative;
   display: inline-block;
 }
-#engsocial .dropdown-content {
+#engb #engsocial .dropdown-content {
   display: none;
   position: absolute;
   background-color: black;
@@ -441,26 +460,26 @@
   margin-top: 35px;
   margin-right: 20px;
 }
-#engsocial .dropdown-content p {
+#engb #engsocial .dropdown-content p {
   color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   cursor: pointer;
 }
-#engsocial .dropdown-content p:hover {
+#engb #engsocial .dropdown-content p:hover {
   background-color: var(--sapphire);
   color: white;
 }
-#engsocial .dropdown-content p:hover:first-child {
+#engb #engsocial .dropdown-content p:hover:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-#engsocial .dropdown-content p:hover:last-child {
+#engb #engsocial .dropdown-content p:hover:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-#engsocial .show {
+#engb #engsocial .show {
   display: block;
 }
 
@@ -631,14 +650,10 @@
 #uacb {
   width: 100%;
   height: calc(100% - (var(--titlebarh) + 6px));
-  background-image: url(../assets/img/bg7.jpg);
-  background-size: center;
-  background-position: bottom;
-  background-repeat: no-repeat;
   border-radius: 0 0 10px 10px;
 }
 #uacb #uac {
-  position: relative;
+  position: absolute;
   background-color: rgb(239, 241, 241);
   width: 500px;
   box-shadow: 0 3px 5px var(--surface2);
