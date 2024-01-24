@@ -328,6 +328,7 @@
   border-radius: 0 0 10px 10px;
 }
 #engb #engsocial {
+  position: absolute;
   border-radius: 20px;
   background-image: url("../assets/img/bg5.jpg");
   background-size: 400px;
@@ -341,7 +342,7 @@
   font-size: 25px;
   margin: 0 5px 5px 0;
 }
-#engb #engsocial #sms-input {
+#engb #engsocial #eng-input {
   width: 64%;
   background-color: #575757;
 }

@@ -30,14 +30,18 @@
         <div id="desafio">
             <div id="desafiot"></div>
             <div id="confirmdiv">
-                <input type="button" value="Entendi" class="nextb" id="nextd" onclick="esconder()">
+                <input type="button" value="Entendi" class="popbutton" id="nextd" onclick="esconder()">
             </div>
         </div>
         <div id="popwindow">
             <div id="pop-up"></div>
             <div id="balao1"></div>
             <div id="balao2"></div>
-            <div id="nextbdiv"><input type="button" value="Anterior" class="nextb" id="prevb" onclick="nextButton(0)"><input type="button" value="Seguinte" class="nextb" id="nextb" onclick="nextButton(1)"></div>
+            <div id="nextbdiv">
+                <input type="button" value="Anterior" class="popbutton" id="prevb" onclick="nextButton(0)">
+                <input type="button" value="Seguinte" class="popbutton" id="nextb" onclick="nextButton(1)">
+                <input type="button" value="Próximo" class="popbutton" id="proxb" onclick="changeQuiz()" style="display:none;">
+            </div>
         </div>
         <div id="sabias">
             <div id="montana">
@@ -56,7 +60,8 @@
     <div class="quiz-area">
         <div class="title-bar">
             <div class="title"><i class="fa-solid fa-gamepad"></i>  CyberQuiz</div>
-            <input type="button" value="Next" onclick="changeQuiz()"> 
+            <input type="button" value="Prev" onclick="changeQuiz()" class="popbutton" id="debugPrev">
+            <input type="button" value="Next" onclick="changeQuiz()" class="popbutton" id="debugNext"> 
             <div class="window-icons"><i class="fa-solid fa-window-minimize"></i><i class="fa-solid fa-window-maximize" onclick="maximize()"></i><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div id="help">
@@ -69,10 +74,10 @@
         </div>
         <!--<div class="quiz" id="quiz">
         </div>-->
-        <div id="test">
+        <div id="quiz" class="quiz">
             <div id='passb' class='background qframe'>
                 <img src='../assets/img/bg1.jpg'>
-                <div id='pass' class='center-vert'>
+                <div id='pass'>
                     <i class='fa-solid fa-user icon-left'>
                     </i><input type='text' width=20 value='Utilizador' id='login' disabled>
                     <br>
@@ -104,7 +109,7 @@
         
             <div id='smsb' class='background qframe' style="display:none">
                 <img src='../assets/img/bg2_company.jpg'>
-                <div id='sms' class='messagewindow center-vert'>
+                <div id='sms' class='messagewindow'>
                     <div id='sms-head'>
                         <span id='mess-number'>(+351) 913071981</span>
                         <div class='sms-drop'>
@@ -113,7 +118,7 @@
                                 <p href='#' onclick='submitSMS(1)'>Denunciar</p>
                                 <p href='#'>Eliminar</p>
                             </div>
-                        </div>div>
+                        </div>
                     </div>
                     <div class='message'>Aviso importante: confirme os detalhes para entrega do pacote hoje. Caso contrario, ele sera devolvido ao remetente:  <span class='link' onclick='submitSMS(0)'>http://cttxpresso.com/RTiLJOD</span></div>
                     <div id='sms-bottom'>
@@ -155,13 +160,13 @@
                                 <p href='#' onclick='submitEng(1)'>Denunciar</p>
                                 <p href='#'>Eliminar</p>
                             </div>
-                        </div>div>
+                        </div>
                     </div>
                     <div class='message'>Olá <span id='engNome'></span>, estou aqui em <span id='engCidade'></span> e preciso de 10€ para almoçar. Podes mandar por mbway? Já agora, guarda este número que é o novo. Beijinhos, mãe 😘</span></div>
                     <div class='message warning'>Este número não se encontra guardado nos seus contactos.
                     <input type='button' value='Adicionar aos contactos' onclick='submitEng(0)'></div>
                     <div id='sms-bottom'>
-                        <input type='text' id='sms-input' disabled><i class='fa-solid fa-paperclip sms-send'></i><i class='fa-solid fa-message sms-send'></i>
+                        <input type='text' id='eng-input' disabled><i class='fa-solid fa-paperclip sms-send'></i><i class='fa-solid fa-message sms-send'></i>
                     </div>
                 </div>
             </div>

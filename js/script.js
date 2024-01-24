@@ -54,41 +54,11 @@ let desafioArray = [
     "Foste a um café e precisas de consultar o email. <b>Conecta a uma rede.</b>"
 ]
 helpt.innerHTML = desafioArray[quizAtual];
-
-function quiz(n) {
-    let str1 = "pages/quiz";
-    if (n == 0) {
-        if (quizAtual > 0) {
-            quizAtual--;
-            helpt.innerHTML = desafioArray[quizAtual];
-        }
-    }
-    if (n == 1) {
-        if (quizAtual < quizMax-1) {
-            quizAtual++;
-            helpt.innerHTML = desafioArray[quizAtual];
-        }
-    }
-    if (quizAtual == 2) {
-        hover("download", "downloadhover");
-    }
-    if (quizAtual == 3) {
-        document.getElementById('engNome').innerText = nomeP;
-        document.getElementById('engCidade').innerText = cidade;
-    }
-    if (quizAtual == 4) {
-        document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
-        hover("emailimg", "emailimghover");
-    }
-    if(quizAtual == 5) {
-        document.getElementById('uacaddress').style.display = 'none';
-    }
-    if(quizAtual == 6) {
-        document.getElementById('wifiNome').innerText = nomeP;
-    }
-}
 /*--------------------------------------------------------------------*/
 
+
+hover("download", "downloadhover");
+hover("emailimg", "emailimghover");
 
 function dropdown() {
     document.getElementById("dropdown").classList.toggle("show");
@@ -150,6 +120,7 @@ let balao1 = document.getElementById('balao1');
 let balao2 = document.getElementById('balao2');
 let nextb = document.getElementById('nextb');
 let prevb = document.getElementById('prevb');
+let proxb = document.getElementById('proxb');
 let nextbdiv = document.getElementById('nextbdiv');
 let sabiasque = document.getElementById('sabiasque');
 let sabias = document.getElementById('sabias');
@@ -217,7 +188,11 @@ function start() {
         block.style.display = 'none';
         registo.style.display = 'none';
         document.getElementById("login").value = nomeP;
-        mostrarDesafio(quizAtual);
+        document.getElementById('engNome').innerText = nomeP;
+        document.getElementById('engCidade').innerText = cidade;
+        document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
+        document.getElementById('uacaddress').style.display = 'none';
+        document.getElementById('wifiNome').innerText = nomeP;
     } else {
         window.alert("Hey");
     }
@@ -245,13 +220,14 @@ function nextButton(n) {
         buttonmode++;
     }
     if (n == 1 && buttonmode == 3) {
-        quiz(1);
+        //quiz(1);
+        changeQuiz();
         buttonmode = 0;
         block.style.display = 'none';
         balao1.style.display = 'none';
         balao2.style.display = 'none';
         sabias.style.display = 'none';
-        mostrarDesafio(quizAtual);
+        //mostrarDesafio(quizAtual);
         return;
     }
     //window.alert(buttonmode);
@@ -772,7 +748,11 @@ function debugging(n) {
         block.classList.toggle('registo');
         mostrarDesafio(quizAtual);
     }
+    else {
+        document.getElementById('debugPrev').style.display = 'none';
+        document.getElementById('debugNext').style.display = 'none';
+    }
 }
 
-debugging(true);
+debugging(1);
 
