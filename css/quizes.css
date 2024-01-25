@@ -106,6 +106,8 @@
   font-size: 30px;
 }
 #searchb #search #searchresults {
+  overflow-y: auto;
+  max-height: calc(100% - 120px);
   margin-left: 230px;
 }
 #searchb #search #searchresults .searchentry {
@@ -730,6 +732,7 @@
   height: 100%;
   margin: 0 auto;
   top: 50%;
+  background-color: white;
   transform: translateY(-50%);
 }
 #email .emailbrowser .emailtopbar {
@@ -811,7 +814,7 @@
 #email .emailbrowser .remetente:hover div {
   display: block;
 }
-#email .emailbrowser #emailhover {
+#email .emailbrowser .emhover {
   position: absolute;
   top: 40px;
   left: 60px;
@@ -896,6 +899,33 @@
   height: calc(100% - (var(--titlebarh) + 6px));
   border-radius: 0 0 10px 10px;
 }
+#geomicb #topbar {
+  position: absolute;
+  top: 46px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  height: 22px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+#geomicb #topbar span {
+  float: left;
+}
+#geomicb #topbar span#url {
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  font-size: 15px;
+  background: rgb(217, 217, 217);
+  padding: 5px;
+  border-radius: 20px;
+}
+#geomicb #topbar span:last-child {
+  float: right;
+}
+#geomicb #topbar span i:last-child {
+  margin-left: 4px;
+}
 #geomicb #geomic {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.95);
@@ -964,6 +994,16 @@
 }
 #geomicb #geomic > input:hover {
   cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  #geomicb #topbar span#url {
+    left: 20px;
+    top: 8px;
+    font-size: 12px !important;
+  }
+  #geomicb #topbar span:not(#url) {
+    display: none;
+  }
 }
 
 /*-----   UAC   -------------------------*/
