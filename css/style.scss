@@ -384,7 +384,7 @@ body {
             border-radius: 0px !important;
         }
         #help {
-            bottom: 20px !important;
+            bottom: 8px !important;
             left: 20px !important;
         }
     }
@@ -405,7 +405,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-    #popwindow, #desafio {
+    #popwindow, #desafio, #quebra, #pontos {
         padding: 20px 0px 30px 0px !important;
         border-radius: 0px !important;
         margin: auto !important;
@@ -414,6 +414,10 @@ body {
     }
     #pop-up, #balao1, #balao2 {
         padding: 20px;
+    }
+
+    .quebrabigger {
+        font-size: 40px !important;
     }
 
     .popbutton {
