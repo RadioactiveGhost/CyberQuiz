@@ -1,11 +1,16 @@
 // Este array é o conjunto de desafios no HTML (definidos pela classe qframe)
 let qArray = document.getElementsByClassName("qframe");
 
+// Variável que guarda a posição atual
+let positione = 6;
+
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
 function onStart() {
-    for (i = 1; i < qArray.length; i++) {
-        qArray[i].style.display = "none";
+    for (i = 0; i < qArray.length; i++) {
+        if (i != positione) {
+            qArray[i].style.display = "none";
+        }
     }
 }
 onStart()
@@ -13,8 +18,7 @@ onStart()
 //
 let points = 0;
 
-// Variável que guarda a posição atual
-let positione = 0;
+
 // Esta função é usada para a mudança de desafios, sempre
 // para o seguinte
 function changeQuiz() {
