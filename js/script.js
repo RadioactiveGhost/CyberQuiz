@@ -2,7 +2,7 @@
 let qArray = document.getElementsByClassName("qframe");
 
 // Variável que guarda a posição atual
-let positione = 6;
+let positione = 0;
 
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
@@ -240,12 +240,130 @@ function showPopup() {
 }
 
 // /!\ O primeiro desafio não tem quebra /!\
-quebraA = ['2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7'];
+quebraA = [ 
+//PESQUISA DOWNLOAD PARA PASS REGISTO:
+        '\
+            <span class="quebrasmaller">\
+                Cada resposta correta é um passo mais perto da tua\
+            </span>\
+            <span class="quebrabigger" style="font-size: 55px">\
+                segurança online!\
+            </span>\
+            <div class="img1">\
+                <img width="60" src="../assets/img/quebra3.png">\
+                <img width="60" src="../assets/img/quebra3_2.png">\
+            </div>',    
+//PASS REGISTO PARA SMS:
+        '\
+            <span class="quebrasmaller">\
+                Quanto mais avanças, menos\
+            </span>\
+            <span class="quebrabigger" style="font-size: 55px">\
+                vulnerabilidades\
+            </span>\
+            <span class="quebrasmaller">\
+                podem ser usadas contra ti!\
+            </span>\
+            <div class="img1">\
+                <img width="60" src="../assets/img/quebra2_2.png">\
+                <img width="80" src="../assets/img/quebra2.png">\
+            </div>',
+//SMS PARA LOGIN FACEBOOK:
+        '\
+            <span class="quebrasmaller">\
+                Sempre que superares um desafio, uma\
+            </span>\
+            <span class="quebrabigger" style="font-size: 45px">\
+                ameaça é derrotada!\
+            </span>\
+            <div class="img1">\
+                <img width="50" src="../assets/img/quebra6.png">\
+                <img width="60" src="../assets/img/quebra6_2.png">\
+            </div>',
+//LOGIN FACEBOOK PARA EMAIL FINANÇAS:
+        '\
+            <span class="quebrasmaller">\
+                Segurança é o teu superpoder, usa-o\
+            </span>\
+            <span class="quebrabigger" style="font-size: 55px">\
+                com sabedoria!\
+            </span>\
+            <div class="img1">\
+                <img width="65" src="../assets/img/quebra4.png">\
+                <img width="50" src="../assets/img/quebra4_2.png">\
+            </div>',
+//EMAIL FINANCAS PARA WHATSAPP:
+        '\
+            <span class="quebrasmaller">\
+                Estás a contruir uma fortaleza contra\
+            </span>\
+            <span class="quebrabigger" style="font-size: 55px">\
+                cibercriminosos!\
+            </span>\
+            <span class="quebrasmaller">\
+                Continua com atenção!\
+            </span>\
+            <div class="img1">\
+                <img width="50" src="../assets/img/quebra5.png">\
+                <img width="60" src="../assets/img/quebra5_2.png">\
+            </div>',
+//WHATSAPP PARA LOGIN GEOMIC
+        '\
+            <span class="quebrasmaller">\
+                Tens uma das armas mais valiosas contra o cibercrime:\
+            </span>\
+            <span class="quebrabigger" style="font-size: 52px">\
+                A tua determinação!\
+            </span>\
+            <div class="img1">\
+                <img width="60" src="../assets/img/quebra3.png">\
+                <img width="60" src="../assets/img/quebra3_2.png">\
+            </div>',
+//LOGIN GEOMIC PARA USER ACCESS CONTROL
+        '\
+            <span class="quebrasmaller">\
+                Observa, questiona e age.\
+            </span>\
+            <span class="quebrabigger" style="font-size: 55px">\
+                O teu cuidado\
+            </span>\
+            <span class="quebrasmaller">\
+                é mais forte do que qualquer anti-vírus!\
+            </span>\
+            <div class="img1">\
+                <img width="70" src="../assets/img/quebra7.png">\
+                <img width="55" src="../assets/img/quebra7_2.png">\
+            </div>',
+//USER ACCESS CONTROL PARA REDES WI-FI
+        '\
+            <span class="quebrasmaller">\
+                Nível após nível, a\
+            </span>\
+            <span class="quebrabigger" style="font-size: 55px">\
+                cibersegurança\
+            </span>\
+            <span class="quebrasmaller">\
+                torna-se parte do teu dia-a-dia!\
+            </span>\
+            <div class="img1">\
+                <img width="50" src="../assets/img/quebra8.png">\
+                <img width="65" src="../assets/img/quebra8_2.png">\
+            </div>',
+//REDES WI.FI PARA EMAIL NATALINA
+        '\
+        <span class="quebrasmaller">\
+            Estás quase a terminar e a tua\
+        </span>\
+        <span class="quebrabigger" style="font-size: 55px">\
+            auto-proteção\
+        </span>\
+        <span class="quebrasmaller">\
+            está mais consciencializada do que nunca!\
+        </span>\
+        <div class="img1">\
+            <img width="65" src="../assets/img/quebra4.png">\
+            <img width="50" src="../assets/img/quebra4_2.png">\
+        </div>'];
 
 function inserirQuebra() {
     quebrat.innerHTML = quebraA[positione-1];

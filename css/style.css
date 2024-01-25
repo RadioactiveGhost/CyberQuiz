@@ -119,6 +119,52 @@ body #registo input[type=text]:hover, body #registo input[type=text]:focus {
 body #desafio, body #quebra, body #pontos {
   text-align: center;
 }
+body #quebra .img1 img {
+  margin-left: auto;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+body #quebra input {
+  width: 300px;
+  background-color: var(--p1);
+  box-shadow: inset 0 0 0 2px #13437a;
+  color: white;
+}
+body #quebra input:hover:not([disabled]) {
+  background-color: #5ba08c;
+  color: white;
+  box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
+}
+body #quebra #quebrat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-bottom: none;
+}
+body #quebra #quebrat .quebrasmaller {
+  font-family: "Segoe UI";
+  font-size: 19px;
+  line-height: 150%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  letter-spacing: 0.4px;
+  font-weight: 900;
+  font-weight: bolder;
+}
+body #quebra #quebrat .quebrabigger {
+  text-transform: uppercase;
+  font-family: "Segoe UI";
+  font-weight: bolder;
+  letter-spacing: -2px;
+  margin-top: -0.3rem;
+  margin-bottom: 0.3rem;
+  color: var(--p1);
+  text-align: center;
+  text-shadow: 2px 2px 2px var(--p2), 5px 5px 5px var(--p2);
+  mix-blend-mode: multiply;
+}
 body #popwindow {
   border: 3px solid var(--p1);
 }
