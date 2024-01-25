@@ -184,23 +184,23 @@
             </div>
         
             <div id='email' class='background qframe'>
-                <div id="emailbrowser">
-                    <div id='emailtopbar'>
+                <div class="emailbrowser">
+                    <div class='emailtopbar'>
                         <span><i class='fa-solid fa-envelope-open-text'></i> GlobalMail</span>
                         <input type='text' width=60 disabled>
                         <i class='fa-solid fa-magnifying-glass'></i>
                         <i class='fa-solid fa-circle-user'></i>
                     </div>
-                    <div id='emailcontent'>
-                        <span id='assunto'>Assunto: Contraordenação Fiscal - Declaração de IRS</span><br><br>
-                        <div id='emailheader'>
-                            <div id='iremetente'><i class='fa-regular fa-user'></i></div>
-                            <div id='remetente'>
+                    <div class='emailcontent'>
+                        <span class='assunto'>Assunto: Contraordenação Fiscal - Declaração de IRS</span><br><br>
+                        <div class='emailheader'>
+                            <div class='iremetente'><i class='fa-regular fa-user'></i></div>
+                            <div class='remetente'>
                                 Autoridade Tributária Portuguesa <i class='fa-solid fa-caret-down'></i>
                                 <div id='emailhover'>governo_de_portugal@outlouk.com</div>
                             </div>
                         </div>
-                        <div id='text'>
+                        <div class='text'>
                             <p>Exmo(a) <span id='emailNome'></span>,<br><br>
                             É com urgência que entramos em contacto consigo referente a uma contraordenação fiscal associada à sua declaração de IRS.<br>
                             Após uma análise minuciosa, detectamos irregularidades que exigem a sua imediata atenção. O não cumprimento das orientações que se seguem poderá resultar numa coima substancial.<br>
@@ -217,7 +217,7 @@
                                 http://www.portaldasfinancas-portugal.pt/validacaoIRS.php
                             </div>
                         </div>
-                        <div id='buttons'>
+                        <div class='buttons'>
                             <button class='emailb' onclick='submitEmail(0)'><i class='fa-solid fa-reply'></i> Responder</button><button class='emailb' onclick='submitEmail(1)'><i class='fa-solid fa-flag'></i> Denunciar</button>
                         </div>
                     </div>
@@ -278,6 +278,49 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Email Natália -->
+            <div id='email' class='background qframe'>
+                <div class="emailbrowser">
+                    <div class='emailtopbar'>
+                        <span><i class='fa-solid fa-envelope-open-text'></i> GlobalMail</span>
+                        <input type='text' width=60 disabled>
+                        <i class='fa-solid fa-magnifying-glass'></i>
+                        <i class='fa-solid fa-circle-user'></i>
+                    </div>
+                    <div class='emailcontent'>
+                        <span class='assunto'>Assunto: Contraordenação Fiscal - Declaração de IRS</span><br><br>
+                        <div class='emailheader'>
+                            <div class='iremetente'><i class='fa-regular fa-user'></i></div>
+                            <div class='remetente'>
+                                Autoridade Tributária Portuguesa <i class='fa-solid fa-caret-down'></i>
+                                <div id='emailhover'>governo_de_portugal@outlouk.com</div>
+                            </div>
+                        </div>
+                        <div class='text'>
+                            <p>Exmo(a) <span id='emailNome'></span>,<br><br>
+                            É com urgência que entramos em contacto consigo referente a uma contraordenação fiscal associada à sua declaração de IRS.<br>
+                            Após uma análise minuciosa, detectamos irregularidades que exigem a sua imediata atenção. O não cumprimento das orientações que se seguem poderá resultar numa coima substancial.<br>
+                            Para resolver a sua situação, solicitamos que clique no botão abaixo para aceder ao portal da Autoridade Tributária e proceder à validação dos seus dados fiscais:<br>
+                            <div id='emailimg' class='imail' onclick='submitEmail(0)'><img src='../assets/img/clique.png'><br></div>
+                            Agradecemos a sua colaboração e compreensão neste assunto delicado.<br><br>
+                            Com os melhores cumprimentos,<br>
+                            Gabinete da Autoridade Tributária de Portugal
+                            </p>
+                            <div id='signimg' class='imail'>
+                                <img src='../assets/img/atea.png'><br>
+                            </div>
+                            <div id='emailimghover'>
+                                http://www.portaldasfinancas-portugal.pt/validacaoIRS.php
+                            </div>
+                        </div>
+                        <div class='buttons'>
+                            <button class='emailb' onclick='submitEmail(0)'><i class='fa-solid fa-reply'></i> Responder</button><button class='emailb' onclick='submitEmail(1)'><i class='fa-solid fa-flag'></i> Denunciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <footer>
