@@ -216,6 +216,7 @@ function startQuiz() {
         document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
         document.getElementById('uacaddress').style.display = 'none';
         document.getElementById('wifiNome').innerText = nomeP;
+        document.getElementById('searchuser').innerText = nomeP;
     } else {
         window.alert("Hey");
     }
@@ -354,6 +355,72 @@ function putSabiasQue(t1, t2){
         + t1 + '<br><i>- ' + t2 + '</i></span>';
     
     return(texto);
+}
+
+function submitSearch(n) {
+    let mPH = '';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            'O teu <b>dispositivo ficava infetado</b> com um malware'
+        + putCaret() +
+            '<b>Irias perder</b> os teus <b>documentos pessoais</b> para sempre';
+    //COMO ME PREVENIR --------------------------------------    
+    b2H = 
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Contacta a instituição</b> através dos meios confiáveis'
+        + putCaret() +
+            '<b>Nunca cliques em links</b> enviados em mensagens suspeitas'
+        + putCaret() +
+            '<b>Repara nos detalhes</b>, como erros ortográficos e pedidos com urgência';
+    //SABIAS QUE --------------------------------------------
+    s1H = 
+        putSabiasQue('"Em Portugal, de 2021 para 2022, as denúncias de cibercrime aumentaram 73,58%."', 'Ministério Público');
+
+    s2H = 
+        putSabiasQue('“\'Smishing\' é um tipo de ataque realizado através de SMS.”', 'IBM');
+    //RESPOSTAS  --------------------------------------------
+    if (n == 1) {
+        mPH = 
+            '<h1 class="right">\
+                Estás em segurança!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Escolheste o mais correto a fazer\
+            </center></h3>\
+            <br>';
+        points++;
+    } else {
+        mPH = 
+            '<h1 class="wrong">\
+                SOFRESTE UMA BURLA!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                O mais correto a fazer seria\
+            </center></h3>\
+            <br>';
+    }
+    mPH += 
+            '<center><h4>\
+            <font color=\"#0F3866\">\
+                Denunciar\
+            </font>\
+            /\
+            <font color=\"#0F3866\">\
+                Bloquear\
+            </font>\
+            </center></h4>\
+            <br><br>\
+            <small><center>\
+                Ao <b>clicares no link</b>, estarias a correr o risco de <b>sofrer um ciberataque</b>.\
+            </center></small>';
+
+    popup.innerHTML = mPH;
+    showPopup();
 }
 
 function submitPass(n) {

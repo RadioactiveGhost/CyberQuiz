@@ -18,6 +18,215 @@
   min-height: 100%;
 }
 
+/*-----   Pesquisa  ---------------------*/
+#searchb {
+  width: 100%;
+  height: calc(100% - (var(--titlebarh) + 6px));
+  border-radius: 0 0 10px 10px;
+  position: relative;
+}
+#searchb #search {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+#searchb #search #searchbar {
+  padding: 30px;
+  position: relative;
+  background-color: white;
+  height: 100px;
+  border-bottom: 1px solid rgb(189, 189, 189);
+}
+#searchb #search #searchbar #searchlogo {
+  position: relative;
+  background-image: linear-gradient(90deg, var(--p1), var(--p2));
+  float: left;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 5px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#searchb #search #searchbar #searchinput {
+  position: relative;
+  float: left;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 15px 20px 15px 45px;
+  font-size: 16px;
+  width: 600px;
+  margin-left: 20px;
+  background-color: white;
+  background-image: url("../assets/img/magnifying-glass-solid.svg");
+  background-position: 15px 15px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  box-shadow: 0px 2px 3px 3px rgba(128, 128, 128, 0.199);
+}
+#searchb #search #searchbar .searchopt {
+  position: relative;
+  float: left;
+  clear: left;
+  padding: 20px auto;
+  margin-top: 20px;
+  margin-left: 202px;
+  padding: 10px 20px;
+}
+#searchb #search #searchbar .searchopt > span {
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid rgb(168, 168, 168);
+  background-color: white;
+  margin-right: 10px;
+  font-size: 15px;
+}
+#searchb #search #searchbar #user {
+  width: 300px;
+  position: relative;
+  float: right;
+  margin-top: -40px;
+}
+#searchb #search #searchbar #user #searchuser {
+  position: absolute;
+  top: -5px;
+  right: 30px;
+  padding: 10px;
+}
+#searchb #search #searchbar #user i {
+  position: absolute;
+  right: 0;
+  font-size: 30px;
+}
+#searchb #search #searchresults {
+  margin-left: 230px;
+}
+#searchb #search #searchresults .searchentry {
+  text-align: left;
+  padding: 20px;
+  width: 700px;
+}
+#searchb #search #searchresults .searchentry:hover {
+  cursor: pointer;
+}
+#searchb #search #searchresults .searchentry img {
+  width: 20px;
+  float: left;
+  margin: 10px;
+}
+#searchb #search #searchresults .searchentry .websitetitle {
+  font-size: 16px;
+}
+#searchb #search #searchresults .searchentry .websiteurl {
+  font-size: 12px;
+  color: gray;
+}
+#searchb #search #searchresults .searchentry .websitetopic {
+  font-size: 23px;
+  color: var(--blue);
+}
+#searchb #search #searchresults .searchentry .websiteblurb {
+  font-size: 16px;
+  color: rgb(59, 59, 59);
+}
+@media only screen and (max-width: 1200px) {
+  #searchb #searchbar {
+    padding: 10px !important;
+  }
+  #searchb #searchbar #searchlogo {
+    clear: both;
+    float: left;
+    font-size: 20px !important;
+  }
+  #searchb #searchbar #searchinput {
+    width: 20% !important;
+    float: left;
+    font-size: 14px !important;
+    padding: 8px 8px 8px 30px !important;
+    background-position: 7px 8px !important;
+    background-repeat: no-repeat;
+    background-size: 14px;
+  }
+  #searchb #searchbar .searchopt {
+    margin-left: 0 !important;
+  }
+  #searchb #searchbar .searchopt > span {
+    font-size: 13px !important;
+  }
+  #searchb #searchbar #user {
+    display: none !important;
+  }
+  #searchb #searchresults {
+    margin-left: 20px !important;
+  }
+  #searchb #searchresults .searchentry {
+    width: 80% !important;
+    padding: 9px !important;
+  }
+  #searchb #searchresults .searchentry .websitetitle {
+    font-size: 13px !important;
+  }
+  #searchb #searchresults .searchentry .websiteurl {
+    font-size: 10px !important;
+    overflow: hidden;
+  }
+  #searchb #searchresults .searchentry .websitetopic {
+    font-size: 18px !important;
+  }
+  #searchb #searchresults .searchentry .websiteblurb {
+    font-size: 14px !important;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #searchb #searchbar {
+    height: 40px !important;
+    padding: 10px !important;
+  }
+  #searchb #searchbar #searchlogo {
+    clear: both;
+    float: left;
+    font-size: 20px !important;
+  }
+  #searchb #searchbar #searchinput {
+    width: 40% !important;
+    float: left;
+    font-size: 14px !important;
+    padding: 8px 8px 8px 30px !important;
+    background-position: 7px 8px !important;
+    background-repeat: no-repeat;
+    background-size: 14px;
+  }
+  #searchb #searchbar .searchopt {
+    display: none !important;
+  }
+  #searchb #searchbar #user {
+    display: none !important;
+  }
+  #searchb #searchresults {
+    margin-left: 20px !important;
+  }
+  #searchb #searchresults .searchentry {
+    width: 80% !important;
+    padding: 2px 9px !important;
+  }
+  #searchb #searchresults .searchentry .websitetitle {
+    font-size: 12px !important;
+  }
+  #searchb #searchresults .searchentry .websiteurl {
+    font-size: 10px !important;
+    overflow: hidden;
+  }
+  #searchb #searchresults .searchentry .websitetopic {
+    font-size: 13px !important;
+  }
+  #searchb #searchresults .searchentry .websiteblurb {
+    font-size: 10px !important;
+  }
+}
+
 /*-----   Passwords  --------------------*/
 #passb {
   width: 100%;
@@ -550,22 +759,23 @@
   border: none;
 }
 #email .emailbrowser .emailcontent {
-  width: 70%;
+  width: calc(100% - 10px);
   height: -moz-min-content;
   height: min-content;
   background-color: white;
   margin: auto;
   position: relative;
   padding: 20px 0 0 5px;
-  box-shadow: 0 2px 5px grey;
 }
 #email .emailbrowser .emailcontent .text {
   text-align: left;
-  padding: 20px;
+  padding: 10px;
+  font-size: 0.9em !important;
 }
 #email .emailbrowser .assunto {
   margin: 20px auto 0 auto;
-  padding: 10px;
+  padding: 8px 4px;
+  font-size: 15px;
   height: 30px;
   background: white;
   border-radius: 10px;
@@ -615,7 +825,7 @@
   width: fit-content;
 }
 #email .emailbrowser .imail img {
-  width: 150px;
+  width: 120px;
 }
 #email .emailbrowser #emailimghover {
   border: 1px solid var(--surface2);
@@ -652,24 +862,17 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1000px) {
-  #email #emailcontent {
-    width: 96%;
-    height: 50vh;
+  #email .emailbrowser .emailtopbar input {
+    width: 30%;
   }
-  #email #text {
-    font-size: 0.65em;
+  #email .emailbrowser .assunto {
+    font-size: 13px !important;
   }
-  #email #emailtopbar input {
-    width: 40%;
+  #email .emailbrowser .emailcontent .text {
+    font-size: 0.7em !important;
   }
-  #email #remetente {
-    font-size: 0.7em;
-  }
-  #email #assunto {
-    font-size: 0.7em;
-  }
-  #email .imail img {
-    width: 100px;
+  #email .emailbrowser .imail img {
+    width: 90px;
   }
 }
 
