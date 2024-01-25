@@ -1070,55 +1070,55 @@ function submitEmailNatalina(n) {
     b1H = 
         putSubtitle(1) +
         putCaret() +
-            '<b>Perderes acesso</b> à tua conta de email'
+            'Se o email fosse falso, podias ter <b>descarregado um malware</b>'
         + putCaret() +
-            '<b>Receberes emails fraudulentos</b> com mais frequência';
+            'Se o email fosse falso, os <b>dados pessoais</b> da empresa <b>estariam em risco</b>';
     //COMO ME PREVENIR --------------------------------------
     b2H =
         putSubtitle(2) +
         putCaret() +
-            '<b>Evita abrir</b> mensagens de email <b>de remetentes desconhecidos</b>'
+            '<b>Evita abrir anexos</b> de remetentes desconhecidos'
         + putCaret() +
-            'Ter especial <b>cuidado com links e anexos</b>'
+            'Cria <b>filtros de spam</b> no teu email'
         + putCaret() +
-            '<b>Rectifica</b> cuidadosamente <b>o endereço</b> do remetente';
+            '<b>Repara na gramática</b>, por norma os emails fraudulentos cometem erros';
     //SABIAS QUE --------------------------------------------
     s1H =
-        putSabiasQue('"O Malware QBot, que se propaga através de emails spam, foi o que mais afetou o setor de cuidados de saúde em Portugal"','TVEuropa');
+        putSabiasQue('"Um famoso malware chamado \'ILOVEYOU\', foi partilhado mundialmente via email no ano 2000. Infectou mais de 10 milhões de utilizadores do sistema Windows"','Cybernews');
     s2H =
-        putSabiasQue('"Em 2023, 94% das organizações do mundo tiveram incidentes de segurança através de emails"','Digit.Fyi');
+        putSabiasQue('"Em 2022, a Universidade da Beira Interior foi vitima de um ataque de ransomware."','Fccn');
     //RESPOSTAS  --------------------------------------------
     if (n == 1) {
         mPH = 
             '<h1 class="right">\
-                Resististe ao ciberataque!\
+                Este email era confiável!\
             </h1>\
             <br><br>\
             <h3><center>\
-                Fizeste aquilo que era mais seguro\
+                O mais correto a fazer era clicar no\
             </center></h3>\
             <br>';
         points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
-                SOFRESTE UM CIBERATAQUE!\
+                Denunciaste injustamente!\
             </h1>\
             <br><br>\
             <h3><center>\
-                O mais seguro a fazer seria\
+                O mais correto a fazer era clicar no\
             </center></h3>\
             <br>';
     }
     mPH += 
         '<center><h4>\
         <font color=\"#0F3866\">\
-            Denunciar\
+            Botão de anexo\
         </font>\
         </center></h4>\
         <br><br>\
         <small><center>\
-            Acreditar neste tipo de mensagens leva ao pagamento de contraordenações não existentes.<br>Os cibercriminosos <b>ficam com todo o dinheiro sem deixar rastro.</b>\
+            No contexto de comunicações empresariais, o mais seguro é <b>verificar o endereço de email e o respetivo domínio associado.</b>\
         </center></small>';
 
     popup.innerHTML = mPH;
