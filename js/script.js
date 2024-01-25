@@ -104,13 +104,16 @@ function nextButton(n) {
 // Array aonde são guardados as especificações de cada
 // desafio
 let desafioArray = [
+    "<b>Pesquisas-te</b> por uma aplicação. <b>Em qual website vais entrar?</b>",
     "Seleciona as <b>2 palavras&#x2011;passe mais seguras </b> para o teu registo",
     "<b>Recebeste esta mensagem</b>! O que vais fazer?",
     "Se achares seguro, <b>faz login na rede social</b>",
-    "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
     "<b>Recebeste este email</b> 2 semanas depois de submeter o IRS. O que fazer?",
-    "<b>Fizeste uma pesquisa</b> por \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
-    "Foste a um café e precisas de consultar o email. <b>Conecta a uma rede.</b>"
+    "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
+    "Entraste nesta página de login. <b>Procede se achares seguro!</b>",
+    "<b>Fizeste a pesquisa</b> \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
+    "Foste a um café e precisas de consultar o email. <b>Conecta a uma rede!</b>",
+    "Recebeste mais um email. <b>Descarrega o anexo</b> se achares seguro!"
 ]
 
 // Variáveis para balão de ajuda
@@ -316,8 +319,8 @@ quebraA = [
                 A tua determinação!\
             </span>\
             <div class="img1">\
+                <img width="65" src="../assets/img/quebra6_3.png">\
                 <img width="60" src="../assets/img/quebra3.png">\
-                <img width="60" src="../assets/img/quebra3_2.png">\
             </div>',
 //LOGIN GEOMIC PARA USER ACCESS CONTROL
         '\
@@ -485,60 +488,56 @@ function submitSearch(n) {
     b1H = 
         putSubtitle(1) +
         putCaret() +
-            'O teu <b>dispositivo ficava infetado</b> com um malware'
+            'Ias infetar o teu <b>computador com um trojan</b>'
         + putCaret() +
-            '<b>Irias perder</b> os teus <b>documentos pessoais</b> para sempre';
+            'O teu sistema iria <b>contagiar outros dispositivos</b>';
     //COMO ME PREVENIR --------------------------------------    
     b2H = 
         putSubtitle(2) +
         putCaret() +
-            '<b>Contacta a instituição</b> através dos meios confiáveis'
+            'Mantém o <b>anti-vírus ativo</b>'
         + putCaret() +
-            '<b>Nunca cliques em links</b> enviados em mensagens suspeitas'
+            '<b>Evita abrir links</b> de fontes desconhecidas'
         + putCaret() +
-            '<b>Repara nos detalhes</b>, como erros ortográficos e pedidos com urgência';
+            '<b>Nunca desligues a firewall</b>, para que todo o tráfego de rede seja controlado';
     //SABIAS QUE --------------------------------------------
     s1H = 
-        putSabiasQue('"Em Portugal, de 2021 para 2022, as denúncias de cibercrime aumentaram 73,58%."', 'Ministério Público');
+        putSabiasQue('"Desde 2022, existem mais de 1590 domínios que replicaram os websites dos bancos líderes do Reino Unido."', 'ComputerWeekly');
 
     s2H = 
-        putSabiasQue('“\'Smishing\' é um tipo de ataque realizado através de SMS.”', 'IBM');
+        putSabiasQue('“\'Spoofing\' é uma técnica de fraude online que engana os utilizadores pela mera aparência do conteúdo apresentado”', 'IBM');
     //RESPOSTAS  --------------------------------------------
     if (n == 1) {
         mPH = 
             '<h1 class="right">\
-                Estás em segurança!\
+                Descarregaste uma aplicação fidedigna!\
             </h1>\
             <br><br>\
             <h3><center>\
-                Escolheste o mais correto a fazer\
+                Esse era o website mais seguro\
             </center></h3>\
             <br>';
         points++;
     } else {
         mPH = 
             '<h1 class="wrong">\
-                SOFRESTE UMA BURLA!\
+                DESCARREGASTE UM VÍRUS!\
             </h1>\
             <br><br>\
             <h3><center>\
-                O mais correto a fazer seria\
+                O website mais seguro seria\
             </center></h3>\
             <br>';
     }
     mPH += 
             '<center><h4>\
             <font color=\"#0F3866\">\
-                Denunciar\
-            </font>\
-            /\
-            <font color=\"#0F3866\">\
-                Bloquear\
+                Microsoft Apps\
             </font>\
             </center></h4>\
             <br><br>\
             <small><center>\
-                Ao <b>clicares no link</b>, estarias a correr o risco de <b>sofrer um ciberataque</b>.\
+                Todas as aplicações na Microsoft <b>foram previamente verificadas e testadas</b> pela própria.\
             </center></small>';
 
     popup.innerHTML = mPH;
@@ -813,6 +812,68 @@ function submitEng(n) {
         <small><center>\
             Interagir poderá levar à <b>perda de dinheiro e</b> de <b>informações pessoais.</b>\
         </center></small>';
+
+    popup.innerHTML = mPH;
+    showPopup();
+}
+
+function submitGeomic(n) {
+    let mPH = '';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            'Caso fosse um website falso, <b>terias dado os teus dados privados</b>'
+        + putCaret() +
+            'Caso fosse um website falso, <b>a rede da empresa ficaria comprometida</b>';
+    //COMO ME PREVENIR --------------------------------------    
+    b2H = 
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Verifica cuidadosamente o url</b> na barra de endereço'
+        + putCaret() +
+            '<b>Repara em erros</b> de design e de gramática'
+        + putCaret() +
+            'Sempre que possível, <b>confirma a política de privacidade do website</b>';
+    //SABIAS QUE --------------------------------------------
+    s1H = 
+        putSabiasQue('"Em 2007, ZeuS foi o primeiro trojan a ser descoberto. Era usado para o roubo de informação bancária."', 'SecurityIntelligence');
+
+    s2H = 
+        putSabiasQue('“70% das palavras-passe usadas em todo o mundo podiam ser decifradas em menos de um segundo”', 'Pplware, 2023');
+    //RESPOSTAS  --------------------------------------------
+    if (n == 1) {
+        mPH = 
+            '<h1 class="right">\
+                Esta plataforma é de confiança!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Podias confiar e carregar no botão\
+            </center></h3>\
+            <br>';
+        points++;
+    } else {
+        mPH = 
+            '<h1 class="wrong">\
+                ESTA PLATAFORMA É DE CONFIANÇA!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Podias confiar e carregar no botão\
+            </center></h3>\
+            <br>';
+    }
+    mPH += 
+            '<center><h4>\
+            <font color=\"#0F3866\">\
+                Login\
+            </font>\
+            </center></h4>\
+            <br><br>\
+            <small><center>\
+                Era possível confirmar a confiabilidade da plataforma <b>através do link.</b>\
+            </center></small>';
 
     popup.innerHTML = mPH;
     showPopup();
