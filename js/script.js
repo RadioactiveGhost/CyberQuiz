@@ -225,7 +225,9 @@ function startQuiz() {
         document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
         document.getElementById('uacaddress').style.display = 'none';
         document.getElementById('wifiNome').innerText = nomeP;
-        document.getElementById('searchuser').innerText = nomeP;
+        document.getElementById('searchuser').innerText = nomeP + " " + nomeS;
+        document.getElementById('locationuser').innerText = cidade;
+        document.getElementById('geouser').value = nomeP.toLowerCase() + "@globalvia.com";
     } else {
         window.alert("Hey");
     }
@@ -1161,4 +1163,4 @@ function debugging(n) {
     }
 }
 
-debugging(1);
+debugging(0);

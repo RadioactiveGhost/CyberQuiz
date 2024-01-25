@@ -138,6 +138,13 @@
   font-size: 16px;
   color: rgb(59, 59, 59);
 }
+#searchb #search #footer {
+  text-align: left;
+  margin-left: 20px;
+}
+#searchb #search #footer i {
+  color: var(--red);
+}
 @media only screen and (max-width: 1200px) {
   #searchb #searchbar {
     padding: 10px !important;
