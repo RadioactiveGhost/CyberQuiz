@@ -5,6 +5,11 @@
     transition-duration: 250ms;
 }
 
+@font-face {
+    font-family: 'ComfortaaSemiBold';
+    src: url(../assets/fonts/Comfortaa-SemiBold.ttf);
+}
+
 .background {
     border-radius: 0 0 10px 10px;
     display: flex;
@@ -1008,6 +1013,87 @@
                 }
             }
         }
+    }
+}
+
+/*-----   Geomic   ----------------------*/
+
+#geomicb {
+    width: 100%;
+    height: calc(100% - (var(--titlebarh) + 6px));
+    border-radius: 0 0 10px 10px;
+
+    #geomic {
+        h1 {
+            font-family: "ComfortaaSemiBold";
+            font-size: 60px;
+        }
+        p {
+            text-align: right;
+            margin-right: 35px;
+            font-size:20px;
+        }
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 300px;
+        padding:18px;
+        border-radius: 3px;
+        user-select: none;
+        margin: 0 auto;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: white;
+        
+        .geoinput {
+            position: relative;
+            height: 20px;
+            border-radius: 4px;
+            background-color: #a8d5bb;
+            width: max-content;
+            height: max-content;
+
+            > i {
+                margin-left:10px;
+                color: black;
+                font-size: 10px;
+            }
+
+            > input {
+                background: white;
+                outline: none;
+                border-radius: 0 4px 4px 0;
+                border: none;
+                border-left: 1px solid rgb(192, 192, 192);
+                padding: 4px 4px 4px 10px;
+                margin-left: 12px;
+                width: 250px;
+            }
+        }
+        > span {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            float: left;
+            color: var(--blue);
+            font-size: 13px;
+        }
+
+        > input {
+            float: right;
+            color: white;
+            background-color: var(--blue);
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            padding: 6px 10px;
+            margin-left: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
     }
 }
 

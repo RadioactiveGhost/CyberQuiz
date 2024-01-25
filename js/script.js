@@ -2,7 +2,7 @@
 let qArray = document.getElementsByClassName("qframe");
 
 // Variável que guarda a posição atual
-let positione = 0;
+let positione = 6;
 
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
