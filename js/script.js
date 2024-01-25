@@ -2,7 +2,7 @@
 let qArray = document.getElementsByClassName("qframe");
 
 // Variável que guarda a posição atual
-let positione = 6;
+let positione = 9;
 
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
@@ -1058,6 +1058,67 @@ function submitWifi(n) {
         <br><br>\
         <small><center>\
             Apesar de gastar dados móveis, <b>é mais seguro conectar a um hotspot pessoal</b> do que a uma rede Wi-Fi pública.\
+        </center></small>';
+
+    popup.innerHTML = mPH;
+    showPopup();
+}
+
+function submitEmailNatalina(n) {
+    let mPH = '';
+    //O QUE PODERIA TER ACONTECIDO --------------------------
+    b1H = 
+        putSubtitle(1) +
+        putCaret() +
+            '<b>Perderes acesso</b> à tua conta de email'
+        + putCaret() +
+            '<b>Receberes emails fraudulentos</b> com mais frequência';
+    //COMO ME PREVENIR --------------------------------------
+    b2H =
+        putSubtitle(2) +
+        putCaret() +
+            '<b>Evita abrir</b> mensagens de email <b>de remetentes desconhecidos</b>'
+        + putCaret() +
+            'Ter especial <b>cuidado com links e anexos</b>'
+        + putCaret() +
+            '<b>Rectifica</b> cuidadosamente <b>o endereço</b> do remetente';
+    //SABIAS QUE --------------------------------------------
+    s1H =
+        putSabiasQue('"O Malware QBot, que se propaga através de emails spam, foi o que mais afetou o setor de cuidados de saúde em Portugal"','TVEuropa');
+    s2H =
+        putSabiasQue('"Em 2023, 94% das organizações do mundo tiveram incidentes de segurança através de emails"','Digit.Fyi');
+    //RESPOSTAS  --------------------------------------------
+    if (n == 1) {
+        mPH = 
+            '<h1 class="right">\
+                Resististe ao ciberataque!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                Fizeste aquilo que era mais seguro\
+            </center></h3>\
+            <br>';
+        points++;
+    } else {
+        mPH = 
+            '<h1 class="wrong">\
+                SOFRESTE UM CIBERATAQUE!\
+            </h1>\
+            <br><br>\
+            <h3><center>\
+                O mais seguro a fazer seria\
+            </center></h3>\
+            <br>';
+    }
+    mPH += 
+        '<center><h4>\
+        <font color=\"#0F3866\">\
+            Denunciar\
+        </font>\
+        </center></h4>\
+        <br><br>\
+        <small><center>\
+            Acreditar neste tipo de mensagens leva ao pagamento de contraordenações não existentes.<br>Os cibercriminosos <b>ficam com todo o dinheiro sem deixar rastro.</b>\
         </center></small>';
 
     popup.innerHTML = mPH;

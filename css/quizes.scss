@@ -947,6 +947,17 @@
                 width: 120px;
             }
         }
+
+        .anexo {
+            position: relative;
+            margin: auto;
+            width: fit-content;
+            float: right;
+
+            img {
+                width: 35px;
+            }
+        }
         
         #emailimghover {
             border: 1px solid var(--surface2);

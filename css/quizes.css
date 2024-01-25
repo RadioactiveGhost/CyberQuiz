@@ -831,6 +831,16 @@
 #email .emailbrowser .imail img {
   width: 120px;
 }
+#email .emailbrowser .anexo {
+  position: relative;
+  margin: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+}
+#email .emailbrowser .anexo img {
+  width: 35px;
+}
 #email .emailbrowser #emailimghover {
   border: 1px solid var(--surface2);
   background: white;
