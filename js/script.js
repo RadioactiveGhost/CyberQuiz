@@ -48,7 +48,7 @@ function nextButton(n) {
     }
     if (n == 1 && buttonmode == 3) {
         if (positione == qArray.length-1) {
-            mostrarPontos();
+            mostrarPaginaPontos();
             return;
         }
         //quiz(1);
@@ -393,22 +393,31 @@ function esconderQuebra() {
 function changeBG(n) {
     if (n) {
         if (positione == 1) {
-            block.style.backgroundImage = "url(../assets/img/bg2_company.jpg)";
+            block.style.backgroundImage = "linear-gradient(120deg, #cc8073 0%, #89a7c3 40%, #96cd0f 75%)";
         }
         if (positione == 2) {
-            block.style.backgroundImage = "linear-gradient(120deg, #1e66f5 0%, rgb(241,205,1) 100%)";
+            block.style.backgroundImage = "url(../assets/img/bg2_company.jpg)";
         }
         if (positione == 3) {
-            block.style.backgroundImage = "linear-gradient(45deg, #0f3866 , #94e8bf)";
+            block.style.backgroundImage = "linear-gradient(120deg, #1e66f5 0%, rgb(241,205,1) 100%)";
         }
         if (positione == 4) {
             block.style.backgroundColor = "#0f3866";
         }
         if (positione == 5) {
-            block.style.backgroundImage = "url(../assets/img/bg7.jpg)";
+            block.style.backgroundImage = "linear-gradient(45deg, #0f3866, #94e8bf)";
         }
-        if (positione == 3) {
-            block.style.backgroundImage = "linear-gradient(45deg, #ffffff , #767676)";
+        if (positione == 6) {
+            block.style.backgroundImage = "linear-gradient(120deg, #858a86 0%, #453118 50%, #0a171d 100%)";
+        }
+        if (positione == 7) {
+            block.style.backgroundImage = "linear-gradient(45deg, #5b7377, #364e4e)";
+        }
+        if (positione == 8) {
+            block.style.backgroundImage = "linear-gradient(45deg, white 30%, #94e8bf 80%)";
+        }
+        if (positione == 9) {
+            block.style.backgroundColor = "#0f3866";
         }
     } else {
         block.style.backgroundImage = "none";
@@ -429,8 +438,8 @@ function esconderJanelaDesafio() {
     desafio.style.display = 'none';
 }
 
-function mostrarPontos() {
-    balao1.style.display = 'none';
+function mostrarPaginaPontos() {
+    /*balao1.style.display = 'none';
     balao2.style.display = 'none';
     sabias.style.display = 'none';
     popwindow.style.display = 'none';
@@ -448,7 +457,10 @@ function mostrarPontos() {
         mensagem += '<h2>Muitos Parabéns '+ nomeP +'!</h2><br>Superaste as espectativas!';
     }
     mensagem += '<br><br>Acertaste ' + points + ' de ' + qArray.length + ' perguntas.';
-    pontost.innerHTML = mensagem;
+    pontost.innerHTML = mensagem;*/
+    localStorage.setItem("pontos", points);
+    localStorage.setItem("total", qArray.length);
+    location.href = "final.html";
 }
 
 //1 para "o que poderia ter acontecido"
@@ -1163,4 +1175,4 @@ function debugging(n) {
     }
 }
 
-debugging(0);
+debugging(1);
