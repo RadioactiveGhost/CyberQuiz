@@ -10,16 +10,22 @@
     <title>CyberQuiz - Fim</title>
 </head>
 <body onload="processarPontos()" id="pontosBody">
+    <div class="capa">
+        <div class="logotipo">
+            <img width="200" src='../assets/img/transmontana.png'>
+        </div>
+    </div>
     <div id="pontosContainer">
         <div class="pontosFinal" id="pontosAval">
-            <h2>Resultado Final!</h2>
-            <p id="preencher"></p>
+            <h2 class="bigger">Resultado Final</h2>
+            <p id="preencher"class="little"></p>
             <br>
-            <input type="button" value="Continuar" class="popbutton" onclick="mostrarSugestoes()">
+            <input type="button" value="Finalizar" class="popbutton" onclick="mostrarSugestoes()">
         </div>
         <div class="pontosFinal" id="sugestoes">
-            <h2>Deixa uma sugestão!</h2>
-            <textarea name="sugestao" id="sugestao" cols="30" rows="10"></textarea>
+            <h3>Se tiveres, deixa aqui as tuas sugestões</h3>
+            <br>
+            <textarea name="sugestao" id="sugestao" cols="40" rows="10"></textarea>
             <br>
             <br>
             <input type="button" value="Enviar" class="popbutton" onclick="enviarSugestoes()">

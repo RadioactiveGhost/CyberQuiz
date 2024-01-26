@@ -9,22 +9,22 @@ function processarPontos() {
     let preencher = document.getElementById("preencher");
     preencher.innerHTML = 'TESTE'
     if (pontosLocal < 2) {
-        preencher.innerHTML = "DAMN";
+        preencher.innerHTML = "Muito Mau!";
     }
     else if (pontosLocal < 4) {
-        preencher.innerHTML = "Meh";
+        preencher.innerHTML = "Mau!";
     }
     else if (pontosLocal < 6) {
-        preencher.innerHTML = "Nice";
+        preencher.innerHTML = "Bom!";
     }
     else if (pontosLocal < 9) {
-        preencher.innerHTML = "Whoa!";
+        preencher.innerHTML = "Muito Bom!";
     }
     else {
-        preencher.innerHTML = "Congrats!!";
+        preencher.innerHTML = "Excelente!";
     }
     preencher.innerHTML+= "\
-    <br>Acertaste "+ pontosLocal +" de "+ totalLocal +" perguntas\
+    <br><br>Acertaste "+ pontosLocal +" de "+ totalLocal +" desafios\
     ";
 }
 
