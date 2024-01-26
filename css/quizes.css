@@ -821,6 +821,9 @@
 #email .emailbrowser .remetente:hover div {
   display: block;
 }
+#email .emailbrowser #natrem {
+  width: 200px;
+}
 #email .emailbrowser .emhover {
   position: absolute;
   top: 40px;

@@ -445,7 +445,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-    #popwindow, #desafio, #quebra, #pontos {
+    #popwindow, #desafio, #quebra, #pontos, #registo {
         padding: 20px 0px 30px 0px !important;
         border-radius: 0px !important;
         margin: auto !important;
@@ -562,8 +562,11 @@ body {
             text-transform: uppercase;
         }
     }
-    
-
+    @media only screen and (max-width: 700px) {
+        .title {
+            font-size: 50px !important;
+        }
+    }
 }
 
 
