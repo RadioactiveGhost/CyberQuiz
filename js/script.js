@@ -229,7 +229,7 @@ function startQuiz() {
         document.getElementById('locationuser').innerText = cidade;
         document.getElementById('geouser').value = nomeP.toLowerCase() + "@globalvia.com";
     } else {
-        window.alert("Hey");
+        window.alert("Tens de preencher os três campos!");
     }
 }
 
