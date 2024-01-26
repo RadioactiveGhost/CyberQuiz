@@ -2,7 +2,6 @@
 @import url(style.css);
 * {
   padding: 0px;
-  transition-duration: 250ms;
 }
 
 @font-face {
@@ -139,8 +138,9 @@
   color: rgb(59, 59, 59);
 }
 #searchb #search #footer {
-  text-align: left;
-  margin-left: 20px;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 12px;
 }
 #searchb #search #footer i {
   color: var(--red);
@@ -791,9 +791,6 @@
   padding: 8px 4px;
   font-size: 15px;
   height: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 3px grey;
 }
 #email .emailbrowser .emailheader {
   border-bottom: 1px solid rgba(128, 128, 128, 0.493);
@@ -820,6 +817,9 @@
 }
 #email .emailbrowser .remetente:hover div {
   display: block;
+}
+#email .emailbrowser #natrem {
+  width: 200px;
 }
 #email .emailbrowser .emhover {
   position: absolute;
