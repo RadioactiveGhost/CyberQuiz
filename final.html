@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/brands.css">
+    <link rel="stylesheet" href="assets/css/solid.css">
+    <title>CyberQuiz - Fim</title>
+</head>
+<body onload="processarPontos()" id="pontosBody">
+    <div id="pontosContainer">
+        <div class="pontosFinal" id="pontosAval">
+            <h2>Resultado Final!</h2>
+            <p id="preencher"></p>
+            <br>
+            <input type="button" value="Continuar" class="popbutton" onclick="mostrarSugestoes()">
+        </div>
+        <div class="pontosFinal" id="sugestoes">
+            <h2>Deixa uma sugestão!</h2>
+            <textarea name="sugestao" id="sugestao" cols="30" rows="10"></textarea>
+            <br>
+            <br>
+            <input type="button" value="Enviar" class="popbutton" onclick="enviarSugestoes()">
+        </div>
+    </div> 
+    <script src="js/pontos.js"></script>
+</body>
+</html>

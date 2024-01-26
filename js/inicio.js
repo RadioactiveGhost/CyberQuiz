@@ -1,6 +1,6 @@
 function iniciarCyberQuiz (){
 
-    location.href = 'index.html';
+    location.href = 'quiz.html';
 
 
 }

@@ -55,6 +55,7 @@ body #block {
   left: 0;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
+  background-size: 150%;
 }
 body #block.registo {
   background-image: url("../assets/img/corgo.jpg");
@@ -312,6 +313,29 @@ body .quiz, body #test {
 }
 body .quipdisabled {
   display: none !important;
+}
+body #pontosContainer {
+  width: 100vw;
+  height: 100vh;
+}
+body #pontosContainer .pontosFinal {
+  position: relative;
+  border-radius: 5px;
+  background-color: white;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 40px 80px;
+  box-shadow: 0 3px 3px var(--surface2);
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body #pontosContainer #sugestoes #sugestao {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border: 3px solid var(--p1);
 }
 @media only screen and (max-width: 700px) {
   body .quiz-area {
