@@ -56,6 +56,9 @@ body #block {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
   background-size: 150%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body #block.registo {
   background-image: url("../assets/img/corgo.jpg");
