@@ -68,32 +68,35 @@ body {
             background-size: 150%;
             background-blend-mode: color-burn;
 
-            input {
-                &[type="text"] {
-                    margin: 5px 10px;
-                    background: #96969656;
-                    border-top-left-radius: 5px;
-                    border-top-right-radius: 5px;
-                    border: none;
-                    border-bottom: 2px solid var(--surface2);
-                    padding: 6px 10px;
-                    text-align: center;
-                }
-                &[type="button"] {
-                    border: none;
-                    outline: none;
-                    width: 200px;
-                    background-color: rgb(230, 230, 230);
-                    height: 30px;
-                    border-radius: 10px;
-                    box-shadow: 0px 1px 5px rgba(88, 88, 88, 0.719);
-                    font-size: 16px;
+            form {
+                input {
+                    &[type="text"], &[type="email"] {
+                        margin: 5px auto;
+                        background: #96969656;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        outline: none;
+                        border: none;
+                        border-bottom: 2px solid var(--surface2);
+                        padding: 6px 10px;
+                        text-align: center;
+                    }
+                    &[type="submit"] {
+                        border: none;
+                        outline: none;
+                        width: 200px;
+                        background-color: rgb(230, 230, 230);
+                        height: 30px;
+                        border-radius: 10px;
+                        box-shadow: 0px 1px 5px rgba(88, 88, 88, 0.719);
+                        font-size: 16px;
 
-                    &:hover {
-                        cursor:pointer;
-                        background-color: #5ba08c;
-                        color: white;
-                        box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
+                        &:hover {
+                            cursor:pointer;
+                            background-color: #5ba08c;
+                            color: white;
+                            box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
+                        }
                     }
                 }
             }
@@ -435,12 +438,19 @@ body {
             }
         }
         #sugestoes {
-            #sugestao {
-                border-radius: 10px;
-                padding: 10px;
-                border: none;
-                outline: none;
-                border: 3px solid var(--p1);
+            #final {
+                #sugestao {
+                    border-radius: 10px;
+                    padding: 10px;
+                    border: none;
+                    outline: none;
+                    border: 3px solid var(--p1);
+                }
+    
+                .hidden{
+                    display: none !important;
+                }
+
             }
         }
     }

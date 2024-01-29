@@ -25,10 +25,27 @@
         <div class="pontosFinal" id="sugestoes">
             <h3>Se tiveres, deixa aqui as tuas sugestões</h3>
             <br>
-            <textarea name="sugestao" id="sugestao" cols="40" rows="10"></textarea>
-            <br>
-            <br>
-            <input type="button" value="Enviar" class="popbutton" onclick="enviarSugestoes()">
+            <form action="fin.php" method="post" id="final">
+                <textarea name="sugestao" id="sugestao" cols="40" rows="10" form="final"></textarea>
+                <br>
+                    <input type="text" id="nomeP" name="nomeP" class="hidden">
+                    <input type="text" id="nomeS" name="nomeS" class="hidden">
+                    <input type="text" id="email" name="email" class="hidden">
+                    <input type="text" id="tempo" name="tempo" class="hidden">
+                    <input type="text" id="pontos" name="pontos" class="hidden">
+                    <input type="text" id="nivel1" name="nivel1" class="hidden">
+                    <input type="text" id="nivel2" name="nivel2" class="hidden">
+                    <input type="text" id="nivel3" name="nivel3" class="hidden">
+                    <input type="text" id="nivel4" name="nivel4" class="hidden">
+                    <input type="text" id="nivel5" name="nivel5" class="hidden">
+                    <input type="text" id="nivel6" name="nivel6" class="hidden">
+                    <input type="text" id="nivel7" name="nivel7" class="hidden">
+                    <input type="text" id="nivel8" name="nivel8" class="hidden">
+                    <input type="text" id="nivel9" name="nivel9" class="hidden">
+                    <input type="text" id="nivel10" name="nivel10" class="hidden">
+                <br>
+                <input type="submit" value="Enviar" class="popbutton">
+            </form>
         </div>
     </div> 
     <script src="js/pontos.js"></script>

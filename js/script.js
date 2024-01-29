@@ -14,7 +14,7 @@ function onStart() {
     }
 }
 onStart()
-
+let start = Date.now();
 //
 let points = 0;
 
@@ -210,10 +210,12 @@ window.onclick = function(event) {
 // Variáveis de detalhes da pessoa
 let nomeP = '';
 let nomeS = '';
+let email = '';
 let cidade = '';
 function startQuiz() {
     nomeP = document.getElementById('nomeP').value;
     nomeS = document.getElementById('nomeS').value;
+    email = document.getElementById('email').value;
     cidade = document.getElementById('cidade').value;
     if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
         block.classList.toggle('registo');
@@ -438,27 +440,20 @@ function esconderJanelaDesafio() {
     desafio.style.display = 'none';
 }
 
+let pSize = qArray.length;
+let pontosArray = [];
+function contarPontos(n) {
+    pontosArray.push(n);
+}
+
 function mostrarPaginaPontos() {
-    /*balao1.style.display = 'none';
-    balao2.style.display = 'none';
-    sabias.style.display = 'none';
-    popwindow.style.display = 'none';
-    document.getElementById('quiz').style.display = 'none';
-    pontos.style.display = 'block';
-    let mensagem = '';
-    let percen = points/qArray.length;
-    if (percen < .5) {
-        mensagem += '<h2>Que pena!</h2><br>Não conseguiste acertar nem a metade!<br>Levavas umas lambadas.';
-    }
-    else if (percen < .9) {
-        mensagem += '<h2>Parabéns '+ nomeP +'!</h2><br>Conseguiste acertar à maior parte das perguntas!';
-    }
-    else {
-        mensagem += '<h2>Muitos Parabéns '+ nomeP +'!</h2><br>Superaste as espectativas!';
-    }
-    mensagem += '<br><br>Acertaste ' + points + ' de ' + qArray.length + ' perguntas.';
-    pontost.innerHTML = mensagem;*/
-    localStorage.setItem("pontos", points);
+    let tempoTotal = Date.now() - start;
+    localStorage.setItem("nomeP", nomeP);
+    localStorage.setItem("nomeS", nomeS);
+    localStorage.setItem("email", email);
+    localStorage.setItem("tempo", tempoTotal);
+    localStorage.setItem("pontos", points); 
+    localStorage.setItem("pontosArray", JSON.stringify(pontosArray));
     localStorage.setItem("total", qArray.length);
     location.href = "final.html";
 }
@@ -533,6 +528,7 @@ function submitSearch(n) {
                 Esse era o website mais seguro\
             </center></h3>\
             <br>';
+        contarPontos(1);
         points++;
     } else {
         mPH = 
@@ -544,6 +540,7 @@ function submitSearch(n) {
                 O website mais seguro seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -607,6 +604,8 @@ function submitPass(n) {
                     Escolheste as palavras-passe mais seguras\
                 </center></h3>\
                 <br>';
+                
+            contarPontos(1);
             points++;
         } else {
             mPH = 
@@ -618,6 +617,7 @@ function submitPass(n) {
                     As palavras-passe seguras são\
                 </center></h3>\
                 <br>';
+            contarPontos(0);
         }
         mPH += 
             '<center><h4>\
@@ -675,6 +675,7 @@ function submitSMS(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -685,6 +686,7 @@ function submitSMS(n) {
                 O mais correto a fazer seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -740,6 +742,7 @@ function submitSpoof(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -750,6 +753,7 @@ function submitSpoof(n) {
                 O mais correto a fazer era\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -803,6 +807,7 @@ function submitEng(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -813,6 +818,7 @@ function submitEng(n) {
                 A decisão mais acertada seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
         '<center><h4>\
@@ -869,6 +875,7 @@ function submitGeomic(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -879,6 +886,7 @@ function submitGeomic(n) {
                 Podias confiar e carregar no botão\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -930,6 +938,7 @@ function submitEmail(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -940,6 +949,7 @@ function submitEmail(n) {
                 O mais seguro a fazer seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
         '<center><h4>\
@@ -991,6 +1001,7 @@ function submitUAC(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -1001,6 +1012,7 @@ function submitUAC(n) {
                 O mais seguro a fazer perante a instalação era\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
 
     mPH += 
@@ -1053,6 +1065,7 @@ function submitWifi(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -1063,6 +1076,7 @@ function submitWifi(n) {
                 A rede mais segura para conectar seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
 
     mPH += 
@@ -1115,6 +1129,7 @@ function submitEmailNatalina(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -1125,6 +1140,7 @@ function submitEmailNatalina(n) {
                 O mais correto a fazer era clicar no\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
         '<center><h4>\
@@ -1174,5 +1190,6 @@ function debugging(n) {
         document.getElementById('debugNext').style.display = 'none';
     }
 }
-
+let x = document.cookie; 
+console.log(x);
 debugging(0);
