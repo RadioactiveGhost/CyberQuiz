@@ -500,7 +500,7 @@ function putSabiasQue(t1, t2){
         </span>\
         <br>\
         <span class="tquote">'
-        + t1 + '<br><i>- ' + t2 + '</i></span>';
+        + t1 + '<br><i>Fonte: ' + t2 + '</i></span>';
     
     return(texto);
 }
