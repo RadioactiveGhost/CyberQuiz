@@ -9,8 +9,7 @@ function processarPontos() {
     let preencher = document.getElementById("preencher");
     preencher.innerHTML = 'TESTE'
     if (pontosLocal < 2) {
-        preencher.innerHTML = "Muito Mau!<br>";
-        preencher.innerHTML += "<img class=\"emoji\" width=60 src=\"../assets/img/muitomau.png\">";
+        preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/muitomau.png\">";
     }
     else if (pontosLocal < 4) {
         preencher.innerHTML = "Mau!<br>";
