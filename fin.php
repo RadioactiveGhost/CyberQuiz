@@ -45,7 +45,6 @@ foreach ($niveis as $n) {
     $conn->query($sql);
 }
 
-
 $conn->close();
 header('Location: final.html');
 die();
