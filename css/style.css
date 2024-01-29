@@ -299,8 +299,8 @@ body .quiz-area #help {
   z-index: 2;
 }
 body .quiz-area #help #helpi {
-  color: var(--p1);
-  background-color: white;
+  color: white;
+  background-color: var(--p1);
   border-radius: 30px;
   padding: 5px 10px;
   font-size: 30px;
@@ -319,6 +319,23 @@ body .quiz-area #help #helpt {
   background-color: white;
   display: none;
   border: 1px solid var(--p1);
+}
+body .quiz-area #help .floating {
+  animation-name: floating;
+  animation-duration: 1s;
+  animation-iteration-count: 2;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, 0px);
+  }
 }
 body .quiz, body #test {
   text-align: center;

@@ -246,7 +246,7 @@ function showPopup() {
 
 }
 
-// /!\ O primeiro desafio não tem quebra /!\
+//PÁGINAS DE QUEBRA
 quebraA = [ 
 //PESQUISA DOWNLOAD PARA PASS REGISTO:
         '\
@@ -431,11 +431,15 @@ function mostrarJanelaDesafio (n){
     popwindow.style.display = 'none';
     block.style.display = 'block';
     desafio.style.display = 'block';
+    //Retira o botão ajuda
+    document.getElementById('help').style.display = "none";
 }
 
 function esconderJanelaDesafio() {
     block.style.display = 'none';
     desafio.style.display = 'none';
+    //Mostra o botão ajuda
+    document.getElementById('help').style.display = "block";
 }
 
 function mostrarPaginaPontos() {
@@ -463,6 +467,7 @@ function mostrarPaginaPontos() {
     location.href = "final.html";
 }
 
+//Função para inserir um dos títulos das páginas de info
 //1 para "o que poderia ter acontecido"
 //2 para "como me prevenir"
 function putSubtitle(n){
@@ -482,10 +487,12 @@ function putSubtitle(n){
     return(texto);
 }
 
+//Função para inserir bullets
 function putCaret(){
     return('<br><i class="fa-solid fa-caret-right"></i>');
 }
 
+//Função para inserir "sabias que"
 function putSabiasQue(t1, t2){
     let texto =
         '<span class="squote">\
@@ -497,6 +504,8 @@ function putSabiasQue(t1, t2){
     
     return(texto);
 }
+
+//FUNÇÕES COM INFORMAÇÕES DOS NÍVEIS
 
 function submitSearch(n) {
     let mPH = '';
@@ -1175,4 +1184,4 @@ function debugging(n) {
     }
 }
 
-debugging(0);
+debugging(1);

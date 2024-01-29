@@ -348,9 +348,10 @@ body {
             bottom: 50px;
             left: 50px;
             z-index: 2;
+
             #helpi {
-                color: var(--p1);
-                background-color: white;
+                color: white;
+                background-color: var(--p1);
                 border-radius: 30px;
                 padding: 5px 10px;
                 font-size: 30px;
@@ -360,6 +361,7 @@ body {
                     cursor: help;
                 }
             }
+
             #helpt {
                 position: absolute;
                 bottom: 60px;
@@ -370,6 +372,18 @@ body {
                 background-color: white;
                 display: none;
                 border: 1px solid var(--p1);
+            }
+
+            .floating{
+                animation-name: floating;
+                animation-duration: 1s;
+                animation-iteration-count: 2;
+                animation-timing-function: ease-in-out;
+            }
+            @keyframes floating {
+                from { transform: translate(0,  0px); }
+                65%  { transform: translate(0, 15px); }
+                to   { transform: translate(0, -0px); }  
             }
         }
     }
