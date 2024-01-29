@@ -164,13 +164,19 @@ body {
         }
 
         input{
-            width: 300px;
-            background-color: var(--p1);
-            box-shadow: inset 0 0 0 2px #13437a;
-            color: white;
+            border: none;
+            outline: none;
+            width: 200px;
+            background-color: rgb(230, 230, 230);
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0px 1px 5px rgba(88, 88, 88, 0.719);
+            font-size: 16px;
 
             &:hover:not([disabled]) {
-                background-color: #5ba08c;
+                cursor:pointer;
+                background-color: var(--p1) !important;
                 color: white;
                 box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
             }
@@ -200,7 +206,7 @@ body {
                 font-weight: bolder;
                 letter-spacing: -2px;
                 margin-top: -.3rem;
-                margin-bottom: 0.3rem;
+                margin-bottom: 0.1rem;
                 color: var(--p1);
                 text-align: center;
                 text-shadow: 2px 2px 2px var(--p2), 5px 5px 5px var(--p2);
@@ -239,7 +245,7 @@ body {
 
         &:hover:not([disabled]) {
             cursor:pointer;
-            background-color: var(--p2) !important;
+            background-color: var(--p1) !important;
             color: white;
             box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
         }
@@ -388,6 +394,20 @@ body {
         }
     }
 
+    .helpjanela {
+
+            position: relative;
+            align-self: center;
+
+        i {
+            color: var(--p2);
+            background-color: var(--p1);
+            border-radius: 30px;
+            padding: 4px 4px;
+            font-size: 20px;
+        }
+    }
+
     .quiz, #test {
         text-align: center;
         height: 100%;
@@ -512,8 +532,8 @@ body {
     }
 
     .popbutton {
-        width: fit-content !important;
-        padding: 20px !important;
+        width: 120px !important;
+        padding: 15px !important;
     }
     #sabiasque {
         width: 30% !important;
@@ -587,7 +607,7 @@ body {
             font-family:'Raleway',sans-serif;
             line-height: auto;
             text-transform: uppercase;
-            padding-bottom: 70px;
+            padding-bottom: 30px;
         }
 
         input{
@@ -604,13 +624,20 @@ body {
             }
         }
 
-        .info{
-            color: black;
-            font-size: 10px;
+        .tempo{
+            color: var(--p1);
+            font-size: 15px;
             font-weight:light;
             font-family:'Raleway',sans-serif;
             line-height: auto;
-            text-transform: uppercase;
+        }
+
+        .info{
+            color: var(--p1);
+            font-size: 15px;
+            font-weight:light;
+            font-family:'Raleway',sans-serif;
+            line-height: auto;
         }
     }
     @media only screen and (max-width: 700px) {
