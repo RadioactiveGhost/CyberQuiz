@@ -206,7 +206,7 @@ body .popbutton {
 }
 body .popbutton:hover:not([disabled]) {
   cursor: pointer;
-  background-color: #5ba08c;
+  background-color: var(--p2) !important;
   color: white;
   box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
 }
