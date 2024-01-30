@@ -636,4 +636,12 @@ body footer img {
   .finale .subtitle {
     font-size: 25px !important;
   }
+}
+
+.emoji {
+  margin-left: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px !important;
+  width: 340px !important;
 }/*# sourceMappingURL=style.css.map */
