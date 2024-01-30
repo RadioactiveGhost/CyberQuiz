@@ -46,6 +46,6 @@ foreach ($niveis as $n) {
 }
 
 $conn->close();
-header('Location: final.html');
+header('Location: finale.html');
 die();
 ?>
