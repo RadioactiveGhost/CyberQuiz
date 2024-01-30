@@ -40,7 +40,7 @@ if ($conn->query($sql) === TRUE ) {
 $lastid = $conn->insert_id;
 $i = 1;
 foreach ($niveis as $n) {
-    $sql = "INSERT INTO utilizadores_nivel (NUM_NIVEL, VALOR_NIVEL, ID_UTILIZADOR) VALUES ('$i', '$n', '$lastid')";
+    $sql = "INSERT INTO utilizadores_niveis (NUM_NIVEL, VALOR_NIVEL, ID_UTILIZADOR) VALUES ('$i', '$n', '$lastid')";
     $i++;
     $conn->query($sql);
 }
