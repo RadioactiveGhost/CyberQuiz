@@ -113,9 +113,11 @@ body {
     #registo {
         text-align: center;
         border:4px solid var(--p1);
+        padding-left: 10px;
+        padding-right: 10px;
 
         .info{
-            color: var(--p1);
+            color: black;
             font-size: 20px;
             font-weight: 900;
             font-family:'Raleway',sans-serif;
@@ -145,6 +147,33 @@ body {
             
         }
 
+        .wrapper{
+            position: relative !important;
+            padding-top: 50px;
+
+            .icon{
+                display: inline-block;
+                
+                i {
+                    color: white;
+                    background-color: var(--p1);
+                    border-radius: 30px;
+                    padding: 4px 4px;
+                    font-size: 15px;
+                }
+            }
+
+            .text{
+                display: inline-block;
+                color: var(--p1);
+                font-size: 15px;
+                font-weight: 300;
+                font-family:'Raleway',sans-serif;
+                line-height: auto;
+                text-align: center;
+            }
+
+        }
     }
     
     #desafio, #quebra, #pontos {
@@ -394,20 +423,6 @@ body {
         }
     }
 
-    .helpjanela {
-
-            position: relative;
-            align-self: center;
-
-        i {
-            color: var(--p2);
-            background-color: var(--p1);
-            border-radius: 30px;
-            padding: 4px 4px;
-            font-size: 20px;
-        }
-    }
-
     .quiz, #test {
         text-align: center;
         height: 100%;
@@ -600,7 +615,6 @@ body {
 
     .body{
         position: relative;
-        padding-top: 40px;
         text-align: center;
 
         .little{
@@ -610,16 +624,17 @@ body {
             font-family:'Raleway',sans-serif;
             line-height: auto;
             text-transform: uppercase;
+            padding-bottom: 60px;
         }
 
-        .bigger{
+        .bigger{ //not sure se está a ser usado, mas acho que nao
             color: black;
             font-size: 30px;
             font-weight: 800;
             font-family:'Raleway',sans-serif;
             line-height: auto;
             text-transform: uppercase;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
         }
 
         input{
@@ -637,11 +652,13 @@ body {
         }
 
         .tempo{
-            color: var(--p1);
-            font-size: 15px;
+            color: rgb(61, 61, 61);
+            font-size: 13px;
             font-weight:light;
             font-family:'Raleway',sans-serif;
             line-height: auto;
+            text-transform: uppercase;
+            padding-top: 10px;
         }
 
         .info{
@@ -650,11 +667,18 @@ body {
             font-weight:light;
             font-family:'Raleway',sans-serif;
             line-height: auto;
+            padding-top: 7px;
         }
     }
     @media only screen and (max-width: 700px) {
         .title {
-            font-size: 50px !important;
+            font-size: 65px !important;
+        }
+        .little{
+            font-size: 14px !important;
+        }
+        input{
+            width: 250px !important;
         }
     }
 }
@@ -673,13 +697,14 @@ body {
         padding-bottom: 10px;
 
         img{
-            width: 15%;
+            width: 180px;
         }
 
     }
 
     .title{
-        font-size: 80px;
+        padding-top: 40px;
+        font-size: 90px;
         text-align: center;
         font-weight: bolder;
         text-transform: uppercase;
@@ -699,7 +724,17 @@ body {
         font-family:'Raleway',sans-serif;
         line-height: auto;
         text-transform: uppercase;
-        padding-top: 10px;
+        padding-top: 20px;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .title {
+            font-size: 65px !important;
+        }
+        .subtitle{
+            font-size: 25px !important;
+        }
+
     }
 }
 

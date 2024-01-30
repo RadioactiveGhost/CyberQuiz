@@ -105,9 +105,11 @@ body #popwindow, body #sabias, body #desafio, body #registo, body #quebra, body 
 body #registo {
   text-align: center;
   border: 4px solid var(--p1);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 body #registo .info {
-  color: var(--p1);
+  color: black;
   font-size: 20px;
   font-weight: 900;
   font-family: "Raleway", sans-serif;
@@ -129,6 +131,29 @@ body #registo input[type=text] {
 }
 body #registo input[type=text]:hover, body #registo input[type=text]:focus {
   border-bottom: 2px solid var(--p2) !important;
+}
+body #registo .wrapper {
+  position: relative !important;
+  padding-top: 50px;
+}
+body #registo .wrapper .icon {
+  display: inline-block;
+}
+body #registo .wrapper .icon i {
+  color: white;
+  background-color: var(--p1);
+  border-radius: 30px;
+  padding: 4px 4px;
+  font-size: 15px;
+}
+body #registo .wrapper .text {
+  display: inline-block;
+  color: var(--p1);
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  line-height: auto;
+  text-align: center;
 }
 body #desafio, body #quebra, body #pontos {
   text-align: center;
@@ -343,17 +368,6 @@ body .quiz-area #help .floating {
     transform: translate(0, 0px);
   }
 }
-body .helpjanela {
-  position: relative;
-  align-self: center;
-}
-body .helpjanela i {
-  color: var(--p2);
-  background-color: var(--p1);
-  border-radius: 30px;
-  padding: 4px 4px;
-  font-size: 20px;
-}
 body .quiz, body #test {
   text-align: center;
   height: 100%;
@@ -517,7 +531,6 @@ body footer img {
 }
 .capa .body {
   position: relative;
-  padding-top: 40px;
   text-align: center;
 }
 .capa .body .little {
@@ -527,6 +540,7 @@ body footer img {
   font-family: "Raleway", sans-serif;
   line-height: auto;
   text-transform: uppercase;
+  padding-bottom: 60px;
 }
 .capa .body .bigger {
   color: black;
@@ -535,7 +549,7 @@ body footer img {
   font-family: "Raleway", sans-serif;
   line-height: auto;
   text-transform: uppercase;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 .capa .body input {
   width: 400px;
@@ -550,11 +564,13 @@ body footer img {
   box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
 }
 .capa .body .tempo {
-  color: var(--p1);
-  font-size: 15px;
+  color: rgb(61, 61, 61);
+  font-size: 13px;
   font-weight: light;
   font-family: "Raleway", sans-serif;
   line-height: auto;
+  text-transform: uppercase;
+  padding-top: 10px;
 }
 .capa .body .info {
   color: var(--p1);
@@ -562,10 +578,17 @@ body footer img {
   font-weight: light;
   font-family: "Raleway", sans-serif;
   line-height: auto;
+  padding-top: 7px;
 }
 @media only screen and (max-width: 700px) {
   .capa .title {
-    font-size: 50px !important;
+    font-size: 65px !important;
+  }
+  .capa .little {
+    font-size: 14px !important;
+  }
+  .capa input {
+    width: 250px !important;
   }
 }
 
@@ -581,10 +604,11 @@ body footer img {
   padding-bottom: 10px;
 }
 .finale .imagefinale img {
-  width: 15%;
+  width: 180px;
 }
 .finale .title {
-  font-size: 80px;
+  padding-top: 40px;
+  font-size: 90px;
   text-align: center;
   font-weight: bolder;
   text-transform: uppercase;
@@ -603,5 +627,13 @@ body footer img {
   font-family: "Raleway", sans-serif;
   line-height: auto;
   text-transform: uppercase;
-  padding-top: 10px;
+  padding-top: 20px;
+}
+@media only screen and (max-width: 700px) {
+  .finale .title {
+    font-size: 65px !important;
+  }
+  .finale .subtitle {
+    font-size: 25px !important;
+  }
 }/*# sourceMappingURL=style.css.map */
