@@ -12,24 +12,20 @@ function processarPontos() {
         preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/muitomau.png\">";
     }
     else if (pontosLocal < 4) {
-        preencher.innerHTML = "Mau!<br>";
-        preencher.innerHTML += "<img class=\"emoji\" width=60 src=\"../assets/img/mau.png\">";
+        preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/mau.png\">";
     }
     else if (pontosLocal < 6) {
-        preencher.innerHTML = "Bom!<br>";
-        preencher.innerHTML += "<img class=\"emoji\" width=60 src=\"../assets/img/bom.png\">";
+        preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/bom.png\">";
     }
     else if (pontosLocal < 9) {
-        preencher.innerHTML = "Muito Bom!<br>";
-        preencher.innerHTML += "<img class=\"emoji\" width=60 src=\"../assets/img/muitobom.png\">";
+        preencher.innerHTML = "<img class=\"emoji\" width=25% src=\"../assets/img/muitobom.png\">";
     }
     else {
-        preencher.innerHTML = "Excelente!<br>";
-        preencher.innerHTML += "<img class=\"emoji\" width=60 src=\"../assets/img/excelente.png\">";
+        preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/excelente.png\">";
     }
-    preencher.innerHTML+= "\
-    <br><br>Acertaste "+ pontosLocal +" de "+ totalLocal +" desafios\
-    ";
+    preencher.innerHTML+= "<h2>\
+    <span style=\"font-weight: 900\"><font color=\"#0F3866\">"+ pontosLocal +"</font></span>/"+ totalLocal +"\
+    </h2><br>";
 }
 
 function mostrarSugestoes() {

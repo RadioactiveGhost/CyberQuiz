@@ -567,4 +567,41 @@ body footer img {
   .capa .title {
     font-size: 50px !important;
   }
+}
+
+.finale .logotipo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: var(--p1);
+}
+.finale .imagefinale {
+  position: relative;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.finale .imagefinale img {
+  width: 15%;
+}
+.finale .title {
+  font-size: 80px;
+  text-align: center;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: "Segoe UI";
+  letter-spacing: -2px;
+  margin-top: -0.2rem;
+  margin-bottom: 0.3rem;
+  color: var(--p1);
+  text-shadow: 2px 2px 2px var(--p2), 5px 5px 5px var(--p2);
+  mix-blend-mode: multiply;
+}
+.finale .subtitle {
+  color: black;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  line-height: auto;
+  text-transform: uppercase;
+  padding-top: 10px;
 }/*# sourceMappingURL=style.css.map */
