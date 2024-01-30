@@ -5,25 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='css/admin.css'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <title>CyberQuiz - Resultados</title>
 </head>
-<body>
-
 <?php
 include 'credenciais.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    echo "<header id='header' class='header' style='background: red !important'>error</header>";
+    echo "<header id='headere'>Erro na ligação à base de dados</header>";
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "<header id='header' class='header' style='background: green !important; color: green !important'>success</header>";
-    echo "<h2>CyberQuiz - Participantes</h2>";
-    contarParticipantes($conn);
-    contarMediaTempo($conn);
-    mostrarBD($conn);
+    echo "<header id='headerc'>Ligação à base de dados efetuada com sucesso</header>";
 }
 
 function mostrarBD($conn) {
@@ -59,7 +53,7 @@ function mostrarBD($conn) {
                 echo "Tempo a mais";
             }
             echo "</td><td>" . $row["SUGESTAO"] . "</td><td>" . $row["RESULTADO_FINAL"] . "</td>";
-            $sql2 = "SELECT  	ID_UTILIZADOR_NIVEL, VALOR_NIVEL, ID_UTILIZADOR FROM utilizadores_nivel WHERE ID_UTILIZADOR=" . $row["ID_UTILIZADOR"];
+            $sql2 = "SELECT  	ID_UTILIZADOR_NIVEL, VALOR_NIVEL, ID_UTILIZADOR FROM utilizadores_niveis WHERE ID_UTILIZADOR=" . $row["ID_UTILIZADOR"];
             $result2 = $conn->query($sql2);
             if ($result2->num_rows > 0) {
                 while($row2 = $result2->fetch_assoc()) {
@@ -73,12 +67,13 @@ function mostrarBD($conn) {
         echo "0 results";
     }
 }
-
+$quant = 0;
 function contarParticipantes($conn) {
     $sql = "SELECT COUNT(*) AS TOTAL FROM UTILIZADORES";
     $result = $conn->query($sql);
     $total = $result->fetch_assoc();
-    echo "<h3>Número total de Participantes: ". $total['TOTAL'] . "</h3>";
+    $quant = $total['TOTAL'];
+    echo $quant;
 }
 
 function contarMediaTempo($conn) {
@@ -86,7 +81,7 @@ function contarMediaTempo($conn) {
     $result = $conn->query($sql);
     $total = $result->fetch_assoc();
     $time = round($total['TOTAL']/1000);
-    echo "<h3>Tempo médio por quiz: ";
+    
     if ( $time < 60) {
         echo $time . "s";
     } else if ($time < 3600) {
@@ -107,47 +102,108 @@ function contarMediaTempo($conn) {
     } else {
         echo "Tempo a mais";
     }
-    echo "</h3>";
 }
-//$conn->close();
 
-?> 
+?>
+<body>
+<h2>CyberQuiz - Participantes</h2>
+<div id ="charts">
+    <div>
+        <canvas id="taxaGeral"></canvas>
+    </div>
+    <div>
+        <canvas id="taxaNivel"></canvas>
+    </div>
+</div>
+<div id="contagens">
+    <div>
+        <p>Número total de Participantes:<br></p>
+        <?php
+        contarParticipantes($conn); ?>
+    </div><div>
+        <p>Tempo médio por quiz<br></p>
+        <?php contarMediaTempo($conn);
+        ?>
+    </div>
+</div>
 
-<div style="max-width:70%;margin:auto;">
-    <canvas id="myChart"></canvas>
+<div id="table">
+    <?php mostrarBD($conn);?>
 </div>
 
 <script>
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('taxaNivel');
+const ctx2 = document.getElementById('taxaGeral');
 new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Nivel 1 - Pesquisa', 'Nivel 2 - Password', 'Nivel 3 - SMS', 'Nivel 4 - Login Rede Social', 'Nivel 5 - Email Finanças', 'Nivel 6 - Whatsapp', 'Nivel 7 - Geomic', 'Nivel 8 - UAC', 'Nivel 9 - Wi-Fi', 'Nivel 10 - Email Natalina'],
         datasets: [{
-            label: '#% de aprovação',
-            data: [
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=1";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=2";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=3";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=4";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=5";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=6";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=7";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=8";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=9";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
-                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM UTILIZADORES_NIVEL WHERE NUM_NIVEL=10";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                label: '% de aprovação',
+                data: [
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=1";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=2";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=3";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=4";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=5";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=6";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=7";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=8";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=9";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
+                <?php $sql = "SELECT AVG(VALOR_NIVEL) AS TOTAL FROM utilizadores_niveis WHERE NUM_NIVEL=10";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>*100,
             ],
-        borderWidth: 1
+            backgroundColor: ['#CD5C5Cbf', '#ADD8E6bf', '#98FB98bf', '#4682B4bf', '#0f3866bf', '#c0c0c0bf', '#696969bf', '#87CEEBbf', '#94e8bfbf', '#FFD700bf'],
+            barPercentage: 1
         }]
     },
     options: {
         plugins: {
             legend: {
-                position: 'top',
+                display: false,
             },
             title: {
                 display: true,
-                text: 'Taxa de Aprovação por Nível'
+                text: 'Taxa de Aprovação por Nível',
+                font: {
+                    size: 24
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+            }
+        }
+    }
+});
+
+new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ['Muito Mau', 'Mau', 'Bom', 'Muito Bom', 'Excelente'],
+        datasets: [{
+                label: '# de aprovação',
+                data: [
+                <?php $sql = "SELECT COUNT(RESULTADO_FINAL) AS TOTAL FROM UTILIZADORES WHERE RESULTADO_FINAL=1 OR RESULTADO_FINAL=2";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>,
+                <?php $sql = "SELECT COUNT(RESULTADO_FINAL) AS TOTAL FROM UTILIZADORES WHERE RESULTADO_FINAL=3 OR RESULTADO_FINAL=4";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>,
+                <?php $sql = "SELECT COUNT(RESULTADO_FINAL) AS TOTAL FROM UTILIZADORES WHERE RESULTADO_FINAL=5 OR RESULTADO_FINAL=6";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>,
+                <?php $sql = "SELECT COUNT(RESULTADO_FINAL) AS TOTAL FROM UTILIZADORES WHERE RESULTADO_FINAL=7 OR RESULTADO_FINAL=8";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>,
+                <?php $sql = "SELECT COUNT(RESULTADO_FINAL) AS TOTAL FROM UTILIZADORES WHERE RESULTADO_FINAL=9 OR RESULTADO_FINAL=10";$result = $conn->query($sql);$total = $result->fetch_assoc();echo $total['TOTAL']?>,
+            ],
+            backgroundColor: ['red','orange','yellow','lightgreen','green']
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false,
+            },
+            title: {
+                display: true,
+                text: 'Taxa de Aprovação Geral',
+                font: {
+                    size: 24
+                }
             }
         },
         scales: {
@@ -158,6 +214,8 @@ new Chart(ctx, {
     }
 });
 </script>
-
+<footer>
+    <img src="assets/img/transmontana.png" alt="Globalvia">
+</footer>
 </body>
 </html>
