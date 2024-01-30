@@ -217,7 +217,7 @@ function startQuiz() {
     nomeS = document.getElementById('nomeS').value;
     email = document.getElementById('email').value;
     cidade = document.getElementById('cidade').value;
-    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
+    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(email == '' || email == null) &&!(cidade == '' || cidade == null)) {
         block.classList.toggle('registo');
         block.style.display = 'none';
         registo.style.display = 'none';
@@ -231,7 +231,7 @@ function startQuiz() {
         document.getElementById('locationuser').innerText = cidade;
         document.getElementById('geouser').value = nomeP.toLowerCase() + "@globalvia.com";
     } else {
-        window.alert("Tens de preencher os três campos!");
+        window.alert("Tens de preencher os quatro campos!");
     }
 }
 
@@ -1201,4 +1201,4 @@ function debugging(n) {
 }
 let x = document.cookie; 
 console.log(x);
-debugging(1);
+debugging(0);

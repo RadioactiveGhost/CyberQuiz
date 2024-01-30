@@ -61,24 +61,19 @@ body #block {
           user-select: none;
 }
 body #block.registo {
-  background-image: url("../assets/img/corgo.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 150%;
-  background-blend-mode: color-burn;
+  background-color: var(--p1);
 }
-body #block.registo form input[type=text], body #block.registo form input[type=email] {
-  margin: 5px auto;
+body #block.registo input[type=text], body #block.registo input[type=email] {
+  margin: 5px 10px;
   background: rgba(150, 150, 150, 0.337254902);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  outline: none;
   border: none;
   border-bottom: 2px solid var(--surface2);
   padding: 6px 10px;
   text-align: center;
 }
-body #block.registo form input[type=submit] {
+body #block.registo input[type=submit] {
   border: none;
   outline: none;
   width: 200px;
@@ -88,7 +83,7 @@ body #block.registo form input[type=submit] {
   box-shadow: 0px 1px 5px rgba(88, 88, 88, 0.719);
   font-size: 16px;
 }
-body #block.registo form input[type=submit]:hover {
+body #block.registo input[type=submit]:hover {
   cursor: pointer;
   background-color: #5ba08c;
   color: white;
@@ -122,15 +117,16 @@ body #registo .info {
 body #registo .inputTitle {
   clear: both;
 }
-body #registo input[type=text] {
+body #registo input[type=text], body #registo input[type=email] {
   width: 40%;
   border: none;
   outline: none;
   height: 20px;
   border-radius: 10px;
   border-bottom: 2px solid var(--p1) !important;
+  margin: 10px auto !important;
 }
-body #registo input[type=text]:hover, body #registo input[type=text]:focus {
+body #registo input[type=text]:hover, body #registo input[type=text]:focus, body #registo input[type=email]:hover, body #registo input[type=email]:focus {
   border-bottom: 2px solid var(--p2) !important;
 }
 body #registo .wrapper {
@@ -425,20 +421,17 @@ body .final input:hover:not([disabled]) {
   color: var(--p2);
   box-shadow: 0px 2px 8px rgba(88, 88, 88, 0.911);
 }
-body .final #sugestoes #final p {
+body .final #sugestoes p {
   margin-top: 50px;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
-body .final #sugestoes #final #sugestao {
+body .final #sugestoes #sugestao {
   border-radius: 10px;
   padding: 15px;
   border: none;
   outline: none;
   border: 3px solid var(--p1);
-}
-body .final #sugestoes #final .hidden {
-  display: none !important;
 }
 @media only screen and (max-width: 700px) {
   body .quiz-area {
