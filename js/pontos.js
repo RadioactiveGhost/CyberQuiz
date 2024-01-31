@@ -64,3 +64,7 @@ function mostrarSugestoes() {
     pointsBox.style.display = 'none';
     suggestionBox.style.display = 'block';
 }
+
+if (localStorage.getItem('finished') === null) {
+    window.location.replace('index.html');
+}

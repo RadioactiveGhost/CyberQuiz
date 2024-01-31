@@ -39,7 +39,7 @@ function changeQuiz() {
 // 0 Passa de Pop para Balões/Sabias que, 1 passa do anterior para vazio
 let buttonmode = 0;
 function nextButton(n) {
-    console.log(buttonmode);
+    //console.log(buttonmode);
     if (n == 0 && buttonmode != 0) {
         buttonmode--;
     }
@@ -48,6 +48,7 @@ function nextButton(n) {
     }
     if (n == 1 && buttonmode == 3) {
         if (positione == qArray.length-1) {
+            localStorage.setItem('finished', 'set');
             mostrarPaginaPontos();
             return;
         }
@@ -146,6 +147,7 @@ function hover(s1, s2) {
 hover("download", "downloadhover");
 hover("emailimg", "emailimghover");
 hover("atrem", "emailhover");
+hover("emailimgnat", "anexohover");
 hover("natrem", "natalinahover");
 hover("helpi", "helpt");
 
@@ -219,7 +221,6 @@ function startQuiz() {
     cidade = document.getElementById('cidade').value;
     if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(email == '' || email == null) &&!(cidade == '' || cidade == null)) {
         block.classList.toggle('registo');
-        block.style.display = 'none';
         registo.style.display = 'none';
         document.getElementById("login").value = nomeP;
         document.getElementById('engNome').innerText = nomeP;
@@ -230,6 +231,7 @@ function startQuiz() {
         document.getElementById('searchuser').innerText = nomeP + " " + nomeS;
         document.getElementById('locationuser').innerText = cidade;
         document.getElementById('geouser').value = nomeP.toLowerCase() + "@globalvia.com";
+        mostrarJanelaDesafio (0);
     } else {
         window.alert("Tens de preencher os quatro campos!");
     }
@@ -1178,12 +1180,15 @@ function uacdetalhes() {
 
 // Função para mostrar opções extra nas ligações Wi-Fi
 function showWifi(n) {
+    let wifiEntries = document.getElementsByClassName('wifientry');
     let wifiExtras = document.getElementsByClassName('extra');
     for (i = 0; i < wifiExtras.length; i++) {
         if (i == n) {
+            wifiEntries[i].classList.add('selected');
             wifiExtras[i].style.display = 'block';
         } else {
             wifiExtras[i].style.display = 'none';
+            wifiEntries[i].classList.remove('selected');
         }
     }
 }
@@ -1195,10 +1200,7 @@ function debugging(n) {
         mostrarJanelaDesafio(positione);
     }
     else {
-        document.getElementById('debugPrev').style.display = 'none';
         document.getElementById('debugNext').style.display = 'none';
     }
 }
-let x = document.cookie; 
-console.log(x);
-debugging(0);
+debugging(1);

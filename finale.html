@@ -30,6 +30,13 @@
         
 
     </div>
-    <script src="js/pontos.js"></script>
+    <script>
+        if (localStorage.getItem('finished') === null) {
+            window.location.replace('index.html');
+        } else {
+            localStorage.removeItem('finished');
+        }
+
+    </script>
 </body>
 </html>

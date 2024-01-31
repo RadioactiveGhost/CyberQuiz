@@ -21,6 +21,26 @@ body {
             background: rgb(32, 177, 32) !important;
         }
     }
+    #warning {
+        margin: 10px auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 1px #94e8bf;
+        background-color: gold;
+        width:max-content;
+        padding: 10px;
+        display: none;
+        animation: warning 3s infinite;
+        &:hover {
+            background-color: orange;
+            cursor: pointer;
+        }
+
+        @keyframes warning {
+            0% {background-color: yellow}
+            50% {background-color: orange; color:white}
+            100% {background-color: yellow}
+        }
+    }
     h2 {
         margin: auto;
         text-align: center;
@@ -59,6 +79,7 @@ body {
             font-weight: bolder;
             p {
                 font-size: 30px;
+                color: black;
             }
         }
     }
@@ -70,8 +91,27 @@ body {
             border-collapse: collapse;
             border-radius: 20px;
             overflow: hidden;
+            margin: auto;
             width: 100%;
+            font-size: 13px;
             box-shadow: 0 2px 3px 1px #94e8bf;
+            thead {
+                position: sticky;
+                top: 0; /* Don't forget this, required for the stickiness */
+                box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+                
+                th {
+                    border: none !important;
+                    padding: 8px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: center;
+                    background-color: #0f3866;
+                    color: white;
+                    font-size: large;
+                    
+                }
+            }
             td {
                 padding: 15px;
             }
@@ -91,20 +131,6 @@ body {
                         }
                     }
                 }
-            }
-            th {
-                border: none !important;
-                padding: 8px;
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: center;
-                background-color: #0f3866;
-                color: white;
-                font-size: large;
-                position: sticky;
-                top: 0; /* Don't forget this, required for the stickiness */
-                box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
-                
             }
 
             @media only screen and (max-width: 1200px) {
@@ -129,4 +155,12 @@ body {
             height: 40px;
         }
     }
+}
+    
+.fa-xmark {
+    color: red !important;
+}
+    
+.fa-check {
+    color: green !important;
 }

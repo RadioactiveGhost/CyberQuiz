@@ -61,7 +61,7 @@
   border-radius: 30px;
   padding: 15px 20px 15px 45px;
   font-size: 16px;
-  width: 600px;
+  width: 300px;
   margin-left: 20px;
   background-color: white;
   background-image: url("../assets/img/magnifying-glass-solid.svg");
@@ -88,7 +88,6 @@
   font-size: 15px;
 }
 #searchb #search #searchbar #user {
-  width: 300px;
   position: relative;
   float: right;
   margin-top: -40px;
@@ -98,51 +97,66 @@
   top: -5px;
   right: 30px;
   padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 300px;
 }
 #searchb #search #searchbar #user i {
   position: absolute;
   right: 0;
   font-size: 30px;
 }
-#searchb #search #searchresults {
-  overflow-y: auto;
-  max-height: calc(100% - 120px);
-  margin-left: 230px;
+#searchb #search .searchcontainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-#searchb #search #searchresults .searchentry {
+#searchb #search .searchcontainer #searchresults {
+  width: calc(100% - 40px);
+  background-color: white;
+  margin: auto;
+  padding: 20px 0 200px 5%;
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+#searchb #search .searchcontainer #searchresults .searchentry {
   text-align: left;
   padding: 20px;
   width: 700px;
 }
-#searchb #search #searchresults .searchentry:hover {
+#searchb #search .searchcontainer #searchresults .searchentry:hover {
   cursor: pointer;
 }
-#searchb #search #searchresults .searchentry img {
+#searchb #search .searchcontainer #searchresults .searchentry img {
   width: 20px;
   float: left;
   margin: 10px;
 }
-#searchb #search #searchresults .searchentry .websitetitle {
+#searchb #search .searchcontainer #searchresults .searchentry .websitetitle {
   font-size: 16px;
 }
-#searchb #search #searchresults .searchentry .websiteurl {
+#searchb #search .searchcontainer #searchresults .searchentry .websiteurl {
   font-size: 12px;
   color: gray;
 }
-#searchb #search #searchresults .searchentry .websitetopic {
+#searchb #search .searchcontainer #searchresults .searchentry .websitetopic {
   font-size: 23px;
   color: var(--blue);
 }
-#searchb #search #searchresults .searchentry .websiteblurb {
+#searchb #search .searchcontainer #searchresults .searchentry .websiteblurb {
   font-size: 16px;
   color: rgb(59, 59, 59);
 }
-#searchb #search #footer {
+#searchb #search .searchcontainer #footer {
   text-align: right;
   margin-right: 20px;
   font-size: 12px;
 }
-#searchb #search #footer i {
+#searchb #search .searchcontainer #footer i {
   color: var(--red);
 }
 @media only screen and (max-width: 1200px) {
@@ -314,6 +328,7 @@
   width: 300px;
   padding: 20px 25px;
   box-shadow: 0 3px 3px var(--surface2);
+  font-size: 16px;
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
@@ -351,7 +366,7 @@
   cursor: pointer;
 }
 #smsb #sms-bottom {
-  margin-top: 100px;
+  margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
 }
@@ -517,7 +532,7 @@
   background: white;
   position: absolute;
   bottom: 0;
-  right: 10px;
+  left: 10px;
   width: 85%;
   padding: 3px;
   display: none;
@@ -568,33 +583,39 @@
   top: 50%;
   transform: translateY(-50%);
 }
-#engb #engsocial {
-  border-radius: 20px;
+#engb #engwindow #engsocial {
   background-image: url("../assets/img/bg5.jpg");
   background-size: 400px;
   margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  background-color: rgb(31, 31, 31);
+  width: 300px;
+  padding: 20px 25px;
+  box-shadow: 0 3px 3px var(--surface2);
+  font-size: 14px;
   top: 50%;
   transform: translateY(-50%);
 }
-#engb #engsocial .icon {
+#engb #engwindow #engsocial .icon {
   color: white;
   float: left;
   font-size: 25px;
   margin: 0 5px 5px 0;
 }
-#engb #engsocial #eng-input {
+#engb #engwindow #engsocial #eng-input {
   width: 64%;
   background-color: #575757;
 }
-#engb #engsocial .sms-send {
+#engb #engwindow #engsocial .sms-send {
   background: none;
   padding-left: 4px;
 }
-#engb #engsocial .message.warning {
+#engb #engwindow #engsocial .message.warning {
   background: none;
   font-style: italic;
 }
-#engb #engsocial .message.warning input {
+#engb #engwindow #engsocial .message.warning input {
   width: 100%;
   background: none;
   outline: none;
@@ -604,32 +625,24 @@
   font-size: 16px;
   margin-top: 10px;
 }
-#engb #engsocial .message.warning input:hover {
+#engb #engwindow #engsocial .message.warning input:hover {
   cursor: pointer;
   background-color: var(--sapphire);
   color: white;
 }
-#engb #engsocial.messagewindow {
-  position: relative;
-  border-radius: 20px;
-  background-color: rgb(31, 31, 31);
-  width: 300px;
-  padding: 20px 25px;
-  box-shadow: 0 3px 3px var(--surface2);
-}
-#engb #engsocial #mess-number {
+#engb #engwindow #engsocial #mess-number {
   position: relative;
   font-weight: bold;
   float: left;
   color: white;
 }
-#engb #engsocial .mess-menu {
+#engb #engwindow #engsocial .mess-menu {
   position: relative;
   float: right;
   top: -9px;
   color: white;
 }
-#engb #engsocial .message {
+#engb #engwindow #engsocial .message {
   clear: both;
   position: relative;
   border-radius: 10px;
@@ -642,19 +655,19 @@
   margin-bottom: 5px;
   margin-top: 10px;
 }
-#engb #engsocial .link {
+#engb #engwindow #engsocial .link {
   text-decoration: underline;
   color: rgb(0, 174, 255) !important;
 }
-#engb #engsocial .link:hover {
+#engb #engwindow #engsocial .link:hover {
   cursor: pointer;
 }
-#engb #engsocial #sms-bottom {
-  margin-top: 100px;
+#engb #engwindow #engsocial #sms-bottom {
+  margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
 }
-#engb #engsocial #sms-input {
+#engb #engwindow #engsocial #sms-bottom #eng-input {
   float: left;
   position: relative;
   width: 55%;
@@ -666,7 +679,7 @@
   background-color: black;
   color: rgba(255, 255, 255, 0.664);
 }
-#engb #engsocial .sms-send {
+#engb #engwindow #engsocial .sms-send {
   position: relative;
   color: white;
   background-color: var(--sapphire);
@@ -674,22 +687,22 @@
   border-radius: 20px;
   margin-left: 5px;
 }
-#engb #engsocial .dropbtn {
+#engb #engwindow #engsocial .dropbtn {
   padding: 10px;
   font-size: 16px;
   border-radius: 50px;
   width: 15px;
   cursor: pointer;
 }
-#engb #engsocial .dropbtn:hover, #engb #engsocial .dropbtn:focus {
+#engb #engwindow #engsocial .dropbtn:hover, #engb #engwindow #engsocial .dropbtn:focus {
   background-color: var(--sapphire);
   color: white;
 }
-#engb #engsocial .dropdown {
+#engb #engwindow #engsocial .dropdown {
   position: relative;
   display: inline-block;
 }
-#engb #engsocial .dropdown-content {
+#engb #engwindow #engsocial .dropdown-content {
   display: none;
   position: absolute;
   background-color: black;
@@ -701,26 +714,26 @@
   margin-top: 35px;
   margin-right: 20px;
 }
-#engb #engsocial .dropdown-content p {
+#engb #engwindow #engsocial .dropdown-content p {
   color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   cursor: pointer;
 }
-#engb #engsocial .dropdown-content p:hover {
+#engb #engwindow #engsocial .dropdown-content p:hover {
   background-color: var(--sapphire);
   color: white;
 }
-#engb #engsocial .dropdown-content p:hover:first-child {
+#engb #engwindow #engsocial .dropdown-content p:hover:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-#engb #engsocial .dropdown-content p:hover:last-child {
+#engb #engwindow #engsocial .dropdown-content p:hover:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-#engb #engsocial .show {
+#engb #engwindow #engsocial .show {
   display: block;
 }
 
@@ -772,32 +785,68 @@
   box-shadow: 0 1px 3px rgba(22, 22, 22, 0.747);
   border: none;
 }
-#email .emailbrowser .emailcontent {
+#email .emailbrowser .emailcontainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#email .emailbrowser .emailcontainer .emailcontent {
   width: calc(100% - 10px);
-  height: -moz-min-content;
-  height: min-content;
   background-color: white;
   margin: auto;
-  position: relative;
-  padding: 20px 0 0 5px;
+  padding: 20px 0 100px 0;
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
-#email .emailbrowser .emailcontent .text {
+#email .emailbrowser .emailcontainer .emailcontent .text {
   text-align: left;
   padding: 10px;
+  padding-left: 100px;
   font-size: 0.9em !important;
 }
-#email .emailbrowser .assunto {
+#email .emailbrowser .emailcontainer .assunto {
   margin: 20px auto 0 auto;
   padding: 8px 4px;
   font-size: 15px;
   height: 30px;
 }
-#email .emailbrowser .emailheader {
+#email .emailbrowser .emailcontainer .emailheader {
   border-bottom: 1px solid rgba(128, 128, 128, 0.493);
   position: relative;
   padding: 0 20px 5px 20px;
 }
-#email .emailbrowser .iremetente {
+#email .emailbrowser .emailcontainer .emailheader #emailimgnat #anexohover {
+  display: none;
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  display: none;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px grey;
+  color: var(--blue);
+}
+#email .emailbrowser .emailcontainer .emailheader .emailb {
+  box-shadow: 0px 2px 6px grey;
+  background: white;
+  border: none;
+  outline: none;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-left: 10px;
+}
+#email .emailbrowser .emailcontainer .emailheader .emailb:hover {
+  background-color: var(--sapphire);
+  color: white;
+  cursor: pointer;
+}
+#email .emailbrowser .emailcontainer .iremetente {
   float: left;
   background: var(--p2);
   border-radius: 50px;
@@ -805,23 +854,23 @@
   width: 23px;
   margin-right: 30px;
 }
-#email .emailbrowser .remetente {
+#email .emailbrowser .emailcontainer .remetente {
   padding: 10px;
   position: relative;
   font-weight: bold;
   text-align: left;
   width: 350px;
 }
-#email .emailbrowser .remetente:hover {
+#email .emailbrowser .emailcontainer .remetente:hover {
   cursor: pointer;
 }
-#email .emailbrowser .remetente:hover div {
+#email .emailbrowser .emailcontainer .remetente:hover div {
   display: block;
 }
-#email .emailbrowser #natrem {
+#email .emailbrowser .emailcontainer #natrem {
   width: 200px;
 }
-#email .emailbrowser .emhover {
+#email .emailbrowser .emailcontainer .emhover {
   position: absolute;
   top: 40px;
   left: 60px;
@@ -832,58 +881,43 @@
   box-shadow: 0 1px 3px grey;
   color: var(--blue);
 }
-#email .emailbrowser .imail {
+#email .emailbrowser .emailcontainer .imail {
   position: relative;
   margin: auto;
   width: -moz-fit-content;
   width: fit-content;
 }
-#email .emailbrowser .imail img {
+#email .emailbrowser .emailcontainer .imail img {
   width: 120px;
 }
-#email .emailbrowser .anexo {
+#email .emailbrowser .emailcontainer .anexo {
   position: relative;
   margin: auto;
   width: -moz-fit-content;
   width: fit-content;
   float: right;
 }
-#email .emailbrowser .anexo img {
+#email .emailbrowser .emailcontainer .anexo img {
   width: 35px;
 }
-#email .emailbrowser #emailimghover {
+#email .emailbrowser .emailcontainer #emailimghover {
   border: 1px solid var(--surface2);
   background: white;
+  width: -moz-max-content;
+  width: max-content;
   position: absolute;
-  bottom: 0;
-  width: 85%;
   padding: 3px;
   display: none;
 }
-#email .emailbrowser #emailimg:hover {
+#email .emailbrowser .emailcontainer #emailimg:hover, #email .emailbrowser .emailcontainer #emailimgnat:hover {
   cursor: pointer;
 }
-#email .emailbrowser #signimg {
+#email .emailbrowser .emailcontainer #signimg {
   float: left;
 }
-#email .emailbrowser .buttons {
+#email .emailbrowser .emailcontainer .buttons {
   padding: 8px;
   clear: both;
-}
-#email .emailbrowser .buttons .emailb {
-  box-shadow: 0px 2px 6px grey;
-  background: white;
-  border: none;
-  outline: none;
-  color: var(--text);
-  border-radius: 10px;
-  padding: 10px 20px;
-  margin-left: 10px;
-}
-#email .emailbrowser .buttons .emailb:hover {
-  background-color: var(--sapphire);
-  color: white;
-  cursor: pointer;
 }
 @media only screen and (max-width: 1000px) {
   #email .emailbrowser .emailtopbar input {
@@ -1127,30 +1161,30 @@
 #browser {
   height: calc(100% - (var(--titlebarh) + 6px));
 }
-#browser #browsererror {
+#browser #browsercontainer #browsererror {
   width: -moz-max-content;
   width: max-content;
   position: relative;
   margin: 0 auto;
-  top: 35%;
-  transform: translateY(-50%);
+  top: 10%;
+  transform: translateY(-10%);
   text-align: left;
 }
-#browser #browsererror .error, #browser #browsererror .err {
+#browser #browsercontainer #browsererror .error, #browser #browsercontainer #browsererror .err {
   color: rgb(126, 124, 124);
 }
-#browser #browsererror .err {
+#browser #browsercontainer #browsererror .err {
   font-size: 13px;
 }
-#browser #browsererror span.diaglink {
+#browser #browsercontainer #browsererror span.diaglink {
   color: var(--blue);
   text-decoration: underline;
 }
-#browser #browsererror img {
+#browser #browsercontainer #browsererror img {
   width: 60px;
   margin-bottom: 15px;
 }
-#browser #wifi {
+#browser #browsercontainer #wifi {
   background-color: var(--p2);
   border-radius: 8px 8px 0 0;
   border: 1px solid var(--p1);
@@ -1159,35 +1193,36 @@
   bottom: 0;
   right: 20px;
   color: var(--p1);
-  height: 400px;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
-  width: 300px;
+  font-size: 12px;
+  width: 220px;
   box-shadow: 0px 2px 4px rgb(88, 88, 88);
 }
-#browser .wifientry {
+#browser #browsercontainer .wifientry {
   text-align: left;
   padding: 20px 40px 20px 20px;
   position: relative;
   transition-duration: 0ms !important;
 }
-#browser .wifientry > .fa-wifi {
+#browser #browsercontainer .wifientry > .fa-wifi {
   font-size: 24px;
   margin-right: 10px;
 }
-#browser .wifientry > .fa-lock {
+#browser #browsercontainer .wifientry > .fa-lock {
   position: absolute;
   margin-left: -15px;
   margin-top: 14px;
   font-size: 13px;
 }
-#browser .wifientry .extra {
+#browser #browsercontainer .wifientry .extra {
   font-weight: normal;
   padding: 20px 0 25px 20px;
   display: none;
 }
-#browser .wifientry .extra input {
+#browser #browsercontainer .wifientry .extra input {
   position: absolute;
   right: 10px;
   bottom: 10px;
@@ -1197,15 +1232,18 @@
   padding: 5px 30px;
   transition-duration: 0ms !important;
 }
-#browser .wifientry .extra input:hover {
+#browser #browsercontainer .wifientry .extra input:hover {
   cursor: pointer;
   outline: 3px solid gray;
 }
-#browser .wifientry:first-child {
+#browser #browsercontainer .wifientry:first-child {
   border-radius: 8px 8px 0 0;
 }
-#browser .wifientry:hover {
+#browser #browsercontainer .wifientry:hover {
   background-color: var(--p1);
   color: white;
   cursor: pointer;
+}
+#browser #browsercontainer .wifientry.selected {
+  background-color: rgba(15, 56, 102, 0.2862745098);
 }/*# sourceMappingURL=quizes.css.map */

@@ -50,9 +50,8 @@
         </div>
         <div id="quebra">
             <div id="quebrat">
-                Hiiiiiii cutie!
             </div>
-            <input type="button" value="Continuar" class="popbutton" id="prevb" onclick="esconderQuebra()">
+            <input type="button" value="Continuar" class="popbutton" onclick="esconderQuebra()">
         </div>
         <div id="desafio">
             <div id="desafiot"></div>
@@ -87,7 +86,7 @@
     <div class="quiz-area">
         <div class="title-bar">
             <div class="title"><i class="fa-solid fa-gamepad"></i>  CyberQuiz</div>
-            <input type="button" value="Prev" onclick="changeQuiz()" class="popbutton" id="debugPrev">
+            <!--<input type="button" value="Prev" onclick="changeQuiz()" class="popbutton" id="debugPrev">-->
             <input type="button" value="Next" onclick="changeQuiz()" class="popbutton" id="debugNext"> 
             <div class="window-icons"><i class="fa-solid fa-window-minimize"></i><i class="fa-solid fa-window-maximize" onclick="maximize()"></i><i class="fa-solid fa-xmark"></i></div>
         </div>
@@ -115,44 +114,46 @@
                         <span id="user"><span id="searchuser">Utilizador</span><i class="fa-solid fa-circle-user"></i></span>
                     </div>
                     
-                    <div id="searchresults">
-                        <div class="searchentry" onclick="submitSearch(0)">
-                            <img src="assets/img/globe-solid.svg" alt="">
-                            <span class="websitetitle">Softonic</span>
-                            <br>
-                            <span class="websiteurl">https://netflix.en.softonic.com
-                            </span>
-                            <br>
-                            <span class="websitetopic">Download Netflix - free - latest version</span>
-                            <br>
-                            <span class="websiteblurb">Your favorite series and movies, anywhere where your PC goes. Netflix for Windows offers an unmatched entertainment experience tailored to your preferences.</span>
-                        </div>
-
-                        <div class="searchentry" onclick="submitSearch(0)">
-                            <img src="assets/img/globe-solid.svg" alt="">
-                            <span class="websitetitle">Uptodown</span>
-                            <br>
-                            <span class="websiteurl">https://audacity.en.uptodown.com/windows/download</span>
-                            <br>
-                            <span class="websitetopic">Download Audacity 3.4.2 for Windows | Uptodown.com</span>
-                            <br>
-                            <span class="websiteblurb">Download the latest version of <b>Audacity</b> for Windows. Record and edit all types of audio files. <b>Audacity</b> is a completely free and open source program under.</span>
-                        </div>
-
-                        
-                        <div class="searchentry" onclick="submitSearch(1)">
-                            <img src="assets/img/globe-solid.svg" alt="">
-                            <span class="websitetitle">Microsoft Apps</span>
-                            <br>
-                            <span class="websiteurl">https://apps.microsoft.com > detail</span>
-                            <br>
-                            <span class="websitetopic">Netflix - Microsoft Apps</span>
-                            <br>
-                            <span class="websiteblurb">Looking for the most talked about TV shows and movies from around the world? They’re all on Netflix.We’ve got award-winning series, movies, documentaries, and stand-up specials. And with the mobile app, you get Netflix while you travel, commute, or just take a break.
+                    <div class="searchcontainer">
+                        <div id="searchresults">
+                            <div class="searchentry" onclick="submitSearch(0)">
+                                <img src="assets/img/globe-solid.svg" alt="">
+                                <span class="websitetitle">Softonic</span>
+                                <br>
+                                <span class="websiteurl">https://netflix.en.softonic.com
                                 </span>
-                        </div>
-                        <div id="footer">
-                            <i class="fa-solid fa-location-dot"></i> <span id="locationuser"></span>
+                                <br>
+                                <span class="websitetopic">Download Netflix - free - latest version</span>
+                                <br>
+                                <span class="websiteblurb">Your favorite series and movies, anywhere where your PC goes. Netflix for Windows offers an unmatched entertainment experience tailored to your preferences.</span>
+                            </div>
+
+                            <div class="searchentry" onclick="submitSearch(0)">
+                                <img src="assets/img/globe-solid.svg" alt="">
+                                <span class="websitetitle">Uptodown</span>
+                                <br>
+                                <span class="websiteurl">https://audacity.en.uptodown.com/windows/download</span>
+                                <br>
+                                <span class="websitetopic">Download Audacity 3.4.2 for Windows | Uptodown.com</span>
+                                <br>
+                                <span class="websiteblurb">Download the latest version of <b>Audacity</b> for Windows. Record and edit all types of audio files. <b>Audacity</b> is a completely free and open source program under.</span>
+                            </div>
+
+                            
+                            <div class="searchentry" onclick="submitSearch(1)">
+                                <img src="assets/img/globe-solid.svg" alt="">
+                                <span class="websitetitle">Microsoft Apps</span>
+                                <br>
+                                <span class="websiteurl">https://apps.microsoft.com > detail</span>
+                                <br>
+                                <span class="websitetopic">Netflix - Microsoft Apps</span>
+                                <br>
+                                <span class="websiteblurb">Looking for the most talked about TV shows and movies from around the world? They’re all on Netflix.We’ve got award-winning series, movies, documentaries, and stand-up specials. And with the mobile app, you get Netflix while you travel, commute, or just take a break.
+                                    </span>
+                            </div>
+                            <div id="footer">
+                                <i class="fa-solid fa-location-dot"></i> <span id="locationuser"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -243,34 +244,36 @@
                         <i class='fa-solid fa-magnifying-glass'></i>
                         <i class='fa-solid fa-circle-user'></i>
                     </div>
-                    <div class='emailcontent'>
-                        <span class='assunto'>Assunto: Contraordenação Fiscal - Declaração de IRS</span><br><br>
-                        <div class='emailheader'>
-                            <div class='iremetente'><i class='fa-regular fa-user'></i></div>
-                            <div class='remetente' id="atrem">
-                                Autoridade Tributária Portuguesa <i class='fa-solid fa-caret-down'></i>
-                                <div id='emailhover' class="emhover">governo_de_portugal@outlouk.com</div>
+                    <div class="emailcontainer">
+                        <div class='emailcontent'>
+                            <span class='assunto'>Assunto: Contraordenação Fiscal - Declaração de IRS</span><br><br>
+                            <div class='emailheader'>
+                                <div class='iremetente'><i class='fa-regular fa-user'></i></div>
+                                <div class='remetente' id="atrem">
+                                    Autoridade Tributária Portuguesa <i class='fa-solid fa-caret-down'></i>
+                                    <div id='emailhover' class="emhover">governo_de_portugal@outlouk.com</div>
+                                </div>
+                                <div class='buttons'>
+                                    <button class='emailb' onclick='submitEmail(0)'><i class='fa-solid fa-reply'></i> Responder</button><button class='emailb' onclick='submitEmail(1)'><i class='fa-solid fa-flag'></i> Denunciar</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class='text'>
-                            <p>Exmo(a) <span id='emailNome'></span>,<br><br>
-                            É com urgência que entramos em contacto consigo referente a uma contraordenação fiscal associada à sua declaração de IRS.<br>
-                            Após uma análise minuciosa, detectamos irregularidades que exigem a sua imediata atenção. O não cumprimento das orientações que se seguem poderá resultar numa coima substancial.<br>
-                            Para resolver a sua situação, solicitamos que clique no botão abaixo para aceder ao portal da Autoridade Tributária e proceder à validação dos seus dados fiscais:<br>
-                            <div id='emailimg' class='imail' onclick='submitEmail(0)'><img src='../assets/img/clique.png'><br></div>
-                            Agradecemos a sua colaboração e compreensão neste assunto delicado.<br><br>
-                            Com os melhores cumprimentos,<br>
-                            Gabinete da Autoridade Tributária de Portugal
-                            </p>
-                            <div id='signimg' class='imail'>
-                                <img src='../assets/img/atea.png'><br>
+                            <div class='text'>
+                                <p>Exmo(a) <span id='emailNome'></span>,<br><br>
+                                É com urgência que entramos em contacto consigo referente a uma contraordenação fiscal associada à sua declaração de IRS.<br>
+                                Após uma análise minuciosa, detectamos irregularidades que exigem a sua imediata atenção. O não cumprimento das orientações que se seguem poderá resultar numa coima substancial.<br>
+                                Para resolver a sua situação, solicitamos que clique no botão abaixo para aceder ao portal da Autoridade Tributária e proceder à validação dos seus dados fiscais:<br>
+                                <div id='emailimg' class='imail' onclick='submitEmail(0)'><img src='../assets/img/clique.png'><br></div>
+                                Agradecemos a sua colaboração e compreensão neste assunto delicado.<br><br>
+                                Com os melhores cumprimentos,<br>
+                                Gabinete da Autoridade Tributária de Portugal
+                                </p>
+                                <div id='signimg' class='imail'>
+                                    <img src='../assets/img/atea.png'><br>
+                                </div>
+                                <div id='emailimghover'>
+                                    http://www.portaldasfinancas-portugal.pt/validacaoIRS.php
+                                </div>
                             </div>
-                            <div id='emailimghover'>
-                                http://www.portaldasfinancas-portugal.pt/validacaoIRS.php
-                            </div>
-                        </div>
-                        <div class='buttons'>
-                            <button class='emailb' onclick='submitEmail(0)'><i class='fa-solid fa-reply'></i> Responder</button><button class='emailb' onclick='submitEmail(1)'><i class='fa-solid fa-flag'></i> Denunciar</button>
                         </div>
                     </div>
                 </div>
@@ -352,7 +355,7 @@
             </div>
         
             <div id='browser' class='background qframe'>
-                <div>
+                <div id="browsercontainer">
                     <div id='browsererror'>
                         <img src='../assets/img/dino.png'>
                         <h2>Sem Internet</h2><br>
@@ -396,34 +399,37 @@
                         <i class='fa-solid fa-magnifying-glass'></i>
                         <i class='fa-solid fa-circle-user'></i>
                     </div>
-                    <div class='emailcontent'>
-                        <span class='assunto'>Assunto: Workshop Yoga do Riso_ Dia Internacional do Riso_Participe</span><br><br>
-                        <div class='emailheader'>
-                            <div id='emailimg' class='anexo' onclick='submitEmailNatalina(1)'><img src='../assets/img/anexo.png'><br></div>
-                            <div class='iremetente'><i class='fa-regular fa-user'></i></div>
-                            <div class='remetente' id="natrem">
-                                Lopes, Natalina <i class='fa-solid fa-caret-down'></i>
-                                <div id='natalinahover' class="emhover">nlopes@globalvia.com</div>
+                    <div class="emailcontainer">
+                        <div class='emailcontent'>
+                            <span class='assunto'>Assunto: Workshop Yoga do Riso_ Dia Internacional do Riso_Participe</span><br><br>
+                            <div class='emailheader'>
+                                <div id='emailimgnat' class='anexo' onclick='submitEmailNatalina(1)'><img src='../assets/img/anexo.png'><br>
+                                    <div id="anexohover">https://mail.global.com/mail/u/0?=0.1&permmsgid=msg-f:att&disp=safe</div></div>
+                                <div class='iremetente'><i class='fa-regular fa-user'></i></div>
+                                <div class='remetente' id="natrem">
+                                    Lopes, Natalina <i class='fa-solid fa-caret-down'></i>
+                                    <div id='natalinahover' class="emhover">nlopes@globalvia.com</div>
+                                </div>
+                                <div class='buttons'>
+                                    <button class='emailb' onclick='submitEmailNatalina(0)'><i class='fa-solid fa-flag'></i> Denunciar</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class='text'>
-                            <p><span id='emailNome'>Exmos(as) Senhores(as),</span><br><br>
-                            Dia 18 de janeiro é o dia Internacional do Riso e será realizada uma sessão de Yoga com todos os colaboradores.<br><br>
-                            O objetivo é promover o bem-estar físico e mental, aumentar a energia e o bom humor através de exercícios de riso, respiração e relaxamento.
-                            <br>
-                            Serve o presente email para partilhar o programa da sessão (em anexo).
-                            <br><br>
-                            Agradeço desde já e conto com a presença de cada um de vocês 😊<br><br>
-                            Atenciosamente e até breve,<br>
-                            Natalina Lopes</p>
-                            <p style="color: #0f3866b4"><b>Área de RH, Comunicação e RSC</b></p><br><br>
+                            <div class='text'>
+                                <p><span id='emailNome'>Exmos(as) Senhores(as),</span><br><br>
+                                Dia 18 de janeiro é o dia Internacional do Riso e será realizada uma sessão de Yoga com todos os colaboradores.<br><br>
+                                O objetivo é promover o bem-estar físico e mental, aumentar a energia e o bom humor através de exercícios de riso, respiração e relaxamento.
+                                <br>
+                                Serve o presente email para partilhar o programa da sessão (em anexo).
+                                <br><br>
+                                Agradeço desde já e conto com a presença de cada um de vocês 😊<br><br>
+                                Atenciosamente e até breve,<br>
+                                Natalina Lopes</p>
+                                <p style="color: #0f3866b4"><b>Área de RH, Comunicação e RSC</b></p><br><br>
 
-                            <div id='emailimghover'>
-                                https://globalmail.com/mail/u/0/#inbox/FMfcgzG.pdf
+                                <div id='emailimghover'>
+                                    https://globalmail.com/mail/u/0/#inbox/FMfcgzG.pdf
+                                </div>
                             </div>
-                        </div>
-                        <div class='buttons'>
-                            <button class='emailb' onclick='submitEmailNatalina(0)'><i class='fa-solid fa-flag'></i> Denunciar</button>
                         </div>
                     </div>
                 </div>

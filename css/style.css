@@ -103,6 +103,7 @@ body #registo {
   border: 4px solid var(--p1);
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 2px !important;
 }
 body #registo .info {
   color: black;
@@ -323,7 +324,7 @@ body .quiz-area .title-bar .window-icons > i:not(:last-child) {
 body .quiz-area #help {
   position: absolute;
   bottom: 50px;
-  left: 50px;
+  left: 20px;
   z-index: 2;
 }
 body .quiz-area #help #helpi {
@@ -432,6 +433,10 @@ body .final #sugestoes #sugestao {
   border: none;
   outline: none;
   border: 3px solid var(--p1);
+}
+body .final #sugestoes .hidden {
+  display: none;
+  pointer-events: none;
 }
 @media only screen and (max-width: 700px) {
   body .quiz-area {
