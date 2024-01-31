@@ -123,12 +123,12 @@ body #table table td {
 }
 body #table table tr {
   background: rgba(148, 232, 191, 0.0823529412);
-  transition-duration: 250ms;
+  transition-duration: 150ms;
 }
 body #table table tr:nth-child(even) {
   background-color: rgba(15, 56, 102, 0.2274509804);
 }
-body #table table tr:hover {
+body #table table tr:hover:not(thead tr) {
   background-color: rgba(187, 247, 216, 0.5803921569);
   box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.26);
 }
@@ -137,6 +137,9 @@ body #table table tr:last-child td:first-child {
 }
 body #table table tr:last-child td:last-child {
   border-bottom-right-radius: 20px;
+}
+body #table table tr:last-child .points {
+  text-align: center;
 }
 @media only screen and (max-width: 1200px) {
   body #table table table {

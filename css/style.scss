@@ -350,6 +350,9 @@ body {
             border-radius: 10px 10px 0 0;
             background-color: var(--surface0);
             overflow:hidden;
+            &:hover {
+                cursor:default;
+            }
 
             .title {
                 font-weight: bold;

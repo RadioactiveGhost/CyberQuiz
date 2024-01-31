@@ -16,23 +16,24 @@
             <div class="info">
                 <p>Por favor, insere os teus dados</p> 
             </div>
-            <span class="inputTitle">Nome</span>
-            <br>
-            <input type="text" name="nomeP" id="nomeP">
-            <br>
-            <span class="inputTitle">Apelido</span>
-            <br>
-            <input type="text" name="nomeS" id="nomeS">
-            <br>
-            <span class="inputTitle">Email</span>
-            <br>
-            <input type="email" name="email" id="email">
-            <br>
-            <span class="inputTitle">Cidade</span>
-            <br>
-            <input type="text" name="cidade" id="cidade">
-            <br><br><br>
-            <input type="submit" value="Iniciar Desafio" onclick="startQuiz()">
+            <form  autocomplete="off"></form>
+                <span class="inputTitle">Nome</span>
+                <br>
+                <input type="text" name="nomeP" id="nomeP" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+                <br>
+                <span class="inputTitle">Apelido</span>
+                <br>
+                <input type="text" name="nomeS" id="nomeS" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+                <br>
+                <span class="inputTitle">Email</span>
+                <br>
+                <input type="text" id="email" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+                <span class="inputTitle">Cidade</span>
+                <br>
+                <input type="text" name="cidade" id="cidade" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+                <br><br><br>
+                <input type="submit" value="Iniciar Desafio" onclick="startQuiz()">
+            </form>
             <br>
             <div class="wrapper">
                 <div class="icon"> 
@@ -88,7 +89,7 @@
             <div class="title"><i class="fa-solid fa-gamepad"></i>  CyberQuiz</div>
             <!--<input type="button" value="Prev" onclick="changeQuiz()" class="popbutton" id="debugPrev">-->
             <input type="button" value="Next" onclick="changeQuiz()" class="popbutton" id="debugNext"> 
-            <div class="window-icons"><i class="fa-solid fa-window-minimize"></i><i class="fa-solid fa-window-maximize" onclick="maximize()"></i><i class="fa-solid fa-xmark"></i></div>
+            <div class="window-icons"><i class="fa-solid fa-window-minimize"></i><i class="fa-solid fa-window-maximize"></i><i class="fa-solid fa-xmark"></i></div>
         </div>
 
         <!--ICON DE AJUDA-->
@@ -116,37 +117,37 @@
                     
                     <div class="searchcontainer">
                         <div id="searchresults">
-                            <div class="searchentry" onclick="submitSearch(0)">
+                            <div class="searchentry">
                                 <img src="assets/img/globe-solid.svg" alt="">
                                 <span class="websitetitle">Softonic</span>
                                 <br>
                                 <span class="websiteurl">https://netflix.en.softonic.com
                                 </span>
                                 <br>
-                                <span class="websitetopic">Download Netflix - free - latest version</span>
+                                <span class="websitetopic" onclick="submitSearch(0)">Download Netflix - free - latest version</span>
                                 <br>
                                 <span class="websiteblurb">Your favorite series and movies, anywhere where your PC goes. Netflix for Windows offers an unmatched entertainment experience tailored to your preferences.</span>
                             </div>
 
-                            <div class="searchentry" onclick="submitSearch(0)">
+                            <div class="searchentry">
                                 <img src="assets/img/globe-solid.svg" alt="">
                                 <span class="websitetitle">Uptodown</span>
                                 <br>
                                 <span class="websiteurl">https://audacity.en.uptodown.com/windows/download</span>
                                 <br>
-                                <span class="websitetopic">Download Audacity 3.4.2 for Windows | Uptodown.com</span>
+                                <span class="websitetopic" onclick="submitSearch(0)">Download Audacity 3.4.2 for Windows | Uptodown.com</span>
                                 <br>
                                 <span class="websiteblurb">Download the latest version of <b>Audacity</b> for Windows. Record and edit all types of audio files. <b>Audacity</b> is a completely free and open source program under.</span>
                             </div>
 
                             
-                            <div class="searchentry" onclick="submitSearch(1)">
+                            <div class="searchentry"">
                                 <img src="assets/img/globe-solid.svg" alt="">
                                 <span class="websitetitle">Microsoft Apps</span>
                                 <br>
                                 <span class="websiteurl">https://apps.microsoft.com > detail</span>
                                 <br>
-                                <span class="websitetopic">Netflix - Microsoft Apps</span>
+                                <span class="websitetopic" onclick="submitSearch(1)">Netflix - Microsoft Apps</span>
                                 <br>
                                 <span class="websiteblurb">Looking for the most talked about TV shows and movies from around the world? They’re all on Netflix.We’ve got award-winning series, movies, documentaries, and stand-up specials. And with the mobile app, you get Netflix while you travel, commute, or just take a break.
                                     </span>
@@ -167,7 +168,7 @@
                     </i><input type='text' width=20 value='Utilizador' id='login' disabled>
                     <br>
                     <i class='fa-solid fa-key icon-left'>
-                    </i><input type='text' width=20>
+                    </i><input type='text' width=20 disabled>
                     <div id='passchecks'>
                         <input type='checkbox' class='pass' id='pass1' name='pass1' value='Password123**'>
                         <label for='pass1'>Password123**</label>
@@ -215,7 +216,7 @@
             <div id='webspoofing' class='background qframe'>
                 <div id="browser">
                     <div id='urlbar'>
-                        <i class='fa-solid fa-lock-open lock' id='lock'></i><input type='text' value='http://faceb00k.com' disabled>\<i class='fa-solid fa-right-from-bracket hammenubar' onclick='submitSpoof(1)'></i>
+                        <i class='fa-solid fa-lock-open lock' id='lock'></i><input type='text' value='http://faceb00k.com' disabled><i class='fa-solid fa-right-from-bracket hammenubar' onclick='submitSpoof(1)'></i>
                         <i class='fa-solid fa-bars hammenubar'></i>
                     </div>
                     <div id='spoofing-content'>
@@ -346,7 +347,7 @@
                         <span id='uacprogram'><i class='fa-solid fa-file-word'></i> Microsoft Word 2023/24 ® Microsoft</span><br><br>
                         <span id='uacorigin'>Editor verificado: Free MS Word for Everyone<br>Origem do ficheiro: Disco neste computador</span><br><br>
                         <span id='uaclink' onclick='uacdetalhes()'>Mostrar mais detalhes</span>
-                        <span id='uacaddress'>C:\\Users\\NOME\\Transferencias\\Wormzy.exe</span>
+                        <span id='uacaddress'>C:\\Users\\Admin\\Transferencias\\Wormzy.exe</span>
                     </div>
                     <div id='uacbottombar'>
                         <input type='button' value='Sim' onclick='submitUAC(0)'><input type='button' value='Não' onclick='submitUAC(1)'>

@@ -40,13 +40,13 @@ function processarPontos() {
     nivel10.value = niveis[20];
     let preencher = document.getElementById("preencher");
     preencher.innerHTML = 'TESTE'
-    if (pontosLocal < 2) {
+    if (pontosLocal < 3) {
         preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/muitomau.png\">";
     }
-    else if (pontosLocal < 4) {
+    else if (pontosLocal < 5) {
         preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/mau.png\">";
     }
-    else if (pontosLocal < 6) {
+    else if (pontosLocal < 7) {
         preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/bom.png\">";
     }
     else if (pontosLocal < 9) {

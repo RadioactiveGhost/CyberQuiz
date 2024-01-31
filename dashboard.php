@@ -30,7 +30,7 @@
         if ($result->num_rows > 0) {
             // output data of each row
             echo "<table>";
-            echo "<thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>Tempo</th><th>Sugestão</th><th>Resultado Final</th><th colspan=10>Pontos</th></tr></thead>";
+            echo "<thead><tr><th rowspan=2>ID</th><th rowspan=2>Nome</th><th rowspan=2>Email</th><th rowspan=2>Tempo</th><th rowspan=2>Sugestão</th><th rowspan=2>Resultado Final</th><th colspan=10>Desafios</th></tr><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>";
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["ID_UTILIZADOR"]. "</td> <td>" . $row["PRIMEIRO_NOME"]. " " . $row["ULTIMO_NOME"]. "</td><td>" . $row["EMAIL"] . "</td><td>";
@@ -61,11 +61,11 @@
                 if ($result2->num_rows > 0) {
                     while($row2 = $result2->fetch_assoc()) {
                         if ($row2["VALOR_NIVEL"] == 1) {
-                            echo "<td><i class='fa-solid fa-check'></i></td>";
+                            echo "<td class='points'><i class='fa-solid fa-check'></i></td>";
                         } else if ($row2["VALOR_NIVEL"] == 0) {
-                            echo "<td><i class='fa-solid fa-xmark'></i></td>";
+                            echo "<td class='points'><i class='fa-solid fa-xmark'></i></td>";
                         } else {
-                            echo "<td>ERR</td>";
+                            echo "<td class='points'>N/A</td>";
                         }
                         //echo "<td>" . $row2["VALOR_NIVEL"] . "</td>";
                     }

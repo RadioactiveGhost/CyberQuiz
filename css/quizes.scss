@@ -133,10 +133,6 @@
                     padding: 20px;
                     width: 700px;
 
-                    &:hover {
-                        cursor: pointer;
-                    }
-
                     img {
                         width: 20px;
                         float:left;
@@ -155,6 +151,9 @@
                     .websitetopic {
                         font-size: 23px;
                         color: var(--blue);
+                        &:hover {
+                            cursor:pointer;
+                        }
                     }
 
                     .websiteblurb {
@@ -292,9 +291,9 @@
         padding: 10px 20px;
         box-shadow: 0 3px 3px var(--surface2);
         margin: 0 auto;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+        top: 55%;
+        -ms-transform: translateY(-55%);
+        transform: translateY(-55%);
 
         :hover {
             cursor: pointer;
@@ -643,6 +642,11 @@
             padding-right: 400px;
         }
     }
+    @media only screen and (max-width: 700px) {
+        .fa-bars {
+            display: none !important;
+        }
+    }
 }
 
 /*-----   Engenharia Social   -----------*/
@@ -862,6 +866,7 @@
             padding: 20px 0;
             position: relative;
             box-shadow: 0 2px 5px grey;
+            cursor: default;
             z-index: 1;
 
             span {
@@ -975,7 +980,7 @@
                 width: 350px;
 
                 &:hover {
-                    cursor: pointer;
+                    cursor: text;
 
                     div {
                         display: block;
@@ -1125,9 +1130,9 @@
         border-radius: 3px;
         user-select: none;
         margin: 0 auto;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+        top: 60%;
+        -ms-transform: translateY(-60%);
+        transform: translateY(-60%);
         color: white;
         
         .geoinput {
@@ -1375,7 +1380,7 @@
 
         .wifientry {
             text-align: left;
-            padding: 20px 40px 20px 20px;
+            padding: 20px 5px 20px 20px;
             position: relative;
             transition-duration: 0ms !important;
 

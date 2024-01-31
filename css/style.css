@@ -303,6 +303,9 @@ body .quiz-area .title-bar {
   background-color: var(--surface0);
   overflow: hidden;
 }
+body .quiz-area .title-bar:hover {
+  cursor: default;
+}
 body .quiz-area .title-bar .title {
   font-weight: bold;
   margin-left: 10px;

@@ -117,9 +117,9 @@ body {
             }
             tr {
                 background: #94e8bf15;
-                transition-duration: 250ms;
+                transition-duration: 150ms;
                 &:nth-child(even){background-color: #0f38663a;}
-                &:hover {background-color: #bbf7d894;
+                &:hover:not(thead tr) {background-color: #bbf7d894;
                     box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.26);}
                 &:last-child {
                     td {
@@ -129,6 +129,9 @@ body {
                         &:last-child {
                             border-bottom-right-radius: 20px;
                         }
+                    }
+                    .points {
+                        text-align: center;
                     }
                 }
             }

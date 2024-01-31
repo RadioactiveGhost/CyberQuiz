@@ -128,9 +128,6 @@
   padding: 20px;
   width: 700px;
 }
-#searchb #search .searchcontainer #searchresults .searchentry:hover {
-  cursor: pointer;
-}
 #searchb #search .searchcontainer #searchresults .searchentry img {
   width: 20px;
   float: left;
@@ -146,6 +143,9 @@
 #searchb #search .searchcontainer #searchresults .searchentry .websitetopic {
   font-size: 23px;
   color: var(--blue);
+}
+#searchb #search .searchcontainer #searchresults .searchentry .websitetopic:hover {
+  cursor: pointer;
 }
 #searchb #search .searchcontainer #searchresults .searchentry .websiteblurb {
   font-size: 16px;
@@ -269,8 +269,8 @@
   padding: 10px 20px;
   box-shadow: 0 3px 3px var(--surface2);
   margin: 0 auto;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 55%;
+  transform: translateY(-55%);
 }
 #passb #pass :hover {
   cursor: pointer;
@@ -568,6 +568,11 @@
     padding-right: 400px;
   }
 }
+@media only screen and (max-width: 700px) {
+  #webspoofing .fa-bars {
+    display: none !important;
+  }
+}
 
 /*-----   Engenharia Social   -----------*/
 #engb {
@@ -760,6 +765,7 @@
   padding: 20px 0;
   position: relative;
   box-shadow: 0 2px 5px grey;
+  cursor: default;
   z-index: 1;
 }
 #email .emailbrowser .emailtopbar span {
@@ -862,7 +868,7 @@
   width: 350px;
 }
 #email .emailbrowser .emailcontainer .remetente:hover {
-  cursor: pointer;
+  cursor: text;
 }
 #email .emailbrowser .emailcontainer .remetente:hover div {
   display: block;
@@ -977,8 +983,8 @@
      -moz-user-select: none;
           user-select: none;
   margin: 0 auto;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 60%;
+  transform: translateY(-60%);
   color: white;
 }
 #geomicb #geomic h1 {
@@ -1203,7 +1209,7 @@
 }
 #browser #browsercontainer .wifientry {
   text-align: left;
-  padding: 20px 40px 20px 20px;
+  padding: 20px 5px 20px 20px;
   position: relative;
   transition-duration: 0ms !important;
 }

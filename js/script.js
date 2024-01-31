@@ -227,13 +227,28 @@ function startQuiz() {
         document.getElementById('engCidade').innerText = cidade;
         document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
         document.getElementById('uacaddress').style.display = 'none';
-        document.getElementById('wifiNome').innerText = nomeP;
+        //document.getElementById('wifiNome').innerText = nomeP;
+        for (i = 0; i < nomeP.length; i++) {
+            if (nomeP[i] == ' ' && i < 10) {
+                document.getElementById('wifiNome').innerText    += '_';
+            } else if (i < 10) {
+                document.getElementById('wifiNome').innerText    += nomeP[i];
+            }
+        }
         document.getElementById('searchuser').innerText = nomeP + " " + nomeS;
         document.getElementById('locationuser').innerText = cidade;
-        document.getElementById('geouser').value = nomeP.toLowerCase() + "@globalvia.com";
+        document.getElementById('geouser').value = '';
+        for (i = 0; i < nomeP.length; i++) {
+            if (nomeP[i] == ' ') {
+                document.getElementById('geouser').value += '.';
+            } else {
+                document.getElementById('geouser').value += nomeP[i].toLowerCase();
+            }
+        }
+        document.getElementById('geouser').value += "@globalvia.com";
         mostrarJanelaDesafio (0);
     } else {
-        window.alert("Tens de preencher os quatro campos!");
+        window.alert("Por favor, preenche todos os campos!");
     }
 }
 
@@ -1093,7 +1108,7 @@ function submitWifi(n) {
     mPH += 
         '<center><h4>\
         <font color=\"#0F3866\">\
-            Hotspot-' + nomeP + 
+            Hotspot-' + nomeP.substring(0, 10) + 
         '</font>\
         </center></h4>\
         <br><br>\
@@ -1161,7 +1176,7 @@ function submitEmailNatalina(n) {
         </center></h4>\
         <br><br>\
         <small><center>\
-            No contexto de comunicações empresariais, o mais seguro é <b>verificar o endereço de email e o respetivo domínio associado.</b>\
+            No contexto das comunicações empresariais, o mais seguro é <b>verificar o endereço de email e o respetivo domínio associado.</b>\
         </center></small>';
 
     popup.innerHTML = mPH;
@@ -1203,4 +1218,4 @@ function debugging(n) {
         document.getElementById('debugNext').style.display = 'none';
     }
 }
-debugging(1);
+debugging(0);
