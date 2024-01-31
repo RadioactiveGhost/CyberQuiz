@@ -130,9 +130,6 @@ body {
                             border-bottom-right-radius: 20px;
                         }
                     }
-                    .points {
-                        text-align: center;
-                    }
                 }
             }
 
@@ -166,4 +163,8 @@ body {
     
 .fa-check {
     color: green !important;
+}
+
+.center {
+    text-align: center;
 }
