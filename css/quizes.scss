@@ -438,6 +438,7 @@
         border-radius: 50px;
         width: 15px;
         cursor: pointer;
+        animation: blink 5s infinite;
 
         &:hover,&:focus {
             background-color: var(--sapphire);
@@ -488,6 +489,12 @@
 
     .show {
         display: block;
+    }
+
+    @keyframes blink {
+        0% { background: none; }
+        50%  { background: var(--p2); }
+        100%   { background: none; }
     }
 }
 
