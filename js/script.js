@@ -1218,4 +1218,4 @@ function debugging(n) {
         document.getElementById('debugNext').style.display = 'none';
     }
 }
-debugging(0);
+debugging(1);

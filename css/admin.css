@@ -103,6 +103,9 @@ body #table table {
   font-size: 13px;
   box-shadow: 0 2px 3px 1px #94e8bf;
 }
+body #table table :focus {
+  border: #94e8bf solid 2px !important;
+}
 body #table table thead {
   position: sticky;
   top: 0; /* Don't forget this, required for the stickiness */
