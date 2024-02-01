@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/brands.css">
     <link rel="stylesheet" href="assets/css/solid.css">
-    <title>CyberQuiz - Fim</title>
+    <title>CyberQuiz</title>
 </head>
 
 <body style="background-color: #94e8bf !important">
@@ -30,6 +30,13 @@
         
 
     </div>
-    <script src="js/pontos.js"></script>
+    <script>
+        if (localStorage.getItem('finished') === null) {
+            window.location.replace('index.html');
+        } else {
+            localStorage.removeItem('finished');
+        }
+
+    </script>
 </body>
 </html>

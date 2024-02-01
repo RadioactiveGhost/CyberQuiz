@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../assets/fonts/OpenSans-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+body {
+    header {
+        text-align: center;
+        color: white !important; 
+        font-weight: bold;
+        padding: 10px;
+        &#headere {
+            background: rgb(211, 44, 44) !important
+        }
+        &#headerc {
+            background: rgb(32, 177, 32) !important;
+        }
+    }
+    #warning {
+        margin: 10px auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 1px #94e8bf;
+        background-color: gold;
+        width:max-content;
+        padding: 10px;
+        display: none;
+        animation: warning 3s infinite;
+        &:hover {
+            background-color: orange;
+            cursor: pointer;
+        }
+
+        @keyframes warning {
+            0% {background-color: yellow}
+            50% {background-color: orange; color:white}
+            100% {background-color: yellow}
+        }
+    }
+    h2 {
+        margin: auto;
+        text-align: center;
+        color: #ffffff;
+        font-size: 42px;
+        font-weight: bolder;
+        width: 100%;
+        text-align:center;
+        background-color: #0f3866;
+        padding: 10px 0;
+    }
+    #charts {
+        display: flex;
+        position: relative;
+        border-radius: 20px;
+        box-shadow: 0 2px 3px 1px #94e8bf;
+        margin: 40px;
+        div {
+            flex: 1;
+            padding: 40px;
+        }
+    }
+    #contagens {
+        margin: auto;
+        display: flex;
+        div {
+            margin: 40px;
+            flex: 1;
+            text-align: center;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 2px 3px 1px #94e8bf;
+            width: max-content;
+            color: #0f3866;
+            font-size: 24px;
+            font-weight: bolder;
+            p {
+                font-size: 30px;
+                color: black;
+            }
+        }
+    }
+    #table{
+        padding: 40px;
+        table {
+            text-align: left;
+            position: relative;
+            border-collapse: collapse;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: auto;
+            width: 100%;
+            font-size: 13px;
+            box-shadow: 0 2px 3px 1px #94e8bf;
+            thead {
+                position: sticky;
+                top: 0; /* Don't forget this, required for the stickiness */
+                box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+                
+                th {
+                    border: none !important;
+                    padding: 8px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: center;
+                    background-color: #0f3866;
+                    color: white;
+                    font-size: large;
+                    
+                }
+            }
+            td {
+                padding: 15px;
+            }
+            tr {
+                background: #94e8bf15;
+                transition-duration: 150ms;
+                &:nth-child(even){background-color: #0f38663a;}
+                &:hover:not(thead tr) {background-color: #bbf7d894;
+                    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.26);}
+                &:last-child {
+                    td {
+                        &:first-child {
+                            border-bottom-left-radius: 20px;
+                        }
+                        &:last-child {
+                            border-bottom-right-radius: 20px;
+                        }
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 1200px) {
+                table {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align:center;
+        background-color: #0f3866;
+        padding: 10px 0;
+
+        img {
+            height: 40px;
+        }
+    }
+}
+    
+.fa-xmark {
+    color: red !important;
+}
+    
+.fa-check {
+    color: green !important;
+}
+
+.center {
+    text-align: center;
+}

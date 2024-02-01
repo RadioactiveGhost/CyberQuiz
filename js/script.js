@@ -14,7 +14,7 @@ function onStart() {
     }
 }
 onStart()
-
+let start = Date.now();
 //
 let points = 0;
 
@@ -39,7 +39,7 @@ function changeQuiz() {
 // 0 Passa de Pop para Balões/Sabias que, 1 passa do anterior para vazio
 let buttonmode = 0;
 function nextButton(n) {
-    console.log(buttonmode);
+    //console.log(buttonmode);
     if (n == 0 && buttonmode != 0) {
         buttonmode--;
     }
@@ -48,6 +48,7 @@ function nextButton(n) {
     }
     if (n == 1 && buttonmode == 3) {
         if (positione == qArray.length-1) {
+            localStorage.setItem('finished', 'set');
             mostrarPaginaPontos();
             return;
         }
@@ -146,6 +147,7 @@ function hover(s1, s2) {
 hover("download", "downloadhover");
 hover("emailimg", "emailimghover");
 hover("atrem", "emailhover");
+hover("emailimgnat", "anexohover");
 hover("natrem", "natalinahover");
 hover("helpi", "helpt");
 
@@ -210,26 +212,43 @@ window.onclick = function(event) {
 // Variáveis de detalhes da pessoa
 let nomeP = '';
 let nomeS = '';
+let email = '';
 let cidade = '';
 function startQuiz() {
     nomeP = document.getElementById('nomeP').value;
     nomeS = document.getElementById('nomeS').value;
+    email = document.getElementById('email').value;
     cidade = document.getElementById('cidade').value;
-    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(cidade == '' || cidade == null)) {
+    if (!(nomeP == '' || nomeP == null) && !(nomeS == '' || nomeS == null) && !(email == '' || email == null) &&!(cidade == '' || cidade == null)) {
         block.classList.toggle('registo');
-        block.style.display = 'none';
         registo.style.display = 'none';
         document.getElementById("login").value = nomeP;
         document.getElementById('engNome').innerText = nomeP;
         document.getElementById('engCidade').innerText = cidade;
         document.getElementById('emailNome').innerText = nomeP + " " + nomeS;
         document.getElementById('uacaddress').style.display = 'none';
-        document.getElementById('wifiNome').innerText = nomeP;
+        //document.getElementById('wifiNome').innerText = nomeP;
+        for (i = 0; i < nomeP.length; i++) {
+            if (nomeP[i] == ' ' && i < 10) {
+                document.getElementById('wifiNome').innerText    += '_';
+            } else if (i < 10) {
+                document.getElementById('wifiNome').innerText    += nomeP[i];
+            }
+        }
         document.getElementById('searchuser').innerText = nomeP + " " + nomeS;
         document.getElementById('locationuser').innerText = cidade;
-        document.getElementById('geouser').value = nomeP.toLowerCase() + "@globalvia.com";
+        document.getElementById('geouser').value = '';
+        for (i = 0; i < nomeP.length; i++) {
+            if (nomeP[i] == ' ') {
+                document.getElementById('geouser').value += '.';
+            } else {
+                document.getElementById('geouser').value += nomeP[i].toLowerCase();
+            }
+        }
+        document.getElementById('geouser').value += "@globalvia.com";
+        mostrarJanelaDesafio (0);
     } else {
-        window.alert("Tens de preencher os três campos!");
+        window.alert("Por favor, preenche todos os campos!");
     }
 }
 
@@ -442,27 +461,20 @@ function esconderJanelaDesafio() {
     document.getElementById('help').style.display = "block";
 }
 
+let pSize = qArray.length;
+let pontosArray = [];
+function contarPontos(n) {
+    pontosArray.push(n);
+}
+
 function mostrarPaginaPontos() {
-    /*balao1.style.display = 'none';
-    balao2.style.display = 'none';
-    sabias.style.display = 'none';
-    popwindow.style.display = 'none';
-    document.getElementById('quiz').style.display = 'none';
-    pontos.style.display = 'block';
-    let mensagem = '';
-    let percen = points/qArray.length;
-    if (percen < .5) {
-        mensagem += '<h2>Que pena!</h2><br>Não conseguiste acertar nem a metade!<br>Levavas umas lambadas.';
-    }
-    else if (percen < .9) {
-        mensagem += '<h2>Parabéns '+ nomeP +'!</h2><br>Conseguiste acertar à maior parte das perguntas!';
-    }
-    else {
-        mensagem += '<h2>Muitos Parabéns '+ nomeP +'!</h2><br>Superaste as espectativas!';
-    }
-    mensagem += '<br><br>Acertaste ' + points + ' de ' + qArray.length + ' perguntas.';
-    pontost.innerHTML = mensagem;*/
-    localStorage.setItem("pontos", points);
+    let tempoTotal = Date.now() - start;
+    localStorage.setItem("nomeP", nomeP);
+    localStorage.setItem("nomeS", nomeS);
+    localStorage.setItem("email", email);
+    localStorage.setItem("tempo", tempoTotal);
+    localStorage.setItem("pontos", points); 
+    localStorage.setItem("pontosArray", JSON.stringify(pontosArray));
     localStorage.setItem("total", qArray.length);
     location.href = "final.html";
 }
@@ -542,6 +554,7 @@ function submitSearch(n) {
                 Esse era o website mais seguro\
             </center></h3>\
             <br>';
+        contarPontos(1);
         points++;
     } else {
         mPH = 
@@ -553,6 +566,7 @@ function submitSearch(n) {
                 O website mais seguro seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -616,6 +630,8 @@ function submitPass(n) {
                     Escolheste as palavras-passe mais seguras\
                 </center></h3>\
                 <br>';
+                
+            contarPontos(1);
             points++;
         } else {
             mPH = 
@@ -627,6 +643,7 @@ function submitPass(n) {
                     As palavras-passe seguras são\
                 </center></h3>\
                 <br>';
+            contarPontos(0);
         }
         mPH += 
             '<center><h4>\
@@ -684,6 +701,7 @@ function submitSMS(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -694,6 +712,7 @@ function submitSMS(n) {
                 O mais correto a fazer seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -749,6 +768,7 @@ function submitSpoof(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -759,6 +779,7 @@ function submitSpoof(n) {
                 O mais correto a fazer era\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -812,6 +833,7 @@ function submitEng(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -822,6 +844,7 @@ function submitEng(n) {
                 A decisão mais acertada seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
         '<center><h4>\
@@ -878,6 +901,7 @@ function submitGeomic(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -888,6 +912,7 @@ function submitGeomic(n) {
                 Podias confiar e carregar no botão\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
             '<center><h4>\
@@ -939,6 +964,7 @@ function submitEmail(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -949,6 +975,7 @@ function submitEmail(n) {
                 O mais seguro a fazer seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
         '<center><h4>\
@@ -1000,6 +1027,7 @@ function submitUAC(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -1010,6 +1038,7 @@ function submitUAC(n) {
                 O mais seguro a fazer perante a instalação era\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
 
     mPH += 
@@ -1062,6 +1091,7 @@ function submitWifi(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -1072,12 +1102,13 @@ function submitWifi(n) {
                 A rede mais segura para conectar seria\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
 
     mPH += 
         '<center><h4>\
         <font color=\"#0F3866\">\
-            Hotspot-' + nomeP + 
+            Hotspot-' + nomeP.substring(0, 10) + 
         '</font>\
         </center></h4>\
         <br><br>\
@@ -1124,6 +1155,7 @@ function submitEmailNatalina(n) {
             </center></h3>\
             <br>';
         points++;
+        contarPontos(1);
     } else {
         mPH = 
             '<h1 class="wrong">\
@@ -1134,6 +1166,7 @@ function submitEmailNatalina(n) {
                 O mais correto a fazer era clicar no\
             </center></h3>\
             <br>';
+        contarPontos(0);
     }
     mPH += 
         '<center><h4>\
@@ -1143,7 +1176,7 @@ function submitEmailNatalina(n) {
         </center></h4>\
         <br><br>\
         <small><center>\
-            No contexto de comunicações empresariais, o mais seguro é <b>verificar o endereço de email e o respetivo domínio associado.</b>\
+            No contexto das comunicações empresariais, o mais seguro é <b>verificar o endereço de email e o respetivo domínio associado.</b>\
         </center></small>';
 
     popup.innerHTML = mPH;
@@ -1162,12 +1195,15 @@ function uacdetalhes() {
 
 // Função para mostrar opções extra nas ligações Wi-Fi
 function showWifi(n) {
+    let wifiEntries = document.getElementsByClassName('wifientry');
     let wifiExtras = document.getElementsByClassName('extra');
     for (i = 0; i < wifiExtras.length; i++) {
         if (i == n) {
+            wifiEntries[i].classList.add('selected');
             wifiExtras[i].style.display = 'block';
         } else {
             wifiExtras[i].style.display = 'none';
+            wifiEntries[i].classList.remove('selected');
         }
     }
 }
@@ -1179,9 +1215,7 @@ function debugging(n) {
         mostrarJanelaDesafio(positione);
     }
     else {
-        document.getElementById('debugPrev').style.display = 'none';
         document.getElementById('debugNext').style.display = 'none';
     }
 }
-
-debugging(1);
+debugging(0);

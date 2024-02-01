@@ -62,14 +62,10 @@ body {
         user-select: none;
 
         &.registo {
-            background-image: url('../assets/img/corgo.jpg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 150%;
-            background-blend-mode: color-burn;
+            background-color: var(--p1);
 
             input {
-                &[type="text"] {
+                &[type="text"], &[type="email"] {
                     margin: 5px 10px;
                     background: #96969656;
                     border-top-left-radius: 5px;
@@ -79,7 +75,7 @@ body {
                     padding: 6px 10px;
                     text-align: center;
                 }
-                &[type="button"] {
+                &[type="submit"] {
                     border: none;
                     outline: none;
                     width: 200px;
@@ -115,6 +111,7 @@ body {
         border:4px solid var(--p1);
         padding-left: 10px;
         padding-right: 10px;
+        margin-top: 2px !important;
 
         .info{
             color: black;
@@ -132,14 +129,14 @@ body {
         }
 
         input {
-            &[type='text'] {
+            &[type='text'], &[type='email'] {
                 width: 40%;
                 border: none;
                 outline: none;
                 height: 20px;
                 border-radius: 10px;
                 border-bottom:2px solid var(--p1) !important;
-
+                margin: 10px auto !important;
                 &:hover, &:focus {
                     border-bottom:2px solid var(--p2) !important;                    
                 }
@@ -353,6 +350,9 @@ body {
             border-radius: 10px 10px 0 0;
             background-color: var(--surface0);
             overflow:hidden;
+            &:hover {
+                cursor:default;
+            }
 
             .title {
                 font-weight: bold;
@@ -381,7 +381,7 @@ body {
         #help {
             position: absolute;
             bottom: 50px;
-            left: 50px;
+            left: 20px;
             z-index: 2;
 
             #helpi {
@@ -501,6 +501,10 @@ body {
                 border: none;
                 outline: none;
                 border: 3px solid var(--p1);
+            }
+            .hidden {
+                display: none;
+                pointer-events:none;
             }
         }
     }
@@ -744,8 +748,3 @@ body {
     margin-top: 5px !important;
     width: 340px !important;
 }
-
-
-
-
-

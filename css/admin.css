@@ -1,0 +1,170 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../assets/fonts/OpenSans-Regular.ttf);
+}
+* {
+  margin: 0px;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+body header {
+  text-align: center;
+  color: white !important;
+  font-weight: bold;
+  padding: 10px;
+}
+body header#headere {
+  background: rgb(211, 44, 44) !important;
+}
+body header#headerc {
+  background: rgb(32, 177, 32) !important;
+}
+body #warning {
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 1px #94e8bf;
+  background-color: gold;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px;
+  display: none;
+  animation: warning 3s infinite;
+}
+body #warning:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+@keyframes warning {
+  0% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: orange;
+    color: white;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+body h2 {
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: bolder;
+  width: 100%;
+  text-align: center;
+  background-color: #0f3866;
+  padding: 10px 0;
+}
+body #charts {
+  display: flex;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 2px 3px 1px #94e8bf;
+  margin: 40px;
+}
+body #charts div {
+  flex: 1;
+  padding: 40px;
+}
+body #contagens {
+  margin: auto;
+  display: flex;
+}
+body #contagens div {
+  margin: 40px;
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 2px 3px 1px #94e8bf;
+  width: -moz-max-content;
+  width: max-content;
+  color: #0f3866;
+  font-size: 24px;
+  font-weight: bolder;
+}
+body #contagens div p {
+  font-size: 30px;
+  color: black;
+}
+body #table {
+  padding: 40px;
+}
+body #table table {
+  text-align: left;
+  position: relative;
+  border-collapse: collapse;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: auto;
+  width: 100%;
+  font-size: 13px;
+  box-shadow: 0 2px 3px 1px #94e8bf;
+}
+body #table table thead {
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+body #table table thead th {
+  border: none !important;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0f3866;
+  color: white;
+  font-size: large;
+}
+body #table table td {
+  padding: 15px;
+}
+body #table table tr {
+  background: rgba(148, 232, 191, 0.0823529412);
+  transition-duration: 150ms;
+}
+body #table table tr:nth-child(even) {
+  background-color: rgba(15, 56, 102, 0.2274509804);
+}
+body #table table tr:hover:not(thead tr) {
+  background-color: rgba(187, 247, 216, 0.5803921569);
+  box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.26);
+}
+body #table table tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+body #table table tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  body #table table table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+body footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #0f3866;
+  padding: 10px 0;
+}
+body footer img {
+  height: 40px;
+}
+
+.fa-xmark {
+  color: red !important;
+}
+
+.fa-check {
+  color: green !important;
+}
+
+.center {
+  text-align: center;
+}/*# sourceMappingURL=admin.css.map */
