@@ -56,8 +56,11 @@ function processarPontos() {
         preencher.innerHTML = "<img class=\"emoji\" width=30% src=\"../assets/img/excelente.png\">";
     }
     preencher.innerHTML+= "<h2>\
-    <span style=\"font-weight: 900\"><font color=\"#0F3866\">"+ pontosLocal +"</font></span>/"+ totalLocal +"\
-    </h2><br>";
+    <span style=\"font-weight: 800; color: #0F3866\">" + 
+    pontosLocal +
+    "/" +
+    totalLocal +
+    "</font></span>\</h2><br>";
 }
 
 function mostrarSugestoes() {

@@ -413,36 +413,39 @@
     #sms-input {
         float: left;
         position: relative;
-        width: 55%;
+        width: 75%;
         border-radius: 10px;
         border: none;
         outline: none;
         padding: 10px 10px;
-        margin-right: 5%;
+        margin-right: 1%;
         background-color: black;
         color: rgba(255, 255, 255, 0.664);
     }
     
     .sms-send {
         position: relative;
-        color: white;
-        background-color: var(--sapphire);
+        color: rgba(255, 255, 255, 0.495);
+        background-color: #209fb56c;
         padding: 10px;
         border-radius: 20px;
-        margin-left: 5px;
+        margin-left: 15px;
     }
 
     .dropbtn {
-        padding: 10px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 1px;
+        padding-right: 1px;
         font-size: 16px;
-        border-radius: 50px;
+        border-radius: 2px;
         width: 15px;
         cursor: pointer;
-        animation: blink 5s infinite;
+        animation: blink 3s infinite;
 
         &:hover,&:focus {
             background-color: var(--sapphire);
-            color: white;
+            color: var(--p1);
         }
     }
 
@@ -493,7 +496,7 @@
 
     @keyframes blink {
         0% { background: none; }
-        50%  { background: var(--p2); }
+        50%  { background: #94e8bf52; }
         100%   { background: none; }
     }
 }
@@ -700,6 +703,7 @@
             .sms-send {
                 background: none;
                 padding-left: 4px;
+                color: #ff0000;
             }
 
             .message.warning {
@@ -710,7 +714,7 @@
                     width: 100%;
                     background: none;
                     outline: none;
-                    border: 2px solid var(--sapphire);
+                    border: 2px solid #94e8bf80;
                     border-radius: 10px;
                     color: #ddd;
                     font-size: 16px;
@@ -754,7 +758,7 @@
 
             .link {
                 text-decoration: underline;
-                color: rgb(0, 174, 255) !important;
+                color: rgba(0, 174, 255, 0.912) !important;
                 &:hover {
                     cursor: pointer;
                 }
@@ -768,36 +772,40 @@
                 #eng-input {
                     float: left;
                     position: relative;
-                    width: 55%;
+                    width: 64%;
                     border-radius: 10px;
                     border: none;
                     outline: none;
-                    padding: 10px 10px;
-                    margin-right: 5%;
-                    background-color: black;
+                    padding: 5px 10px;
+                    margin-right: 3%;
+                    background-color: rgba(0, 0, 0, 0.659);
                     color: rgba(255, 255, 255, 0.664);
                 }
             }
             
             .sms-send {
                 position: relative;
-                color: white;
-                background-color: var(--sapphire);
+                color: rgba(255, 255, 255, 0.268);
+                background-color: #209fb55c;
                 padding: 10px;
                 border-radius: 20px;
                 margin-left: 5px;
             }
 
             .dropbtn {
-                padding: 10px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                padding-left: 1px;
+                padding-right: 1px;
                 font-size: 16px;
-                border-radius: 50px;
+                border-radius: 2px;
                 width: 15px;
                 cursor: pointer;
+                animation: blink 3s infinite;
 
                 &:hover,&:focus {
                     background-color: var(--sapphire);
-                    color: white;
+                    color: var(--p1);
                 }
             }
 
@@ -844,6 +852,12 @@
 
             .show {
                 display: block;
+            }
+
+            @keyframes blink {
+                0% { background: none; }
+                50%  { background: #94e8bf52; }
+                100%   { background: none; }
             }
         }
     }

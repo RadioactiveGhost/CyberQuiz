@@ -2,7 +2,7 @@
 let qArray = document.getElementsByClassName("qframe");
 
 // Variável que guarda a posição atual
-let positione = 0;
+let positione = 9;
 
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
@@ -105,16 +105,16 @@ function nextButton(n) {
 // Array aonde são guardados as especificações de cada
 // desafio
 let desafioArray = [
-    "<b>Pesquisas-te</b> por uma aplicação. <b>Em qual website vais entrar?</b>",
-    "Seleciona as <b>2 palavras&#x2011;passe mais seguras </b> para o teu registo",
-    "<b>Recebeste esta mensagem</b>! O que vais fazer?",
-    "Se achares seguro, <b>faz login na rede social</b>",
-    "<b>Recebeste este email</b> 2 semanas depois de submeter o IRS. O que fazer?",
-    "Estás numa aplicação de mensagens. <b>Toma uma decisão!</b>",
-    "Entraste nesta página de login. <b>Procede se achares seguro!</b>",
-    "<b>Fizeste a pesquisa</b> \"Microsoft Word download grátis\" <b>e descarregaste a aplicação.</b>\n Proceder com a instalação?",
-    "Foste a um café e precisas de consultar o email. <b>Conecta a uma rede!</b>",
-    "Recebeste mais um email. <b>Descarrega o anexo</b> se achares seguro!"
+    "Pesquisas-te por uma aplicação.<br><h3 style=\"margin-top: 5px;\"><b>Entra no website</b> que achares mais seguro!</h3>",
+    "Entraste num website e tens que te registar.<br><h3 style=\"margin-top: 5px;\">Seleciona as 2 palavras&#x2011;passe que consideras mais seguras!</h3>",
+    "Recebeste esta mensagem no teu telemóvel.<br><h3 style=\"margin-top: 5px;\">Denuncia ou clica no link!</h3>",
+    "Pesquisaste facebook e entraste no website.<br><h3 style=\"margin-top: 5px;\">Se achares seguro faz login, senão sai da rede social!</h3>",
+    "Recebeste este email depois de submeter o IRS.<br><h3 style=\"margin-top: 5px;\">Se achares seguro responde, senão denuncia!</h3>",
+    "Recebeste esta mensagem numa aplicação de chat.<br><h3 style=\"margin-top: 5px;\">Se confiares adiciona aos contactos, senão denuncia!</h3>",
+    "Entraste nesta página de login.<br><h3 style=\"margin-top: 5px;\">Procede se achares seguro, senão sai!</h3>",
+    "Descarregaste a aplicação \"Microsoft Word grátis\".<h3 style=\"margin-top: 5px;\">Instala, só se achares seguro!</h3>",
+    "Foste a um café e precisas de ir ao email. Tens o hotspot ligado.<h3 style=\"margin-top: 5px;\">Conecta-te à rede que achares mais segura!</h3>",
+    "Recebeste mais um email, desta vez em nome da empresa.<h3 style=\"margin-top: 5px;\">Descarrega o anexo se achares seguro, senão denuncia!</h3>"
 ]
 
 // Variáveis para balão de ajuda
