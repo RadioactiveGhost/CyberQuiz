@@ -2,7 +2,7 @@
 let qArray = document.getElementsByClassName("qframe");
 
 // Variável que guarda a posição atual
-let positione = 9;
+let positione = 0;
 
 // Esta função esconde todos os desafios menos o primeiro,
 // uma vez que o objetivo é mostrar um a um
@@ -1151,7 +1151,7 @@ function submitEmailNatalina(n) {
             </h1>\
             <br><br>\
             <h3><center>\
-                O mais correto a fazer era clicar no\
+                Fizeste o mais correto, que era clicar no\
             </center></h3>\
             <br>';
         points++;
