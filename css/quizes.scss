@@ -118,7 +118,9 @@
             height:100%;
             position:relative;
             #searchresults {
-                width: calc(100% - 40px);
+                overflow-y: auto; /* Show scrollbars */
+                overflow-x: hidden;
+                width: calc(97% - 40px);
                 background-color: white;
                 margin: auto;
                 padding: 20px 0 200px 5%;
@@ -128,6 +130,7 @@
                 top:0;
                 right:0;
                 bottom:0;
+
                 .searchentry {
                     text-align: left;
                     padding: 20px;

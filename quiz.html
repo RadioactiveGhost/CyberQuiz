@@ -106,61 +106,6 @@
 
         <div id="quiz" class="quiz">
 
-            <div id="searchb" class='background qframe'>
-                <div id="search">
-                    <div id="searchbar">
-                        <div id="searchlogo">GlobalSearch</div>
-                        <input type="text" name="searchinput" id="searchinput" value="Netflix free download" disabled>
-                        <span class="searchopt"><span>Tudo</span><span>Imagens</span><span>Vídeos</span></span>
-                        <span id="user"><span id="searchuser">Utilizador</span><i class="fa-solid fa-circle-user"></i></span>
-                    </div>
-                    
-                    <div class="searchcontainer">
-                        <div id="searchresults">
-                            <div class="searchentry">
-                                <img src="assets/img/globe-solid.svg" alt="">
-                                <span class="websitetitle">Softonic</span>
-                                <br>
-                                <span class="websiteurl">https://netflix.ru.softonic.com
-                                </span>
-                                <br>
-                                <span class="websitetopic" onclick="submitSearch(0)">Скачать Netflix - бесплатно - последнюю версию</span>
-                                <br>
-                                <span class="websiteblurb">Ваши любимые сериалы и фильмы, где бы ни находился ваш компьютер. Netflix для Windows предлагает непревзойденные возможности развлечений, адаптированные к вашим предпочтениям.</span>
-                            </div>
-
-                            <div class="searchentry">
-                                <img src="assets/img/globe-solid.svg" alt="">
-                                <span class="websitetitle">Uptodown</span>
-                                <br>
-                                <span class="websiteurl">https://audacity.en.uptodown.com/windows/download</span>
-                                <br>
-                                <span class="websitetopic" onclick="submitSearch(0)">Download Audacity 3.4.2 for Windows | Uptodown.com</span>
-                                <br>
-                                <span class="websiteblurb">Download the latest version of <b>Audacity</b> for Windows. Record and edit all types of audio files. <b>Audacity</b> is a completely free and open source program under.</span>
-                            </div>
-
-                            
-                            <div class="searchentry"">
-                                <img src="assets/img/globe-solid.svg" alt="">
-                                <span class="websitetitle">Microsoft Apps</span>
-                                <br>
-                                <span class="websiteurl">https://apps.microsoft.com > detail</span>
-                                <br>
-                                <span class="websitetopic" onclick="submitSearch(1)">Netflix - Microsoft Apps</span>
-                                <br>
-                                <span class="websiteblurb">Looking for the most talked about TV shows and movies from around the world? They’re all on Netflix.We’ve got award-winning series, movies, documentaries, and stand-up specials. And with the mobile app, you get Netflix while you travel, commute, or just take a break.
-                                    </span>
-                            </div>
-                            <div id="footer">
-                                <i class="fa-solid fa-location-dot"></i> <span id="locationuser"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
             <div id='passb' class='background qframe'>
                 <img src='../assets/img/bg1.jpg'>
                 <div id='pass'>
@@ -191,6 +136,64 @@
                         <input type='button' value='Submeter' onclick='submitPass()'>
                     </div>
                 </div>
+            </div>
+
+            <div id="searchb" class='background qframe'>
+                <div id="search">
+                    <div id="searchbar">
+                        <div id="searchlogo">GlobalSearch</div>
+                        <input type="text" name="searchinput" id="searchinput" value="Netflix free download" disabled>
+                        <span class="searchopt"><span>Tudo</span><span>Imagens</span><span>Vídeos</span></span>
+                        <span id="user"><span id="searchuser">Utilizador</span><i class="fa-solid fa-circle-user"></i></span>
+                    </div>
+                    
+                    <div class="searchcontainer">
+                        <div id="searchresults">
+                            <div class="searchentry">
+                                <!--<img src="assets/img/globe-solid.svg" alt="">-->
+                                <img src="assets/img/softonic.jpg" alt="">
+                                <span class="websitetitle">Softonic</span>
+                                <br>
+                                <i style="color: white; background-color: green; border: 0.5px solid green;" class="fa-solid fa-rectangle-ad"></i>
+                                <span class="websiteurl" style="color: green;">https://netflix.ru.softonic.com
+                                </span>
+                                <br>
+                                <span class="websitetopic" onclick="submitSearch(0)">Скачать Netflix - бесплатно - последнюю версию</span>
+                                <br>
+                                <span class="websiteblurb">Ваши любимые сериалы и фильмы, где бы ни находился ваш компьютер. Netflix для Windows предлагает непревзойденные возможности развлечений, адаптированные к вашим предпочтениям.</span>
+                            </div>
+
+                            <div class="searchentry">
+                                <img src="assets/img/uptodown.png" alt="">
+                                <span class="websitetitle">Uptodown</span>
+                                <br>
+                                <i style="color: white; background-color: green; border: 0.5px solid green;" class="fa-solid fa-rectangle-ad"></i>
+                                <span class="websiteurl" style="color: green;"> https://softonic.en.uptodown.com/windows/download</span>
+                                <br>
+                                <span class="websitetopic" onclick="submitSearch(0)">Download Netflix 8.104.0 build 4 50617 for Android</span>
+                                <br>
+                                <span class="websiteblurb">Download the latest version of Netflix for Android. All Netflix movies and series now on Android. Netflix is the official application of this popular movie.</span>
+                            </div>
+
+                            
+                            <div class="searchentry">
+                                <img src="assets/img/microsoft_store.png" alt="">
+                                <span class="websitetitle">Microsoft Apps</span>
+                                <br>
+                                <span class="websiteurl">https://apps.microsoft.com > detail</span>
+                                <br>
+                                <span class="websitetopic" onclick="submitSearch(1)">Netflix - Microsoft Apps</span>
+                                <br>
+                                <span class="websiteblurb">Looking for the most talked about TV shows and movies from around the world? They’re all on Netflix.We’ve got award-winning series, movies, documentaries, and stand-up specials. And with the mobile app, you get Netflix while you travel, commute, or just take a break.
+                                    </span>
+                            </div>
+                            <div id="footer">
+                                <i class="fa-solid fa-location-dot"></i> <span id="locationuser"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         
             <div id='smsb' class='background qframe'>

@@ -112,7 +112,9 @@
   position: relative;
 }
 #searchb #search .searchcontainer #searchresults {
-  width: calc(100% - 40px);
+  overflow-y: auto; /* Show scrollbars */
+  overflow-x: hidden;
+  width: calc(97% - 40px);
   background-color: white;
   margin: auto;
   padding: 20px 0 200px 5%;

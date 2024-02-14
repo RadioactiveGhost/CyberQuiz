@@ -105,8 +105,8 @@ function nextButton(n) {
 // Array aonde são guardados as especificações de cada
 // desafio
 let desafioArray = [
-    "Pesquisas-te por uma aplicação.<br><h3 style=\"margin-top: 5px;\"><b>Entra no website</b> que achares mais seguro!</h3>",
     "Entraste num website e tens que te registar.<br><h3 style=\"margin-top: 5px;\">Seleciona as 2 palavras&#x2011;passe que consideras mais seguras!</h3>",
+    "Pesquisas-te por uma aplicação.<br><h3 style=\"margin-top: 5px;\"><b>Entra no website</b> que achares mais seguro!</h3>",
     "Recebeste esta mensagem no teu telemóvel.<br><h3 style=\"margin-top: 5px;\">Denuncia ou clica no link!</h3>",
     "Pesquisaste facebook e entraste no website.<br><h3 style=\"margin-top: 5px;\">Se achares seguro faz login, senão sai da rede social!</h3>",
     "Recebeste este email depois de submeter o IRS.<br><h3 style=\"margin-top: 5px;\">Se achares seguro responde, senão denuncia!</h3>",
