@@ -153,7 +153,7 @@ const ctx2 = document.getElementById('taxaGeral');
 new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Nivel 1 - Pesquisa', 'Nivel 2 - Password', 'Nivel 3 - SMS', 'Nivel 4 - Login Rede Social', 'Nivel 5 - Email Finanças', 'Nivel 6 - Whatsapp', 'Nivel 7 - Geomic', 'Nivel 8 - UAC', 'Nivel 9 - Wi-Fi', 'Nivel 10 - Email Natalina'],
+        labels: ['Nivel 1 - Password', 'Nivel 2 - Pesquisa', 'Nivel 3 - SMS', 'Nivel 4 - Login Rede Social', 'Nivel 5 - Email Finanças', 'Nivel 6 - Whatsapp', 'Nivel 7 - Geomic', 'Nivel 8 - UAC', 'Nivel 9 - Wi-Fi', 'Nivel 10 - Email Natalina'],
         datasets: [{
                 label: '% de aprovação',
                 data: [
