@@ -106,7 +106,7 @@ function nextButton(n) {
 // desafio
 let desafioArray = [
     "Entraste num website e tens que te registar.<br><h3 style=\"margin-top: 5px;\">Seleciona as 2 palavras&#x2011;passe que consideras mais seguras!</h3>",
-    "Pesquisas-te por uma aplicação.<br><h3 style=\"margin-top: 5px;\"><b>Entra no website</b> que achares mais seguro!</h3>",
+    "Pesquisas-te pela Netflix para fazer download.<br><h3 style=\"margin-top: 5px;\"><b>Entra no website</b> que achares mais seguro para descarregar!</h3>",
     "Recebeste esta mensagem no teu telemóvel.<br><h3 style=\"margin-top: 5px;\">Denuncia ou clica no link!</h3>",
     "Pesquisaste facebook e entraste no website.<br><h3 style=\"margin-top: 5px;\">Se achares seguro faz login, senão sai da rede social!</h3>",
     "Recebeste este email depois de submeter o IRS.<br><h3 style=\"margin-top: 5px;\">Se achares seguro responde, senão denuncia!</h3>",
@@ -354,7 +354,7 @@ quebraA = [
                 O teu cuidado\
             </span>\
             <span class="quebrasmaller">\
-                é mais forte do que qualquer anti-vírus!\
+                é mais forte do que qualquer antivírus!\
             </span>\
             <div class="img1">\
                 <img width="70" src="../assets/img/quebra7.png">\
@@ -532,7 +532,7 @@ function submitSearch(n) {
     b2H = 
         putSubtitle(2) +
         putCaret() +
-            'Mantém o <b>anti-vírus ativo</b>'
+            'Mantém o <b>antivírus ativo</b>'
         + putCaret() +
             '<b>Evita abrir links</b> de fontes desconhecidas'
         + putCaret() +
@@ -746,7 +746,7 @@ function submitSpoof(n) {
     b2H =
         putSubtitle(2) +
         putCaret() +
-            '<b>Atualiza o browser e anti-vírus</b> sempre que possível'
+            '<b>Atualiza o browser e antivírus</b> sempre que possível'
         + putCaret() +
             '<b>Tem cuidado</b> com websites iniciados <b>com o protocolo http</b>'
         + putCaret() +
@@ -1009,7 +1009,7 @@ function submitUAC(n) {
         + putCaret() +
             '<b>Não descarregues aplicações</b> de fontes desconhecidas'
         + putCaret() +
-            '<b>Utiliza um antivirus</b> que seja bom e confiável';
+            '<b>Utiliza um antivírus</b> que seja bom e confiável';
     //SABIAS QUE --------------------------------------------
     s1H =
         putSabiasQue('"60% das empresas, que sofrem um ciberataque, fecham num espaço de meio ano."','ModernDiplomacy');
