@@ -108,13 +108,13 @@ let desafioArray = [
     "Entraste num website e tens que te registar.<br><h3 style=\"margin-top: 5px;\">Seleciona as 2 palavras&#x2011;passe que consideras mais seguras!</h3>",
     "Pesquisas-te pela Netflix para fazer download.<br><h3 style=\"margin-top: 5px;\"><b>Entra no website</b> que achares mais seguro para descarregar!</h3>",
     "Recebeste esta mensagem no teu telemóvel.<br><h3 style=\"margin-top: 5px;\">Denuncia ou clica no link!</h3>",
-    "Pesquisaste facebook e entraste no website.<br><h3 style=\"margin-top: 5px;\">Se achares seguro faz login, senão sai da rede social!</h3>",
-    "Recebeste este email depois de submeter o IRS.<br><h3 style=\"margin-top: 5px;\">Se achares seguro responde, senão denuncia!</h3>",
-    "Recebeste esta mensagem numa aplicação de chat.<br><h3 style=\"margin-top: 5px;\">Se confiares adiciona aos contactos, senão denuncia!</h3>",
-    "Entraste nesta página de login.<br><h3 style=\"margin-top: 5px;\">Procede se achares seguro, senão sai!</h3>",
+    "Pesquisaste facebook e entraste no website.<br><h3 style=\"margin-top: 5px;\">Se achares seguro faz login, se não sai da rede social!</h3>",
+    "Recebeste este email depois de submeter o IRS.<br><h3 style=\"margin-top: 5px;\">Se achares seguro responde, se não denuncia!</h3>",
+    "Recebeste esta mensagem numa aplicação de chat.<br><h3 style=\"margin-top: 5px;\">Se confiares adiciona aos contactos, se não denuncia!</h3>",
+    "Entraste nesta página de login.<br><h3 style=\"margin-top: 5px;\">Procede se achares seguro, se não sai!</h3>",
     "Descarregaste a aplicação \"Microsoft Word grátis\".<h3 style=\"margin-top: 5px;\">Instala, só se achares seguro!</h3>",
     "Foste a um café e precisas de ir ao email. Tens o hotspot ligado.<h3 style=\"margin-top: 5px;\">Conecta-te à rede que achares mais segura!</h3>",
-    "Recebeste mais um email, desta vez em nome da empresa.<h3 style=\"margin-top: 5px;\">Descarrega o anexo se achares seguro, senão denuncia!</h3>"
+    "Recebeste mais um email, desta vez em nome da empresa.<h3 style=\"margin-top: 5px;\">Descarrega o anexo se achares seguro, se não denuncia!</h3>"
 ]
 
 // Variáveis para balão de ajuda
